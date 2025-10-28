@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root {
+  --bg: #0b0f19;        /* slate-950-ish */
+  --card: #0f1629;      /* slightly elevated */
+  --fg: #e5e7eb;        /* text */
+  --muted: #94a3b8;     /* secondary text */
+  --accent: #22c55e;    /* green-500 */
+  --accent-600: #16a34a; /* green-600 */
+  --ring: rgba(34, 197, 94, 0.35);
+}
+
+html, body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(1200px 600px at 120% -10%, rgba(34,197,94,0.12), rgba(34,197,94,0) 60%),
+    radial-gradient(1000px 500px at -20% -10%, rgba(34,197,94,0.14), rgba(34,197,94,0) 60%),
+    linear-gradient(to bottom, rgba(255,255,255,0.02), rgba(255,255,255,0) 24%),
+    linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 31px,
+      rgba(148,163,184,0.06) 32px
+    );
+  background-size: auto, auto, auto, 100% 32px;
+  color: var(--fg);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle grain */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='140' height='140' viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.80' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0 0 0 0 0.015 0.03 0.045 0.06 0.075'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: .25;
+  mix-blend-mode: soft-light;
+}
+
+/* Selection */
+::selection {
+  color: #0b0f19;
+  background: var(--accent);
+}
+
+/* Utilities */
+.accent { color: var(--accent); }
+.text-gradient { background: linear-gradient(90deg, #22c55e, #86efac); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.bg-accent { background-color: var(--accent); }
+.ring-accent { box-shadow: 0 0 0 3px var(--ring); }
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0) 40%), var(--card);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 16px;
+  transition: border-color .2s ease, transform .2s ease, background .2s ease;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+}
+.btn-primary { background: var(--accent); color: #081018; }
+.btn-primary:hover { background: var(--accent-600); }
+.btn-ghost { background: transparent; color: var(--fg); border: 1px solid rgba(148, 163, 184, 0.2); }
+.btn-ghost:hover { border-color: rgba(148, 163, 184, 0.35); }
+
+.mono { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+.eyebrow { letter-spacing: .16em; text-transform: uppercase; font-size: .78rem; color: var(--muted); }
+.link-underline { position: relative; }
+.link-underline::after { content: ""; position: absolute; left: 0; bottom: -2px; width: 100%; height: 1px; background: currentColor; opacity: .35; transform: scaleX(0); transform-origin: left; transition: transform .25s ease, opacity .25s ease; }
+.link-underline:hover::after { transform: scaleX(1); opacity: .9; }
+
+/* Glassmorphism */
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  backdrop-filter: saturate(140%) blur(14px);
+  -webkit-backdrop-filter: saturate(140%) blur(14px);
+  position: relative;
+}
+.glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0) 40%);
+  pointer-events: none;
+  opacity: .5;
+}
+.glass:hover { border-color: rgba(148, 163, 184, 0.28); }
+
+/* Aspect ratio utility */
+.ratio-16x9 { position: relative; width: 100%; padding-bottom: 56.25%; }
+.ratio-16x9 > .ratio-inner { position: absolute; inset: 0; }
+
+/* Header shares hero gradient at top */
+.header-hero-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(520px 260px at 50% -40%, rgba(34, 197, 94, 0.20), rgba(34, 197, 94, 0) 58%),
+    linear-gradient(to bottom, rgba(255,255,255,0.05), rgba(255,255,255,0) 60%);
+  opacity: 1;
+}
