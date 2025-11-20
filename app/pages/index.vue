@@ -1,4 +1,16 @@
 <script setup>
+useSeoMeta({
+  title: 'Kato Emmanuel',
+  description: 'Full-Stack Developer & UI/UX Designer building modern, scalable web and mobile apps with Vue, Nuxt, Inertia, Laravel, Tailwind, Flutter, TypeScript, and AI RAG.',
+  ogTitle: 'Kato Emmanuel',
+  ogDescription: 'Full-Stack Developer & UI/UX Designer building modern, scalable web and mobile apps with Vue, Nuxt, Inertia, Laravel, Tailwind, Flutter, TypeScript, and AI RAG.',
+  ogImage: '/og-image.svg',
+  ogUrl: 'https://katoemma.website',
+  ogSiteName: 'Kato Emmanuel',
+  ogType: 'website',
+  ogLocale: 'en_US',
+  
+})
 </script>
 
 <template>

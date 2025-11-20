@@ -52,4 +52,15 @@ export default defineNuxtConfig({
   },
 
   modules: ['@nuxtjs/seo'],
+
+  site: {
+    url: 'https://katoemma.website',
+    name: 'Katoemma',
+    description: 'Full-Stack Developer & UI/UX Designer building modern, scalable web and mobile apps.',
+    defaultLocale: 'en',
+  },
+
+  schemaOrg: {
+    identity: 'Person',
+  },
 })
