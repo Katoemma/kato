@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
+
   app: {
     head: {
       htmlAttrs: {
@@ -38,13 +39,17 @@ export default defineNuxtConfig({
       ]
     }
   },
+
   components: [
     { path: '~/app/components', pathPrefix: false },
     { path: '~/components', pathPrefix: false }
   ],
+
   vite: {
     plugins: [
       tailwindcss(),
     ],
   },
+
+  modules: ['@nuxtjs/seo'],
 })
