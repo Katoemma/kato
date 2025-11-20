@@ -1,6 +1,5 @@
 <script setup>
 import { onMounted, onBeforeUnmount, ref } from 'vue'
-import profileImg from '/images/profile.png'
 
 const scrollY = ref(0)
 
@@ -66,9 +65,9 @@ onBeforeUnmount(() => {
         <div class="relative group">
           <div class="absolute -inset-4 bg-gradient-to-r from-[#00ff41] to-[#00f3ff] opacity-30 blur-lg group-hover:opacity-50 transition duration-500"></div>
           <div class="relative border-2 border-[#00ff41] p-2 bg-black/50">
-            <img 
-              :src="profileImg" 
-              alt="Kato Emmanuel" 
+            <img
+              src="/Images/profile.png"
+              alt="Kato Emmanuel"
               class="w-full h-auto grayscale group-hover:grayscale-0 transition duration-500"
             />
             <!-- Tech overlay lines -->

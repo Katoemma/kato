@@ -1,9 +1,6 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import VanillaTilt from 'vanilla-tilt'
-import project1Img from '/images/project1.png'
-import project2Img from '/images/project2.png'
-import project3Img from '/images/project3.png'
 
 const projectCards = ref([])
 
@@ -22,21 +19,21 @@ const projects = [
     title: 'KIJANI_FORESTRY_APP',
     description: 'Cross-platform mobile app used by 450+ field users. Integrated with Airtable APIs for offline-first data collection, reducing reporting time by 75%.',
     tags: ['Flutter', 'Airtable API', 'Offline-First', 'Mobile'],
-    image: project1Img,
+    image: '/Images/project1.png',
     link: '#'
   },
   {
     title: 'AIRTABLE_CRUD_LIB',
     description: 'Open-source Dart library simplifying Airtable API integration. Built to streamline data operations for the Flutter developer community.',
     tags: ['Dart', 'Open Source', 'API Wrapper', 'Package'],
-    image: project2Img,
+    image: '/Images/project2.png',
     link: 'https://github.com/katoemma'
   },
   {
     title: 'VILT_STACK_SYSTEMS',
     description: 'High-performance web applications using Vue, Inertia, Laravel, and Tailwind. Achieved 99% Lighthouse performance scores with modern UX.',
     tags: ['Vue.js', 'Laravel', 'Inertia.js', 'Tailwind'],
-    image: project3Img,
+    image: '/Images/project3.png',
     link: '#'
   }
 ]
