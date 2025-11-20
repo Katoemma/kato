@@ -53,7 +53,7 @@ onBeforeUnmount(() => {
           <div class="grid grid-cols-2 gap-4">
             <div class="border border-[#00f3ff]/30 p-4 bg-[#0a0a0a]/50">
               <h3 class="text-[#00f3ff] text-sm font-mono mb-1">EXPERIENCE</h3>
-              <p class="text-2xl font-bold text-white">2+ YEARS</p>
+              <p class="text-2xl font-bold text-white">4+ YEARS</p>
             </div>
             <div class="border border-[#00f3ff]/30 p-4 bg-[#0a0a0a]/50">
               <h3 class="text-[#00f3ff] text-sm font-mono mb-1">PROJECTS</h3>
