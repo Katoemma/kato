@@ -13,6 +13,8 @@
     "@tailwindcss/vite": "^4.1.13",
     "nuxt": "^4.1.1",
     "tailwindcss": "^4.1.13",
+    "three": "^0.181.2",
+    "vanilla-tilt": "^1.8.1",
     "vue": "^3.5.20",
     "vue-router": "^4.5.1"
   }
