@@ -47,11 +47,11 @@ onBeforeUnmount(() => {
         <!-- Massive Typography -->
         <div class="relative mb-8">
           <!-- Ghost Text (Outline) -->
-          <h1 class="absolute top-0 left-0 w-full text-6xl sm:text-8xl md:text-9xl font-black text-transparent stroke-text opacity-20 select-none transform translate-x-1 translate-y-1" aria-hidden="true">
+          <h1 class="absolute top-0 left-0 w-full text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black text-transparent stroke-text opacity-20 select-none transform translate-x-1 translate-y-1" aria-hidden="true">
             KATO EMMANUEL
           </h1>
           <!-- Main Text -->
-          <h1 class="relative text-6xl sm:text-8xl md:text-9xl font-black text-white tracking-tighter mix-blend-screen glitch-container">
+          <h1 class="relative text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter mix-blend-screen glitch-container">
             <span class="glitch-layer" data-text="KATO">KATO</span>
             <span class="block md:inline text-transparent bg-clip-text bg-gradient-to-r from-[#00ff41] via-[#00f3ff] to-[#00ff41] animate-gradient-x glitch-layer" data-text="EMMANUEL"> EMMANUEL</span>
           </h1>

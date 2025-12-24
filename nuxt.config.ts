@@ -55,7 +55,7 @@ export default defineNuxtConfig({
 
   site: {
     url: 'https://katoemma.website',
-    name: 'Katoemma',
+    name: 'Kato Emmanuel',
     description: 'Full-Stack Developer & UI/UX Designer building modern, scalable web and mobile apps.',
     defaultLocale: 'en',
   },
