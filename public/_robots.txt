@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://katoemma.website/sitemap.xml
 User-Agent: *
 Disallow:
