@@ -64,7 +64,7 @@ const skills = [
         <div class="w-24 h-[2px] bg-[#00f3ff] mx-auto shadow-[0_0_10px_#00f3ff]"></div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div 
           v-for="category in skills" 
           :key="category.category" 
