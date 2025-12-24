@@ -170,5 +170,5 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div ref="container" class="fixed top-0 left-0 w-full h-full -z-10 bg-[#050505] pointer-events-none"></div>
+  <div ref="container" class="fixed top-0 left-0 w-full h-full z-10 bg-[#050505] pointer-events-none"></div>
 </template>
