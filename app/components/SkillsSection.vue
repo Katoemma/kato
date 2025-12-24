@@ -41,6 +41,15 @@ const skills = [
       { name: 'Git / GitHub', level: 90, color: 'bg-[#ffffff]' },
       { name: 'Figma', level: 85, color: 'bg-[#f24e1e]' }
     ]
+  },
+  {
+    category: 'DOMAIN_EXPERTISE',
+    items: [
+      { name: 'GIS & Geospatial', level: 90, color: 'bg-[#00ff41]' },
+      { name: 'Forestry Software', level: 85, color: 'bg-[#228b22]' },
+      { name: 'Mobile Development', level: 95, color: 'bg-[#40e0d0]' },
+      { name: 'SaaS Architecture', level: 85, color: 'bg-[#ff00ff]' }
+    ]
   }
 ]
 </script>

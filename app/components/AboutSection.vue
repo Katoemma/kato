@@ -36,8 +36,8 @@ onBeforeUnmount(() => {
             <div class="font-mono text-gray-300 space-y-4 relative z-10">
               <p><span class="text-[#00ff41]">>></span> INITIALIZING BIO_SCAN...</p>
               <p>
-                Innovative Software Developer experienced in building scalable, production-ready web and mobile applications. 
-                Skilled at designing robust backend architectures and crafting responsive frontends.
+                Innovative <strong>Software Engineer based in Uganda</strong>, experienced in building scalable, production-ready web and mobile applications. 
+                Specialized in <strong>GIS</strong> and <strong>Forestry software solutions</strong>, designing robust backend architectures and crafting responsive frontends.
               </p>
               <p>
                 <span class="text-[#00ff41]">>></span> CORE_STACK: Laravel // Vue.js // Flutter // Inertia.js
