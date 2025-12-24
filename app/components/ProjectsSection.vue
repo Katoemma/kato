@@ -27,7 +27,7 @@ const projects = [
     description: 'Open-source Dart library simplifying Airtable API integration. Built to streamline data operations for the Flutter developer community.',
     tags: ['Dart', 'Open Source', 'API Wrapper', 'Package'],
     image: '/Images/project2.png',
-    link: 'https://github.com/katoemma'
+    link: 'https://github.com/Katoemma/airtable_crud'
   },
   {
     title: 'VILT_STACK_SYSTEMS',
