@@ -66,9 +66,9 @@ onBeforeUnmount(() => {
           <div class="absolute -inset-4 bg-gradient-to-r from-[#00ff41] to-[#00f3ff] opacity-30 blur-lg group-hover:opacity-50 transition duration-500"></div>
           <div class="relative border-2 border-[#00ff41] p-2 bg-black/50">
             <img
-              src="/Images/profile.png"
+              src="/Images/profile.jpeg"
               alt="Kato Emmanuel"
-              class="w-full h-auto grayscale group-hover:grayscale-0 transition duration-500"
+              class="w-full h-96 md:h-[500px] object-cover grayscale group-hover:grayscale-0 transition duration-500"
             />
             <!-- Tech overlay lines -->
             <div class="absolute top-0 left-0 w-full h-[2px] bg-[#00ff41] shadow-[0_0_10px_#00ff41]"></div>
