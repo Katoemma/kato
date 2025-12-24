@@ -4,7 +4,7 @@ useSeoMeta({
   description: 'Top-rated Software Engineer in Uganda specialized in GIS & Forestry software. Expert Flutter, Laravel, Vue.js, & Nuxt developer building scalable solutions.',
   ogTitle: 'Kato Emmanuel — Best Software Engineer in Uganda | GIS & Forestry',
   ogDescription: 'Top-rated Software Engineer in Uganda specialized in GIS & Forestry software. Expert Flutter, Laravel, Vue.js, & Nuxt developer.',
-  ogImage: '/og-image.svg',
+  ogImage: '/og-image.png',
   ogUrl: 'https://katoemma.website',
   ogSiteName: 'Kato Emmanuel',
   ogType: 'website',

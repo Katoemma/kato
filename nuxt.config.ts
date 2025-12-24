@@ -23,13 +23,13 @@ export default defineNuxtConfig({
         { property: 'og:type', content: 'website' },
         { property: 'og:title', content: 'Katoemma — Full‑Stack Developer & UI/UX Designer' },
         { property: 'og:description', content: 'Modern, scalable apps with Vue, Nuxt, Laravel, Flutter, and AI RAG.' },
-        { property: 'og:image', content: '/og-image.svg' },
+        { property: 'og:image', content: '/og-image.png' },
         { property: 'og:site_name', content: 'Katoemma' },
         // Twitter
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: 'Katoemma — Full‑Stack Developer & UI/UX Designer' },
         { name: 'twitter:description', content: 'Modern, scalable apps with Vue, Nuxt, Laravel, Flutter, and AI RAG.' },
-        { name: 'twitter:image', content: '/og-image.svg' }
+        { name: 'twitter:image', content: '/og-image.png' }
       ],
       link: [
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap' },
