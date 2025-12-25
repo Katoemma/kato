@@ -12,22 +12,22 @@ export default defineNuxtConfig({
         lang: 'en',
         class: 'dark'
       },
-      title: 'Katoemma — Full‑Stack Developer & UI/UX Designer',
-      titleTemplate: '%s · Katoemma',
+      title: 'Kato Emmanuel — Full‑Stack Developer & UI/UX Designer',
+      titleTemplate: '%s · Kato Emmanuel',
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' },
-        { name: 'description', content: 'Katoemma — Full-Stack Developer & UI/UX Designer building modern, scalable web and mobile apps with Vue, Nuxt, Inertia, Laravel, Tailwind, Flutter, TypeScript, and AI RAG (LangChain.js + Google Gemini).' },
-        { name: 'keywords', content: 'Katoemma, Full-Stack Developer, UI/UX Designer, Vue, Nuxt, Inertia, Laravel, Tailwind, Flutter, TypeScript, RAG, LangChain.js, Google Gemini, VILT' },
+        { name: 'description', content: 'Kato Emmanuel — Full-Stack Developer & UI/UX Designer building modern, scalable web and mobile apps with Vue, Nuxt, Inertia, Laravel, Tailwind, Flutter, TypeScript, and AI RAG (LangChain.js + Google Gemini).' },
+        { name: 'keywords', content: 'Kato Emmanuel, Full-Stack Developer, UI/UX Designer, Vue, Nuxt, Inertia, Laravel, Tailwind, Flutter, TypeScript, RAG, LangChain.js, Google Gemini, VILT' },
         { name: 'theme-color', content: '#0b0f19' },
         // Open Graph
         { property: 'og:type', content: 'website' },
-        { property: 'og:title', content: 'Katoemma — Full‑Stack Developer & UI/UX Designer' },
+        { property: 'og:title', content: 'Kato Emmanuel — Full‑Stack Developer & UI/UX Designer' },
         { property: 'og:description', content: 'Modern, scalable apps with Vue, Nuxt, Laravel, Flutter, and AI RAG.' },
         { property: 'og:image', content: '/og-image.png' },
-        { property: 'og:site_name', content: 'Katoemma' },
+        { property: 'og:site_name', content: 'Kato Emmanuel' },
         // Twitter
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: 'Katoemma — Full‑Stack Developer & UI/UX Designer' },
+        { name: 'twitter:title', content: 'Kato Emmanuel — Full‑Stack Developer & UI/UX Designer' },
         { name: 'twitter:description', content: 'Modern, scalable apps with Vue, Nuxt, Laravel, Flutter, and AI RAG.' },
         { name: 'twitter:image', content: '/og-image.png' }
       ],
