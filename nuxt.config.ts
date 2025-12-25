@@ -12,23 +12,23 @@ export default defineNuxtConfig({
         lang: 'en',
         class: 'dark'
       },
-      title: 'Kato Emmanuel — Full‑Stack Developer & UI/UX Designer',
+      title: 'Kato Emmanuel — Best Software Engineer in Uganda | GIS & Forestry',
       titleTemplate: '%s · Kato Emmanuel',
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' },
-        { name: 'description', content: 'Kato Emmanuel — Full-Stack Developer & UI/UX Designer building modern, scalable web and mobile apps with Vue, Nuxt, Inertia, Laravel, Tailwind, Flutter, TypeScript, and AI RAG (LangChain.js + Google Gemini).' },
-        { name: 'keywords', content: 'Kato Emmanuel, Full-Stack Developer, UI/UX Designer, Vue, Nuxt, Inertia, Laravel, Tailwind, Flutter, TypeScript, RAG, LangChain.js, Google Gemini, VILT' },
+        { name: 'description', content: 'Top-rated Software Engineer in Uganda specialized in GIS & Forestry. Expert Flutter, Laravel, Vue.js, & Nuxt developer building scalable solutions.' },
+        { name: 'keywords', content: 'Kato Emmanuel, Best Software Engineer in Uganda, GIS, Forestry, Flutter, Laravel, Vue.js, Nuxt, Software Engineer' },
         { name: 'theme-color', content: '#0b0f19' },
         // Open Graph
         { property: 'og:type', content: 'website' },
-        { property: 'og:title', content: 'Kato Emmanuel — Full‑Stack Developer & UI/UX Designer' },
-        { property: 'og:description', content: 'Modern, scalable apps with Vue, Nuxt, Laravel, Flutter, and AI RAG.' },
+        { property: 'og:title', content: 'Kato Emmanuel — Best Software Engineer in Uganda | GIS & Forestry' },
+        { property: 'og:description', content: 'Top-rated Software Engineer in Uganda specialized in GIS & Forestry. Expert Flutter, Laravel, Vue.js, & Nuxt developer.' },
         { property: 'og:image', content: '/og-image.png' },
         { property: 'og:site_name', content: 'Kato Emmanuel' },
         // Twitter
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: 'Kato Emmanuel — Full‑Stack Developer & UI/UX Designer' },
-        { name: 'twitter:description', content: 'Modern, scalable apps with Vue, Nuxt, Laravel, Flutter, and AI RAG.' },
+        { name: 'twitter:title', content: 'Kato Emmanuel — Best Software Engineer in Uganda | GIS & Forestry' },
+        { name: 'twitter:description', content: 'Top-rated Software Engineer in Uganda specialized in GIS & Forestry. Expert Flutter, Laravel, Vue.js, & Nuxt developer.' },
         { name: 'twitter:image', content: '/og-image.png' }
       ],
       link: [
@@ -56,7 +56,7 @@ export default defineNuxtConfig({
   site: {
     url: 'https://katoemma.website',
     name: 'Kato Emmanuel',
-    description: 'Full-Stack Developer & UI/UX Designer building modern, scalable web and mobile apps.',
+    description: 'Top-rated Software Engineer in Uganda specialized in GIS & Forestry.',
     defaultLocale: 'en',
   },
 
