@@ -1,9 +1,9 @@
 <script setup>
 useSeoMeta({
-  title: 'Kato Emmanuel — Best Software Engineer in Uganda | GIS & Forestry',
-  description: 'Top-rated Software Engineer in Uganda specialized in GIS & Forestry software. Expert Flutter, Laravel, Vue.js, & Nuxt developer building scalable solutions.',
-  ogTitle: 'Kato Emmanuel — Best Software Engineer in Uganda | GIS & Forestry',
-  ogDescription: 'Top-rated Software Engineer in Uganda specialized in GIS & Forestry software. Expert Flutter, Laravel, Vue.js, & Nuxt developer.',
+  title: 'Kato Emmanuel | GIS & Full-Stack Engineer',
+  description: 'I design and build modern GIS platforms, data-driven web systems, and scalable SaaS tools for forestry, land restoration, and operations teams.',
+  ogTitle: 'Kato Emmanuel | GIS & Full-Stack Engineer',
+  ogDescription: 'Building Spatial Systems That Scale. Modern GIS platforms, data-driven web systems, and scalable SaaS tools.',
   ogImage: '/og-image.png',
   ogUrl: 'https://katoemma.website',
   ogSiteName: 'Kato Emmanuel',
@@ -19,7 +19,7 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'Person',
         name: 'Kato Emmanuel',
-        jobTitle: 'Senior Software Engineer',
+        jobTitle: 'GIS & Full-Stack Engineer',
         url: 'https://katoemma.website',
         image: 'https://katoemma.website/Images/profile.png',
         address: {
@@ -32,17 +32,16 @@ useHead({
           'https://twitter.com/katoemma'
         ],
         knowsAbout: [
-          'Software Engineering',
           'GIS Development',
-          'Forestry Software',
-          'Flutter',
+          'Spatial Systems',
+          'Full-Stack Engineering',
+          'SaaS Development',
           'Laravel',
           'Vue.js',
-          'Nuxt',
-          'Geospatial Analysis',
-          'Mobile App Development'
+          'Flutter',
+          'PostgreSQL/PostGIS'
         ],
-        description: 'Best Software Engineer in Uganda specializing in GIS, Forestry, and full-stack web/mobile development.'
+        description: 'GIS & Full-Stack Engineer building modern spatial systems and scalable SaaS tools.'
       })
     }
   ]
@@ -50,16 +49,16 @@ useHead({
 </script>
 
 <template>
-  <main class="relative w-full min-h-screen text-white">
-    <ThreeBackground />
+  <div class="relative w-full min-h-screen text-white">
+    <NavBar />
     <HeroSection />
     <AboutSection />
-    <SkillsSection />
+    <ServicesSection />
     <ProjectsSection />
     <ContactSection />
-    
-    <footer class="py-8 text-center text-gray-500 text-sm relative z-10">
-      <p>&copy; {{ new Date().getFullYear() }} Kato Emmanuel. All rights reserved.</p>
+
+    <footer class="py-8 bg-black text-center text-slate-400 text-sm">
+      © {{ new Date().getFullYear() }} Kato Emmanuel. Built with TailwindCSS.
     </footer>
-  </main>
+  </div>
 </template>

@@ -1,29 +1,55 @@
 @import "tailwindcss";
 
+/* Custom Colors - Army Green Theme */
+:root {
+  --army-900: #0f1f17;
+  --army-800: #162e22;
+  --army-700: #1f3f2f;
+  --army-600: #2a5a42;
+  --orange-primary: #ea580c;
+  --orange-hover: #c2410c;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #050505;
-  /* Deep Black */
+  background-color: var(--army-900);
   color: #e2e8f0;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   overflow-x: hidden;
-  cursor: none;
-  /* Hide default cursor */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Orbitron', sans-serif;
-  letter-spacing: 0.05em;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
 }
 
 ::selection {
-  background-color: #00ff41;
-  color: #000;
+  background-color: #ea580c;
+  color: #fff;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--army-900);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--army-700);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--army-600);
 }
