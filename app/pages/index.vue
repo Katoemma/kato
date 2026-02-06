@@ -154,8 +154,9 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'WebSite',
         '@id': 'https://katoemma.website/#website',
-        url: 'https://katoemma.website',
-        name: 'Kato Emmanuel - GIS Developer & Full-Stack Engineer',
+        name: 'Kato Emmanuel',
+        alternateName: 'Kato Emmanuel . Software Engineer',
+        url: 'https://katoemma.website/',
         description: 'Portfolio and services of Kato Emmanuel, expert GIS Developer and Full-Stack Software Engineer in Uganda.',
         publisher: {
           '@id': 'https://katoemma.website/#person'
@@ -214,6 +215,7 @@ useHead({
       <ServicesSection />
       <ProjectsSection />
       <ContactSection />
+      
     </main>
 
     <FooterSection />
