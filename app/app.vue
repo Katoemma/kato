@@ -4,7 +4,7 @@ import CustomCursor from './components/CustomCursor.vue'
 <template>
   <div>
     <NuxtRouteAnnouncer />
-    <CustomCursor />
+    <!-- <CustomCursor /> -->
     <NuxtPage />
   </div>
 </template>
