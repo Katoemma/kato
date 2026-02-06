@@ -90,11 +90,40 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
+    // Enable strict paths
     strictNuxtContentPaths: true,
+    // Add lastmod date
+    defaults: {
+      lastmod: new Date().toISOString(),
+      changefreq: 'weekly',
+      priority: 1.0,
+    },
+    // Include images in sitemap
+    urls: [
+      {
+        loc: '/',
+        lastmod: new Date().toISOString(),
+        changefreq: 'weekly',
+        priority: 1.0,
+        images: [
+          {
+            loc: 'https://katoemma.website/Images/profile.jpeg',
+            title: 'Kato Emmanuel - Software Engineer Profile Photo',
+            caption: 'Kato Emmanuel, GIS Developer and Full-Stack Software Engineer based in Uganda'
+          },
+          {
+            loc: 'https://katoemma.website/og-image.png',
+            title: 'Kato Emmanuel - GIS Developer and Full-Stack Engineer',
+            caption: 'Building Spatial Systems That Scale'
+          }
+        ]
+      }
+    ]
   },
 
   robots: {
     allow: '/',
+    sitemap: 'https://katoemma.website/sitemap.xml',
   },
 
   ogImage: {
