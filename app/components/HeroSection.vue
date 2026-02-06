@@ -13,7 +13,7 @@ onMounted(() => {
 <template>
   <section class="relative min-h-screen flex items-center pt-32 overflow-hidden bg-[#0f1f17]">
     <!-- Background map texture -->
-    <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1"
+    <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1920&q=80"
       class="absolute inset-0 w-full h-full object-cover opacity-10" alt="Background" />
 
     <div class="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center"
@@ -52,29 +52,29 @@ onMounted(() => {
 
       <!-- IMAGE COLLAGE -->
       <div class="relative hidden md:block h-[520px]">
-        <!-- Tall main image -->
+        <!-- Main tall image - GIS/Mapping visualization -->
         <div
           class="absolute left-20 top-0 w-56 h-96 rounded-3xl overflow-hidden shadow-2xl shadow-black/40 border border-white/10">
-          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" class="w-full h-full object-cover"
-            alt="Nature landscape" />
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80"
+            class="w-full h-full object-cover" alt="Data visualization dashboard" />
         </div>
 
-        <!-- Top right -->
+        <!-- Top right - Forestry/Nature -->
         <div class="absolute right-0 top-10 w-44 h-44 rounded-2xl overflow-hidden shadow-xl border border-white/10">
-          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" class="w-full h-full object-cover"
-            alt="Mountains" />
+          <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&q=80"
+            class="w-full h-full object-cover" alt="Forest aerial view" />
         </div>
 
-        <!-- Bottom right -->
+        <!-- Bottom right - Technology/Code -->
         <div class="absolute right-10 bottom-0 w-48 h-56 rounded-3xl overflow-hidden shadow-xl border border-white/10">
-          <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e" class="w-full h-full object-cover"
-            alt="Forest" />
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80"
+            class="w-full h-full object-cover" alt="Code on screen" />
         </div>
 
-        <!-- Floating accent -->
-        <div class="absolute left-0 bottom-20 w-40 h-40 rounded-full overflow-hidden shadow-xl border border-white/10">
-          <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da" class="w-full h-full object-cover"
-            alt="Taj Mahal" />
+        <!-- Profile image - circular accent -->
+        <div
+          class="absolute left-0 bottom-20 w-40 h-40 rounded-full overflow-hidden shadow-xl border-4 border-orange-500/30">
+          <img src="/Images/profile.jpeg" class="w-full h-full object-cover" alt="Kato Emmanuel" />
         </div>
       </div>
     </div>
