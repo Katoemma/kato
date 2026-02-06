@@ -81,8 +81,9 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
   },
 
+  // Disable automatic redirects to prevent 307 loops in production
   seo: {
-    redirectToCanonicalSiteUrl: true,
+    redirectToCanonicalSiteUrl: false,
   },
 
   schemaOrg: {
