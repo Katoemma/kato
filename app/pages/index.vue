@@ -56,9 +56,6 @@ useHead({
     <ServicesSection />
     <ProjectsSection />
     <ContactSection />
-
-    <footer class="py-8 bg-black text-center text-slate-400 text-sm">
-      © {{ new Date().getFullYear() }} Kato Emmanuel. Built with TailwindCSS.
-    </footer>
+    <FooterSection />
   </div>
 </template>
