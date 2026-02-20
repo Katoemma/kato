@@ -45,10 +45,10 @@ const navLinks = [
                 </ul>
 
                 <!-- CTA Button -->
-                <a href="#contact" class="hidden md:inline-block bg-orange-600 hover:bg-orange-700
+                <a href="/Kato_Emmanuel_CV-1.pdf" download class="hidden md:inline-block bg-orange-600 hover:bg-orange-700
                  text-white px-5 py-2 rounded-full text-sm
                  shadow-md shadow-orange-600/30 transition-all duration-200">
-                    Hire Me
+                    Download CV
                 </a>
 
                 <!-- Mobile Menu Button -->
@@ -80,10 +80,10 @@ const navLinks = [
                             </a>
                         </li>
                         <li>
-                            <a href="#contact" @click="isMobileMenuOpen = false" class="inline-block bg-orange-600 hover:bg-orange-700
+                            <a href="/Kato_Emmanuel_CV-1.pdf" download @click="isMobileMenuOpen = false" class="inline-block bg-orange-600 hover:bg-orange-700
                        text-white px-6 py-2 rounded-full text-sm
                        shadow-md shadow-orange-600/30 transition-all">
-                                Hire Me
+                                Download CV
                             </a>
                         </li>
                     </ul>
