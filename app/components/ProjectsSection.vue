@@ -1,28 +1,25 @@
 <script setup>
 const projects = [
   {
-    title: 'Forestry GIS Platform',
-    description: 'Polygon management, land analytics, restoration tracking.',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475',
-    tags: ['GIS', 'Laravel', 'Vue.js', 'PostGIS']
+    title: 'Terrave',
+    description: 'Geospatial SaaS application for managing forest gardens in Africa.',
+    link: 'https://terrave.katoemma.website',
+    iframeUrl: 'https://terrave.katoemma.website',
+    tags: ['GIS', 'SaaS', 'Vue.js', 'PostGIS']
   },
   {
-    title: 'HR & Operations System',
-    description: 'Modular Laravel + Vue platform with shared auth.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71',
-    tags: ['SaaS', 'Laravel', 'Inertia', 'PostgreSQL']
+    title: 'Qigo-HR',
+    description: 'A comprehensive Human Capital Management (HCM) system.',
+    link: 'https://hr.lipon.store',
+    iframeUrl: 'https://hr.lipon.store',
+    tags: ['HCM', 'Laravel', 'Vue.js', 'Operations']
   },
   {
-    title: 'Mobile Field App',
-    description: 'Offline-first data collection for remote field teams.',
-    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c',
-    tags: ['Flutter', 'SQLite', 'REST API', 'Offline']
-  },
-  {
-    title: 'Land Analytics Dashboard',
-    description: 'Real-time spatial data visualization and reporting.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
-    tags: ['Mapbox', 'Vue.js', 'D3.js', 'Analytics']
+    title: 'Zoya Travels',
+    description: 'Travel agency landing page built with Nuxt.js and Tailwind CSS.',
+    link: 'https://zoyatravelsug.com',
+    iframeUrl: 'https://zoyatravelsug.com',
+    tags: ['Nuxt', 'TailwindCSS', 'Landing Page', 'Travel']
   }
 ]
 </script>
@@ -46,16 +43,24 @@ const projects = [
       </div>
 
       <!-- Project Grid -->
-      <div class="grid md:grid-cols-2 gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <article v-for="project in projects" :key="project.title"
           class="group relative bg-[#162e22] rounded-2xl overflow-hidden border border-white/5 hover:border-orange-500/30 transition-all duration-300">
-          <!-- Image -->
-          <div class="relative h-56 overflow-hidden">
-            <img :src="project.image" :alt="project.title"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            <!-- Overlay on hover -->
-            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            </div>
+          <!-- Iframe Preview -->
+          <div class="relative h-64 overflow-hidden bg-black/20">
+            <iframe :src="project.iframeUrl"
+              class="w-[100%] h-[100%] border-none pointer-events-none scale-[0.6] origin-top-left w-[166.6%] h-[166.6%]"
+              loading="lazy" title="Project Preview"></iframe>
+            <!-- Overlay and link -->
+            <a :href="project.link" target="_blank" class="absolute inset-0 bg-transparent z-10 cursor-pointer">
+              <div
+                class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span
+                  class="text-white bg-orange-500 px-4 py-2 rounded-full text-sm font-semibold transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                  Open Site
+                </span>
+              </div>
+            </a>
           </div>
 
           <!-- Content -->
