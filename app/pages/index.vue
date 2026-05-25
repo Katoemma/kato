@@ -145,126 +145,121 @@ onMounted(() => {
 
     <!-- =========== HERO =========== -->
     <section class="relative min-h-screen flex items-center overflow-hidden pt-20">
-      <div class="grid-bg"></div>
-
-      <!-- Blobs -->
-      <div class="blob w-96 h-96 bg-green-500 top-20 -left-32"></div>
-      <div class="blob w-80 h-80 bg-green-700 bottom-20 right-0"></div>
+      <!-- Green background panel on right -->
+      <div class="absolute right-0 top-0 bottom-0 w-full lg:w-1/2 bg-gradient-to-bl from-green-100/80 via-green-50/50 to-transparent"></div>
 
       <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-12 w-full py-20">
-        <div class="flex flex-col lg:flex-row items-start lg:items-center gap-16">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
 
           <!-- Left: Text -->
-          <div class="flex-1">
-            <div class="flex items-center gap-3 mb-8">
+          <div class="flex-1 max-w-2xl">
+            <!-- Label -->
+            <div class="flex items-center gap-3 mb-6">
               <span class="tag">
-                <span class="w-2 h-2 rounded-full bg-green-400 mr-2 pulsing-dot"></span>
-                Available for work · Gulu, Uganda
+                <span class="w-2 h-2 rounded-full bg-green-500 mr-2 pulsing-dot"></span>
+                Available for work
               </span>
+              <span class="text-sm text-muted">· Gulu, Uganda</span>
             </div>
 
-            <h1 class="syne text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
+            <!-- Headline with underline accent -->
+            <h1 class="syne text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] mb-6">
               <span class="hero-word" style="animation-delay:0.1s;">Full-Stack</span><br />
               <span class="hero-word brand-text" style="animation-delay:0.2s;">& Geospatial</span><br />
-              <span class="hero-word" style="animation-delay:0.3s;">Engineer.</span>
+              <span class="hero-word relative inline-block" style="animation-delay:0.3s;">
+                Engineer
+                <span class="absolute -bottom-2 left-0 w-full h-1.5 bg-green-500 rounded-full"></span>
+              </span>
             </h1>
 
-            <p class="text-base md:text-lg leading-relaxed mb-10 max-w-xl text-muted">
-              I'm <strong class="text-white font-medium">Kato Emmanuel</strong> — a Full-Stack Software Engineer with 3+
-              years building scalable web, mobile, and AI-powered applications. I also design geospatial systems that
-              make geographic data actionable for real-world impact.
+            <p class="text-base md:text-lg leading-relaxed mb-8 max-w-lg text-muted">
+              I'm <strong class="font-semibold text-gray-900">Kato Emmanuel</strong> — a Full-Stack Software Engineer with 3+
+              years building scalable web, mobile, and AI-powered applications.
             </p>
 
-            <div class="flex flex-wrap gap-4">
-              <a href="#projects" class="btn-primary">View Projects</a>
-              <a href="#contact" class="btn-outline">Let's Talk</a>
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap items-center gap-4 mb-10">
+              <a href="#projects" class="btn-primary">
+                View Projects
+                <Icon icon="lucide:arrow-right" class="w-4 h-4" />
+              </a>
+              <a href="#contact" class="text-sm font-medium brand-text hover:underline flex items-center gap-1">
+                Let's Talk
+                <Icon icon="lucide:arrow-up-right" class="w-4 h-4" />
+              </a>
             </div>
 
-            <!-- Stat strip -->
-            <div class="flex gap-10 mt-14 pt-10 border-t border-green-500/10">
+            <!-- Stats -->
+            <div class="flex gap-8">
               <div>
-                <p class="stat-num counter" data-target="75">0</p>
-                <p class="text-xs mt-1 text-muted">% Reporting Time Saved</p>
+                <p class="text-3xl font-bold brand-text">75%</p>
+                <p class="text-xs text-muted mt-1">Reporting Time Saved</p>
               </div>
               <div>
-                <p class="stat-num counter" data-target="450">0</p>
-                <p class="text-xs mt-1 text-muted">+ Field Users Reached</p>
+                <p class="text-3xl font-bold brand-text">450+</p>
+                <p class="text-xs text-muted mt-1">Field Users Reached</p>
               </div>
               <div>
-                <p class="stat-num counter" data-target="3">0</p>
-                <p class="text-xs mt-1 text-muted">+ Years Experience</p>
+                <p class="text-3xl font-bold brand-text">3+</p>
+                <p class="text-xs text-muted mt-1">Years Experience</p>
               </div>
             </div>
           </div>
 
-          <!-- Right: Profile Card -->
+          <!-- Right: Profile Photo -->
           <div class="flex-shrink-0 relative">
-            <!-- Main card -->
-            <div class="relative w-80 card overflow-hidden">
-              <!-- Top accent bar -->
-              <div class="h-1.5 bg-gradient-to-r from-green-500 via-green-600 to-green-500"></div>
+            <!-- Main photo container with rounded corners -->
+            <div class="relative w-80 h-[28rem] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-green-500/20 border-4 border-white">
+              <!-- Green gradient overlay at top -->
+              <div class="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-green-500/30 to-transparent z-10"></div>
 
-              <div class="p-6">
-                <!-- Avatar with ring -->
-                <div class="relative mx-auto w-24 h-24 mb-4">
-                  <div class="absolute inset-0 rounded-full bg-gradient-to-br from-green-400 to-green-600 animate-pulse opacity-20">
-                  </div>
-                  <div
-                    class="relative w-24 h-24 rounded-full mx-auto flex items-center justify-center syne font-extrabold text-3xl bg-white border-2 border-green-500/30 shadow-lg">
-                    <span class="brand-text">KE</span>
-                  </div>
-                  <!-- Status dot -->
-                  <div
-                    class="absolute bottom-1 right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white flex items-center justify-center">
-                    <div class="w-2 h-2 bg-white rounded-full"></div>
-                  </div>
-                </div>
+              <!-- Profile photo -->
+              <img
+                src="/Images/profile.png"
+                alt="Kato Emmanuel"
+                class="w-full h-full object-cover"
+              />
 
-                <!-- Info -->
-                <div class="text-center">
-                  <p class="syne font-bold text-xl mb-1">Kato Emmanuel</p>
-                  <p class="text-sm text-muted mb-4">Full-Stack & Geospatial Engineer</p>
-
-                  <!-- Location pill -->
-                  <div class="flex items-center justify-center gap-1.5 text-xs text-muted mb-4">
-                    <Icon icon="lucide:map-pin" class="w-3.5 h-3.5" />
-                    <span>Gulu City, Uganda</span>
-                  </div>
-
-                  <!-- Tech stack icons -->
-                  <div class="flex justify-center gap-3 mb-4">
-                    <div class="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center" title="Laravel">
-                      <Icon icon="logos:laravel" class="w-5 h-5" />
-                    </div>
-                    <div class="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center" title="Vue.js">
-                      <Icon icon="logos:vue" class="w-5 h-5" />
-                    </div>
-                    <div class="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center" title="Flutter">
-                      <Icon icon="logos:flutter" class="w-5 h-5" />
-                    </div>
-                    <div class="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center" title="PostGIS">
-                      <Icon icon="logos:postgresql" class="w-5 h-5" />
-                    </div>
-                  </div>
-
-                  <!-- Availability badge -->
-                  <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20">
-                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                    <span class="text-xs font-medium brand-text">Available for work</span>
-                  </div>
-                </div>
+              <!-- Name overlay at bottom -->
+              <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-white via-white/90 to-transparent">
+                <p class="syne font-bold text-xl">Kato Emmanuel</p>
+                <p class="text-sm text-muted">Full-Stack & Geospatial Engineer</p>
               </div>
             </div>
 
             <!-- Floating badges -->
-            <div class="float-badge absolute -top-3 -right-6 card px-3 py-2 flex items-center gap-2">
-              <Icon icon="lucide:hexagon" class="w-4 h-4 brand-text" />
-              <span class="text-xs font-medium">GIS Systems</span>
+            <div class="absolute -top-3 -left-3 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center border-2 border-green-100">
+              <Icon icon="lucide:hexagon" class="w-6 h-6 brand-text" />
             </div>
-            <div class="float-badge absolute -bottom-3 -left-6 card px-3 py-2 flex items-center gap-2"
-              style="animation-delay: 1s;">
-              <Icon icon="lucide:bot" class="w-4 h-4 brand-text" />
-              <span class="text-xs font-medium">AI-Powered</span>
+
+            <div class="absolute top-1/4 -right-4 bg-white rounded-full px-4 py-2 shadow-lg border border-green-100 flex items-center gap-2">
+              <div class="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center">
+                <Icon icon="lucide:map-pin" class="w-4 h-4 text-white" />
+              </div>
+              <span class="text-xs font-medium">GIS Expert</span>
+            </div>
+
+            <div class="absolute bottom-24 -left-6 bg-white rounded-full px-4 py-2 shadow-lg border border-green-100 flex items-center gap-2">
+              <div class="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center">
+                <Icon icon="lucide:bot" class="w-4 h-4 text-white" />
+              </div>
+              <span class="text-xs font-medium">AI Developer</span>
+            </div>
+
+            <!-- Tech stack icons at bottom -->
+            <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-full px-4 py-2 shadow-lg border border-green-100 flex items-center gap-2">
+              <div class="w-7 h-7 rounded-lg bg-gray-100 flex items-center justify-center">
+                <Icon icon="logos:laravel" class="w-4 h-4" />
+              </div>
+              <div class="w-7 h-7 rounded-lg bg-gray-100 flex items-center justify-center">
+                <Icon icon="logos:vue" class="w-4 h-4" />
+              </div>
+              <div class="w-7 h-7 rounded-lg bg-gray-100 flex items-center justify-center">
+                <Icon icon="logos:flutter" class="w-4 h-4" />
+              </div>
+              <div class="w-7 h-7 rounded-lg bg-gray-100 flex items-center justify-center">
+                <Icon icon="logos:postgresql" class="w-4 h-4" />
+              </div>
             </div>
           </div>
 
