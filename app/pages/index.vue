@@ -27,7 +27,7 @@ useHead({
 onMounted(() => {
   const cursor = document.getElementById('cursor')
   const ring = document.getElementById('cursorRing')
-  
+
   const moveCursor = (e: MouseEvent) => {
     if (cursor && ring) {
       cursor.style.left = e.clientX + 'px'
@@ -36,9 +36,9 @@ onMounted(() => {
       ring.style.top = e.clientY + 'px'
     }
   }
-  
+
   document.addEventListener('mousemove', moveCursor)
-  
+
   // Hover effects
   const hoverElements = document.querySelectorAll('a, button, .card')
   hoverElements.forEach(el => {
@@ -69,7 +69,7 @@ onMounted(() => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
-        ;(entry.target as HTMLElement).style.transitionDelay = (i % 3) * 0.1 + 's'
+        ; (entry.target as HTMLElement).style.transitionDelay = (i % 3) * 0.1 + 's'
         entry.target.classList.add('visible')
       }
     })
@@ -164,13 +164,15 @@ onMounted(() => {
             </div>
 
             <h1 class="syne text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
-              <span class="hero-word" style="animation-delay:0.1s;">Full-Stack</span><br/>
-              <span class="hero-word brand-text" style="animation-delay:0.2s;">& Geospatial</span><br/>
+              <span class="hero-word" style="animation-delay:0.1s;">Full-Stack</span><br />
+              <span class="hero-word brand-text" style="animation-delay:0.2s;">& Geospatial</span><br />
               <span class="hero-word" style="animation-delay:0.3s;">Engineer.</span>
             </h1>
 
             <p class="text-base md:text-lg leading-relaxed mb-10 max-w-xl text-muted">
-              I'm <strong class="text-white font-medium">Kato Emmanuel</strong> — a Full-Stack Software Engineer with 3+ years building scalable web, mobile, and AI-powered applications. I also design geospatial systems that make geographic data actionable for real-world impact.
+              I'm <strong class="text-white font-medium">Kato Emmanuel</strong> — a Full-Stack Software Engineer with 3+
+              years building scalable web, mobile, and AI-powered applications. I also design geospatial systems that
+              make geographic data actionable for real-world impact.
             </p>
 
             <div class="flex flex-wrap gap-4">
@@ -201,20 +203,21 @@ onMounted(() => {
             <div class="relative w-72 h-80 card overflow-hidden card-gradient">
               <!-- Decorative geo lines -->
               <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 288 320" fill="none">
-                <line x1="0" y1="80" x2="288" y2="80" stroke="#4ade80" stroke-width="0.5"/>
-                <line x1="0" y1="160" x2="288" y2="160" stroke="#4ade80" stroke-width="0.5"/>
-                <line x1="0" y1="240" x2="288" y2="240" stroke="#4ade80" stroke-width="0.5"/>
-                <line x1="72" y1="0" x2="72" y2="320" stroke="#4ade80" stroke-width="0.5"/>
-                <line x1="144" y1="0" x2="144" y2="320" stroke="#4ade80" stroke-width="0.5"/>
-                <line x1="216" y1="0" x2="216" y2="320" stroke="#4ade80" stroke-width="0.5"/>
-                <circle cx="144" cy="160" r="60" stroke="#4ade80" stroke-width="0.5"/>
-                <circle cx="144" cy="160" r="100" stroke="#4ade80" stroke-width="0.3"/>
+                <line x1="0" y1="80" x2="288" y2="80" stroke="#4ade80" stroke-width="0.5" />
+                <line x1="0" y1="160" x2="288" y2="160" stroke="#4ade80" stroke-width="0.5" />
+                <line x1="0" y1="240" x2="288" y2="240" stroke="#4ade80" stroke-width="0.5" />
+                <line x1="72" y1="0" x2="72" y2="320" stroke="#4ade80" stroke-width="0.5" />
+                <line x1="144" y1="0" x2="144" y2="320" stroke="#4ade80" stroke-width="0.5" />
+                <line x1="216" y1="0" x2="216" y2="320" stroke="#4ade80" stroke-width="0.5" />
+                <circle cx="144" cy="160" r="60" stroke="#4ade80" stroke-width="0.5" />
+                <circle cx="144" cy="160" r="100" stroke="#4ade80" stroke-width="0.3" />
               </svg>
 
               <!-- Avatar placeholder -->
               <div class="absolute inset-0 flex items-center justify-center">
                 <div class="text-center">
-                  <div class="w-28 h-28 rounded-full mx-auto mb-4 flex items-center justify-center syne font-extrabold text-4xl avatar-gradient">
+                  <div
+                    class="w-28 h-28 rounded-full mx-auto mb-4 flex items-center justify-center syne font-extrabold text-4xl avatar-gradient">
                     KE
                   </div>
                   <p class="syne font-bold text-lg">Kato Emmanuel</p>
@@ -231,7 +234,8 @@ onMounted(() => {
             <div class="float-badge absolute -top-5 -right-8 card px-3 py-2 text-xs syne font-bold bg-card">
               <Icon icon="lucide:hexagon" class="w-4 h-4 brand-text" /> GIS Systems
             </div>
-            <div class="float-badge absolute -bottom-4 -left-8 card px-3 py-2 text-xs syne font-bold bg-card" style="animation-delay: 1.5s;">
+            <div class="float-badge absolute -bottom-4 -left-8 card px-3 py-2 text-xs syne font-bold bg-card"
+              style="animation-delay: 1.5s;">
               <Icon icon="lucide:bot" class="w-4 h-4 brand-text" /> AI-Powered Apps
             </div>
           </div>
@@ -250,13 +254,20 @@ onMounted(() => {
             <div class="accent-line mb-4"></div>
             <h2 class="syne text-4xl font-bold mb-6">About Me</h2>
             <p class="text-base leading-relaxed mb-5 text-muted">
-              I'm an innovative Full-Stack Software Developer with expertise spanning web, mobile, and AI-powered applications. From backend architectures in <strong class="text-white">Laravel</strong> to fluid frontends with <strong class="text-white">Vue.js / Nuxt.js</strong> and cross-platform apps in <strong class="text-white">Flutter</strong> — I ship end-to-end.
+              I'm an innovative Full-Stack Software Developer with expertise spanning web, mobile, and AI-powered
+              applications. From backend architectures in <strong class="text-white">Laravel</strong> to fluid frontends
+              with <strong class="text-white">Vue.js / Nuxt.js</strong> and cross-platform apps in <strong
+                class="text-white">Flutter</strong> — I ship end-to-end.
             </p>
             <p class="text-base leading-relaxed mb-5 text-muted">
-              Beyond traditional development, I design and build <strong class="brand-text">geospatial systems</strong> — leveraging spatial databases, mapping libraries, and field data pipelines to help organizations understand and act on geographic information in real time.
+              Beyond traditional development, I design and build <strong class="brand-text">geospatial systems</strong>
+              — leveraging spatial databases, mapping libraries, and field data pipelines to help organizations
+              understand and act on geographic information in real time.
             </p>
             <p class="text-base leading-relaxed text-muted">
-              I thrive in challenging environments — from low-connectivity field deployments across Uganda to AI-augmented workflows — always with a focus on clean architecture, open-source, and technology that solves real problems.
+              I thrive in challenging environments — from low-connectivity field deployments across Uganda to
+              AI-augmented workflows — always with a focus on clean architecture, open-source, and technology that
+              solves real problems.
             </p>
 
             <div class="flex flex-wrap gap-3 mt-8">
@@ -273,7 +284,8 @@ onMounted(() => {
             <div class="card p-5 col-span-2">
               <Icon icon="lucide:globe" class="w-8 h-8 mb-2 brand-text" />
               <p class="syne font-bold text-base mb-1">Geospatial & Field-First</p>
-              <p class="text-sm text-muted">Building systems that work where data is sparse — in the field, offline, and under pressure.</p>
+              <p class="text-sm text-muted">Building systems that work where data is sparse — in the field, offline, and
+                under pressure.</p>
             </div>
             <div class="card p-5">
               <Icon icon="lucide:bot" class="w-8 h-8 mb-2 brand-text" />
@@ -305,46 +317,55 @@ onMounted(() => {
     <section id="skills" class="py-24 px-6 md:px-12 bg-white/[0.01]">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-16 reveal">
+          <div class="accent-line mx-auto mb-4"></div>
           <h2 class="syne text-3xl font-bold mb-4">Tech Stack</h2>
-          <p class="text-sm text-muted max-w-md mx-auto">Core technologies I use to build scalable applications and geospatial systems.</p>
+          <p class="text-sm text-muted max-w-md mx-auto">Core technologies I use to build scalable applications and
+            geospatial systems.</p>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
 
           <!-- Backend -->
           <div class="card p-5 text-center group">
-            <div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-green-500/20 transition-colors">
-              <Icon icon="lucide:server" class="w-5 h-5 brand-text" />
+            <p class="syne font-semibold text-sm mb-3">Backend</p>
+            <div class="flex justify-center gap-2 mb-3">
+              <Icon icon="logos:laravel" class="w-6 h-6" />
+              <Icon icon="logos:php" class="w-6 h-6" />
+              <Icon icon="logos:nodejs-icon" class="w-6 h-6" />
             </div>
-            <p class="syne font-semibold text-sm mb-1">Backend</p>
             <p class="text-xs text-muted">Laravel · PHP · Node.js</p>
           </div>
 
           <!-- Frontend -->
           <div class="card p-5 text-center group">
-            <div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-green-500/20 transition-colors">
-              <Icon icon="lucide:monitor" class="w-5 h-5 brand-text" />
+            <p class="syne font-semibold text-sm mb-3">Frontend</p>
+            <div class="flex justify-center gap-2 mb-3">
+              <Icon icon="logos:vue" class="w-6 h-6" />
+              <Icon icon="logos:nuxt-icon" class="w-6 h-6" />
+              <Icon icon="logos:tailwindcss-icon" class="w-6 h-6" />
             </div>
-            <p class="syne font-semibold text-sm mb-1">Frontend</p>
             <p class="text-xs text-muted">Vue.js · Nuxt · Tailwind</p>
           </div>
 
           <!-- Mobile -->
           <div class="card p-5 text-center group">
-            <div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-green-500/20 transition-colors">
-              <Icon icon="lucide:smartphone" class="w-5 h-5 brand-text" />
+            <p class="syne font-semibold text-sm mb-3">Mobile</p>
+            <div class="flex justify-center gap-2 mb-3">
+              <Icon icon="logos:flutter" class="w-6 h-6" />
+              <Icon icon="logos:dart" class="w-6 h-6" />
             </div>
-            <p class="syne font-semibold text-sm mb-1">Mobile</p>
             <p class="text-xs text-muted">Flutter · Dart · Offline-First</p>
           </div>
 
           <!-- Data & Maps -->
           <div class="card p-5 text-center group">
-            <div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-green-500/20 transition-colors">
-              <Icon icon="lucide:map-pin" class="w-5 h-5 brand-text" />
+            <p class="syne font-semibold text-sm mb-3">Data & Maps</p>
+            <div class="flex justify-center gap-2 mb-3">
+              <Icon icon="logos:postgresql" class="w-6 h-6" />
+              <Icon icon="simple-icons:qgis" class="w-6 h-6 text-green-600" />
+              <Icon icon="simple-icons:mapbox" class="w-6 h-6" />
             </div>
-            <p class="syne font-semibold text-sm mb-1">Data & Maps</p>
-            <p class="text-xs text-muted">PostGIS · Leaflet · QGIS</p>
+            <p class="text-xs text-muted">PostgreSQL · PostGIS · Mapbox · GeoServer · QGIS</p>
           </div>
 
         </div>
@@ -383,10 +404,12 @@ onMounted(() => {
             </div>
             <h3 class="syne font-bold text-lg mb-2">Kijani Forestry App</h3>
             <p class="text-sm leading-relaxed mb-5 text-muted">
-              Cross-platform Flutter application with Airtable API integration for offline-first field data collection. Adopted by 450+ field staff across Uganda, cutting reporting time by 75%.
+              Cross-platform Flutter application with Airtable API integration for offline-first field data collection.
+              Adopted by 450+ field staff across Uganda, cutting reporting time by 75%.
             </p>
             <div class="flex flex-wrap gap-2 mb-5">
-              <span class="tag">Flutter</span><span class="tag">Airtable API</span><span class="tag">Offline-First</span>
+              <span class="tag">Flutter</span><span class="tag">Airtable API</span><span
+                class="tag">Offline-First</span>
             </div>
             <div class="flex items-center gap-4 pt-4 border-t border-green-500/10 text-xs text-muted">
               <span>450+ Users</span>
@@ -401,7 +424,8 @@ onMounted(() => {
             </div>
             <h3 class="syne font-bold text-lg mb-2">Airtable CRUD Library</h3>
             <p class="text-sm leading-relaxed mb-5 text-muted">
-              Open-source Dart library published to pub.dev that simplifies Airtable API integration for Flutter developers. Reduces boilerplate and accelerates development across the community.
+              Open-source Dart library published to pub.dev that simplifies Airtable API integration for Flutter
+              developers. Reduces boilerplate and accelerates development across the community.
             </p>
             <div class="flex flex-wrap gap-2 mb-5">
               <span class="tag">Dart</span><span class="tag">Open Source</span><span class="tag">pub.dev</span>
@@ -419,7 +443,8 @@ onMounted(() => {
             </div>
             <h3 class="syne font-bold text-lg mb-2">Geospatial Field Dashboard</h3>
             <p class="text-sm leading-relaxed mb-5 text-muted">
-              Real-time spatial dashboard for visualising field data from across Uganda. Integrates PostGIS, Leaflet, and Laravel to provide map-based analytics for decision-makers.
+              Real-time spatial dashboard for visualising field data from across Uganda. Integrates PostGIS, Leaflet,
+              and Laravel to provide map-based analytics for decision-makers.
             </p>
             <div class="flex flex-wrap gap-2 mb-5">
               <span class="tag">PostGIS</span><span class="tag">Leaflet</span><span class="tag">Laravel</span>
@@ -436,10 +461,12 @@ onMounted(() => {
             </div>
             <h3 class="syne font-bold text-lg mb-2">Legacy POS Modernization</h3>
             <p class="text-sm leading-relaxed mb-5 text-muted">
-              Migrated legacy point-of-sale systems to modern architectures with offline-first desktop and mobile clients designed for low-connectivity environments.
+              Migrated legacy point-of-sale systems to modern architectures with offline-first desktop and mobile
+              clients designed for low-connectivity environments.
             </p>
             <div class="flex flex-wrap gap-2 mb-5">
-              <span class="tag">Offline-First</span><span class="tag">Desktop App</span><span class="tag">Modern Stack</span>
+              <span class="tag">Offline-First</span><span class="tag">Desktop App</span><span class="tag">Modern
+                Stack</span>
             </div>
             <div class="flex items-center gap-4 pt-4 border-t border-green-500/10 text-xs text-muted">
               <span>Native Frontiers</span>
@@ -454,10 +481,12 @@ onMounted(() => {
             </div>
             <h3 class="syne font-bold text-lg mb-2">AI-Powered Workflow Tools</h3>
             <p class="text-sm leading-relaxed mb-5 text-muted">
-              Integrated LLM APIs (OpenAI, Anthropic) into business workflows for document processing, intelligent routing, and automated data-driven reporting.
+              Integrated LLM APIs (OpenAI, Anthropic) into business workflows for document processing, intelligent
+              routing, and automated data-driven reporting.
             </p>
             <div class="flex flex-wrap gap-2 mb-5">
-              <span class="tag">OpenAI API</span><span class="tag">Anthropic</span><span class="tag">Prompt Engineering</span>
+              <span class="tag">OpenAI API</span><span class="tag">Anthropic</span><span class="tag">Prompt
+                Engineering</span>
             </div>
             <div class="flex items-center gap-4 pt-4 border-t border-green-500/10 text-xs text-muted">
               <span class="brand-text">AI Integration</span>
@@ -471,7 +500,8 @@ onMounted(() => {
             </div>
             <h3 class="syne font-bold text-lg mb-2">Responsive Web Platforms</h3>
             <p class="text-sm leading-relaxed mb-5 text-muted">
-              Developed responsive web interfaces using PHP and Tailwind CSS for Oysters & Pearls Uganda, improving page load speed by 35% and database efficiency.
+              Developed responsive web interfaces using PHP and Tailwind CSS for Oysters & Pearls Uganda, improving page
+              load speed by 35% and database efficiency.
             </p>
             <div class="flex flex-wrap gap-2 mb-5">
               <span class="tag">PHP</span><span class="tag">Tailwind CSS</span><span class="tag">MySQL</span>
@@ -496,55 +526,64 @@ onMounted(() => {
               <!-- Grid -->
               <defs>
                 <pattern id="geo-grid" width="30" height="30" patternUnits="userSpaceOnUse">
-                  <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(74,222,128,0.08)" stroke-width="0.5"/>
+                  <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(74,222,128,0.08)" stroke-width="0.5" />
                 </pattern>
               </defs>
-              <rect width="420" height="300" fill="url(#geo-grid)"/>
+              <rect width="420" height="300" fill="url(#geo-grid)" />
 
               <!-- Uganda outline (simplified) -->
-              <path d="M160 40 L200 35 L240 50 L260 80 L270 120 L260 160 L250 190 L220 210 L200 220 L170 210 L150 185 L140 160 L135 130 L140 100 L150 70 Z"
-                    fill="rgba(74,222,128,0.06)" stroke="rgba(74,222,128,0.4)" stroke-width="1.5" stroke-linejoin="round"/>
+              <path
+                d="M160 40 L200 35 L240 50 L260 80 L270 120 L260 160 L250 190 L220 210 L200 220 L170 210 L150 185 L140 160 L135 130 L140 100 L150 70 Z"
+                fill="rgba(74,222,128,0.06)" stroke="rgba(74,222,128,0.4)" stroke-width="1.5" stroke-linejoin="round" />
 
               <!-- Gulu dot -->
-              <circle cx="200" cy="90" r="5" fill="#4ade80" class="map-dot" style="animation-delay: 0s;"/>
-              <circle cx="200" cy="90" r="14" fill="rgba(74,222,128,0.12)" class="map-dot" style="animation-delay: 0s;"/>
-              <text x="212" y="94" fill="#4ade80" font-size="10" font-family="'Syne', sans-serif" font-weight="700">Gulu City</text>
+              <circle cx="200" cy="90" r="5" fill="#4ade80" class="map-dot" style="animation-delay: 0s;" />
+              <circle cx="200" cy="90" r="14" fill="rgba(74,222,128,0.12)" class="map-dot"
+                style="animation-delay: 0s;" />
+              <text x="212" y="94" fill="#4ade80" font-size="10" font-family="'Syne', sans-serif" font-weight="700">Gulu
+                City</text>
 
               <!-- Kampala dot -->
-              <circle cx="195" cy="175" r="4" fill="#22c55e" class="map-dot" style="animation-delay: 0.7s;"/>
-              <circle cx="195" cy="175" r="12" fill="rgba(34,197,94,0.12)" class="map-dot" style="animation-delay: 0.7s;"/>
+              <circle cx="195" cy="175" r="4" fill="#22c55e" class="map-dot" style="animation-delay: 0.7s;" />
+              <circle cx="195" cy="175" r="12" fill="rgba(34,197,94,0.12)" class="map-dot"
+                style="animation-delay: 0.7s;" />
               <text x="207" y="179" fill="#9ca3af" font-size="9" font-family="'DM Sans', sans-serif">Kampala</text>
 
               <!-- Field lines -->
-              <line x1="200" y1="90" x2="195" y2="175" stroke="rgba(74,222,128,0.2)" stroke-width="1" stroke-dasharray="4,3"/>
+              <line x1="200" y1="90" x2="195" y2="175" stroke="rgba(74,222,128,0.2)" stroke-width="1"
+                stroke-dasharray="4,3" />
 
               <!-- Data points scattered -->
-              <circle cx="150" cy="110" r="3" fill="rgba(74,222,128,0.5)"/>
-              <circle cx="230" cy="105" r="3" fill="rgba(74,222,128,0.5)"/>
-              <circle cx="170" cy="140" r="3" fill="rgba(74,222,128,0.5)"/>
-              <circle cx="220" cy="145" r="3" fill="rgba(74,222,128,0.5)"/>
-              <circle cx="165" cy="165" r="3" fill="rgba(74,222,128,0.5)"/>
-              <circle cx="240" cy="125" r="3" fill="rgba(74,222,128,0.3)"/>
+              <circle cx="150" cy="110" r="3" fill="rgba(74,222,128,0.5)" />
+              <circle cx="230" cy="105" r="3" fill="rgba(74,222,128,0.5)" />
+              <circle cx="170" cy="140" r="3" fill="rgba(74,222,128,0.5)" />
+              <circle cx="220" cy="145" r="3" fill="rgba(74,222,128,0.5)" />
+              <circle cx="165" cy="165" r="3" fill="rgba(74,222,128,0.5)" />
+              <circle cx="240" cy="125" r="3" fill="rgba(74,222,128,0.3)" />
 
               <!-- Legend -->
-              <circle cx="30" cy="260" r="4" fill="#4ade80"/>
+              <circle cx="30" cy="260" r="4" fill="#4ade80" />
               <text x="40" y="264" fill="#6b7a6b" font-size="9" font-family="'DM Sans', sans-serif">Base Location</text>
-              <circle cx="120" cy="260" r="3" fill="rgba(74,222,128,0.5)"/>
-              <text x="130" y="264" fill="#6b7a6b" font-size="9" font-family="'DM Sans', sans-serif">Field Data Points</text>
+              <circle cx="120" cy="260" r="3" fill="rgba(74,222,128,0.5)" />
+              <text x="130" y="264" fill="#6b7a6b" font-size="9" font-family="'DM Sans', sans-serif">Field Data
+                Points</text>
 
               <!-- Compass rose -->
               <g transform="translate(375, 40)">
-                <circle cx="0" cy="0" r="18" fill="rgba(74,222,128,0.05)" stroke="rgba(74,222,128,0.2)" stroke-width="0.5"/>
-                <text x="0" y="-7" fill="#4ade80" font-size="8" text-anchor="middle" font-family="'Syne', sans-serif" font-weight="700">N</text>
-                <line x1="0" y1="-4" x2="0" y2="4" stroke="rgba(74,222,128,0.5)" stroke-width="0.5"/>
-                <line x1="-4" y1="0" x2="4" y2="0" stroke="rgba(74,222,128,0.3)" stroke-width="0.5"/>
+                <circle cx="0" cy="0" r="18" fill="rgba(74,222,128,0.05)" stroke="rgba(74,222,128,0.2)"
+                  stroke-width="0.5" />
+                <text x="0" y="-7" fill="#4ade80" font-size="8" text-anchor="middle" font-family="'Syne', sans-serif"
+                  font-weight="700">N</text>
+                <line x1="0" y1="-4" x2="0" y2="4" stroke="rgba(74,222,128,0.5)" stroke-width="0.5" />
+                <line x1="-4" y1="0" x2="4" y2="0" stroke="rgba(74,222,128,0.3)" stroke-width="0.5" />
               </g>
 
               <!-- Scale bar -->
-              <line x1="300" y1="270" x2="360" y2="270" stroke="rgba(74,222,128,0.4)" stroke-width="1"/>
-              <line x1="300" y1="267" x2="300" y2="273" stroke="rgba(74,222,128,0.4)" stroke-width="1"/>
-              <line x1="360" y1="267" x2="360" y2="273" stroke="rgba(74,222,128,0.4)" stroke-width="1"/>
-              <text x="330" y="265" fill="#6b7a6b" font-size="8" text-anchor="middle" font-family="'DM Sans', sans-serif">100 km</text>
+              <line x1="300" y1="270" x2="360" y2="270" stroke="rgba(74,222,128,0.4)" stroke-width="1" />
+              <line x1="300" y1="267" x2="300" y2="273" stroke="rgba(74,222,128,0.4)" stroke-width="1" />
+              <line x1="360" y1="267" x2="360" y2="273" stroke="rgba(74,222,128,0.4)" stroke-width="1" />
+              <text x="330" y="265" fill="#6b7a6b" font-size="8" text-anchor="middle"
+                font-family="'DM Sans', sans-serif">100 km</text>
             </svg>
           </div>
 
@@ -553,36 +592,47 @@ onMounted(() => {
             <div class="accent-line mb-4"></div>
             <h2 class="syne text-4xl font-bold mb-6">Geospatial Systems</h2>
             <p class="text-base leading-relaxed mb-6 text-muted">
-              I design and build geospatial systems that transform raw geographic data into actionable intelligence. From mobile field data collection in remote Uganda to interactive web-based spatial dashboards — I bridge the physical world and the digital.
+              I design and build geospatial systems that transform raw geographic data into actionable intelligence.
+              From mobile field data collection in remote Uganda to interactive web-based spatial dashboards — I bridge
+              the physical world and the digital.
             </p>
 
             <div class="space-y-4">
               <div class="card p-4 flex gap-4">
-                <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 bg-green-500/10"><Icon icon="lucide:database" class="w-4 h-4 brand-text" /></div>
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 bg-green-500/10">
+                  <Icon icon="lucide:database" class="w-4 h-4 brand-text" />
+                </div>
                 <div>
                   <p class="syne font-bold text-sm mb-1">Spatial Databases</p>
                   <p class="text-xs text-muted">PostGIS, spatial indexing, geospatial queries, coordinate systems.</p>
                 </div>
               </div>
               <div class="card p-4 flex gap-4">
-                <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 bg-green-500/10"><Icon icon="lucide:map" class="w-4 h-4 brand-text" /></div>
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 bg-green-500/10">
+                  <Icon icon="lucide:map" class="w-4 h-4 brand-text" />
+                </div>
                 <div>
                   <p class="syne font-bold text-sm mb-1">Interactive Mapping</p>
                   <p class="text-xs text-muted">Leaflet, Mapbox, OpenLayers — dynamic, web-based map visualisations.</p>
                 </div>
               </div>
               <div class="card p-4 flex gap-4">
-                <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 bg-green-500/10"><Icon icon="lucide:smartphone" class="w-4 h-4 brand-text" /></div>
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 bg-green-500/10">
+                  <Icon icon="lucide:smartphone" class="w-4 h-4 brand-text" />
+                </div>
                 <div>
                   <p class="syne font-bold text-sm mb-1">Mobile Field Collection</p>
                   <p class="text-xs text-muted">GPS-integrated Flutter apps with offline sync for field teams.</p>
                 </div>
               </div>
               <div class="card p-4 flex gap-4">
-                <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 bg-green-500/10"><Icon icon="lucide:bar-chart-3" class="w-4 h-4 brand-text" /></div>
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 bg-green-500/10">
+                  <Icon icon="lucide:bar-chart-3" class="w-4 h-4 brand-text" />
+                </div>
                 <div>
                   <p class="syne font-bold text-sm mb-1">Spatial Analytics</p>
-                  <p class="text-xs text-muted">GeoJSON, KML, shapefiles — data pipelines for geographic decision-making.</p>
+                  <p class="text-xs text-muted">GeoJSON, KML, shapefiles — data pipelines for geographic
+                    decision-making.</p>
                 </div>
               </div>
             </div>
@@ -597,7 +647,7 @@ onMounted(() => {
       <div class="max-w-3xl mx-auto text-center reveal">
         <div class="accent-line mx-auto mb-4"></div>
         <h2 class="syne text-4xl md:text-5xl font-bold mb-4">
-          Let's Build<br/><span class="brand-text">Something Great.</span>
+          Let's Build<br /><span class="brand-text">Something Great.</span>
         </h2>
         <p class="mb-12 text-base text-muted">
           Open to freelance projects, full-time roles, and geospatial collaborations. Based in Uganda, working globally.
@@ -668,54 +718,85 @@ onMounted(() => {
 
 /* Custom cursor */
 .cursor {
-  width: 12px; height: 12px;
+  width: 12px;
+  height: 12px;
   background: #16a34a;
   border-radius: 50%;
-  position: fixed; top: 0; left: 0;
-  pointer-events: none; z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
   transform: translate(-50%, -50%);
   transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease, background 0.2s ease;
 }
+
 .cursor-ring {
-  width: 36px; height: 36px;
-  border: 1px solid rgba(22,163,74,0.4);
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(22, 163, 74, 0.4);
   border-radius: 50%;
-  position: fixed; top: 0; left: 0;
-  pointer-events: none; z-index: 9998;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
   transform: translate(-50%, -50%);
   transition: left 0.08s ease, top 0.08s ease, width 0.2s ease, height 0.2s ease;
 }
 
 /* Fonts */
-.syne { font-family: 'Syne', sans-serif; }
+.syne {
+  font-family: 'Syne', sans-serif;
+}
 
 /* Noise texture overlay */
 .site-wrapper::before {
   content: '';
-  position: fixed; inset: 0;
+  position: fixed;
+  inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none; z-index: 0;
+  pointer-events: none;
+  z-index: 0;
   opacity: 0.15;
 }
 
 /* Brand color */
-.brand-text { color: #16a34a; }
-.text-muted { color: #5b6a5b; }
-.bg-card { background: #ffffff; }
-.text-white { color: #1a1f1a !important; }
+.brand-text {
+  color: #16a34a;
+}
+
+.text-muted {
+  color: #5b6a5b;
+}
+
+.bg-card {
+  background: #ffffff;
+}
+
+.text-white {
+  color: #1a1f1a !important;
+}
 
 /* Animated grid lines */
 .grid-bg {
-  position: absolute; inset: 0;
+  position: absolute;
+  inset: 0;
   background-image:
-    linear-gradient(rgba(22,163,74,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(22,163,74,0.06) 1px, transparent 1px);
+    linear-gradient(rgba(22, 163, 74, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(22, 163, 74, 0.06) 1px, transparent 1px);
   background-size: 60px 60px;
   animation: gridScroll 20s linear infinite;
 }
+
 @keyframes gridScroll {
-  0% { background-position: 0 0; }
-  100% { background-position: 60px 60px; }
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 60px;
+  }
 }
 
 /* Glow blobs */
@@ -729,11 +810,14 @@ onMounted(() => {
 
 /* Nav */
 nav {
-  position: fixed; top: 0; left: 0; right: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   backdrop-filter: blur(12px);
-  background: rgba(248,250,248,0.85);
-  border-bottom: 1px solid rgba(22,163,74,0.1);
+  background: rgba(248, 250, 248, 0.85);
+  border-bottom: 1px solid rgba(22, 163, 74, 0.1);
 }
 
 /* Hero text animation */
@@ -743,23 +827,29 @@ nav {
   transform: translateY(30px);
   animation: wordUp 0.7s ease forwards;
 }
+
 @keyframes wordUp {
-  to { opacity: 1; transform: translateY(0); }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Cards */
 .card {
   background: #ffffff;
-  border: 1px solid rgba(22,163,74,0.15);
+  border: 1px solid rgba(22, 163, 74, 0.15);
   border-radius: 16px;
   transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
+
 .card:hover {
-  border-color: rgba(22,163,74,0.4);
+  border-color: rgba(22, 163, 74, 0.4);
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(22,163,74,0.1);
+  box-shadow: 0 8px 24px rgba(22, 163, 74, 0.1);
 }
+
 .card-gradient {
   background: linear-gradient(135deg, #ffffff 0%, #f0f7f0 100%);
 }
@@ -772,15 +862,16 @@ nav {
   border-radius: 999px;
   font-size: 12px;
   font-weight: 500;
-  background: rgba(22,163,74,0.08);
+  background: rgba(22, 163, 74, 0.08);
   color: #16a34a;
-  border: 1px solid rgba(22,163,74,0.2);
+  border: 1px solid rgba(22, 163, 74, 0.2);
   letter-spacing: 0.02em;
 }
 
 /* Green accent line */
 .accent-line {
-  width: 48px; height: 3px;
+  width: 48px;
+  height: 3px;
   background: linear-gradient(90deg, #16a34a, transparent);
   border-radius: 2px;
 }
@@ -796,10 +887,11 @@ nav {
 
 /* Timeline dot */
 .timeline-dot {
-  width: 12px; height: 12px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background: #16a34a;
-  box-shadow: 0 0 0 4px rgba(22,163,74,0.15);
+  box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.15);
   flex-shrink: 0;
   margin-top: 6px;
 }
@@ -807,10 +899,11 @@ nav {
 /* Skill bar */
 .skill-bar-track {
   height: 3px;
-  background: rgba(22,163,74,0.12);
+  background: rgba(22, 163, 74, 0.12);
   border-radius: 2px;
   overflow: hidden;
 }
+
 .skill-bar-fill {
   height: 100%;
   background: linear-gradient(90deg, #16a34a, #22c55e);
@@ -819,8 +912,9 @@ nav {
   transform: scaleX(0);
   transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.skill-bar-fill.animate { 
-  transform: scaleX(var(--w, 1)); 
+
+.skill-bar-fill.animate {
+  transform: scaleX(var(--w, 1));
 }
 
 /* Scroll reveal */
@@ -829,6 +923,7 @@ nav {
   transform: translateY(24px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
+
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
@@ -838,9 +933,19 @@ nav {
 .map-dot {
   animation: mapPulse 2s ease-in-out infinite;
 }
+
 @keyframes mapPulse {
-  0%, 100% { opacity: 1; r: 4; }
-  50% { opacity: 0.5; r: 7; }
+
+  0%,
+  100% {
+    opacity: 1;
+    r: 4;
+  }
+
+  50% {
+    opacity: 0.5;
+    r: 7;
+  }
 }
 
 /* Nav link */
@@ -851,16 +956,25 @@ nav {
   font-size: 14px;
   font-weight: 400;
 }
+
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -2px; left: 0;
-  width: 0; height: 1px;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
   background: #16a34a;
   transition: width 0.3s ease;
 }
-.nav-link:hover { color: #16a34a; }
-.nav-link:hover::after { width: 100%; }
+
+.nav-link:hover {
+  color: #16a34a;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
 
 /* CTA button */
 .btn-primary {
@@ -878,10 +992,11 @@ nav {
   transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   cursor: none;
 }
+
 .btn-primary:hover {
   background: #15803d;
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(22,163,74,0.25);
+  box-shadow: 0 8px 30px rgba(22, 163, 74, 0.25);
 }
 
 .btn-outline {
@@ -891,7 +1006,7 @@ nav {
   padding: 14px 28px;
   background: transparent;
   color: #16a34a;
-  border: 1px solid rgba(22,163,74,0.4);
+  border: 1px solid rgba(22, 163, 74, 0.4);
   border-radius: 999px;
   font-family: 'Syne', sans-serif;
   font-weight: 600;
@@ -900,8 +1015,9 @@ nav {
   transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
   cursor: none;
 }
+
 .btn-outline:hover {
-  background: rgba(22,163,74,0.08);
+  background: rgba(22, 163, 74, 0.08);
   border-color: #16a34a;
   transform: translateY(-2px);
 }
@@ -909,7 +1025,7 @@ nav {
 /* Contact input */
 .form-input {
   background: #ffffff;
-  border: 1px solid rgba(22,163,74,0.2);
+  border: 1px solid rgba(22, 163, 74, 0.2);
   color: #1a1f1a;
   border-radius: 10px;
   padding: 12px 16px;
@@ -919,19 +1035,31 @@ nav {
   outline: none;
   width: 100%;
 }
-.form-input:focus { 
-  border-color: rgba(22,163,74,0.5); 
-  box-shadow: 0 0 0 3px rgba(22,163,74,0.1);
+
+.form-input:focus {
+  border-color: rgba(22, 163, 74, 0.5);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
 }
-.form-input::placeholder { color: #8b9a8b; }
+
+.form-input::placeholder {
+  color: #8b9a8b;
+}
 
 /* Floating badge */
 .float-badge {
   animation: floatBadge 3s ease-in-out infinite;
 }
+
 @keyframes floatBadge {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 /* Pulsing dot */
@@ -941,20 +1069,39 @@ nav {
 
 /* Avatar gradient */
 .avatar-gradient {
-  background: linear-gradient(135deg, rgba(22,163,74,0.15), rgba(34,197,94,0.25));
-  border: 2px solid rgba(22,163,74,0.3);
+  background: linear-gradient(135deg, rgba(22, 163, 74, 0.15), rgba(34, 197, 94, 0.25));
+  border: 2px solid rgba(22, 163, 74, 0.3);
   color: #16a34a;
 }
 
 /* Scrollbar */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #e8f0e8; }
-::-webkit-scrollbar-thumb { background: rgba(22,163,74,0.3); border-radius: 2px; }
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e8f0e8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(22, 163, 74, 0.3);
+  border-radius: 2px;
+}
 
 /* Hide custom cursor on touch devices */
 @media (hover: none) {
-  .site-wrapper { cursor: auto; }
-  .cursor, .cursor-ring { display: none; }
-  .btn-primary, .btn-outline { cursor: pointer; }
+  .site-wrapper {
+    cursor: auto;
+  }
+
+  .cursor,
+  .cursor-ring {
+    display: none;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    cursor: pointer;
+  }
 }
 </style>
