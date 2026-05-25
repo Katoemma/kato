@@ -136,9 +136,9 @@ onMounted(() => {
           <a href="#geo" class="nav-link">Geospatial</a>
           <a href="#contact" class="nav-link">Contact</a>
         </div>
-        <a href="mailto:katoemmy001@gmail.com" class="btn-primary text-xs py-2 px-5">
-          Hire Me
-          <Icon icon="lucide:arrow-right" class="w-4 h-4" />
+        <a href="/Kato_Emmanuel_CV.pdf" download class="btn-primary text-xs py-2 px-5">
+          Download CV
+          <Icon icon="lucide:download" class="w-4 h-4" />
         </a>
       </div>
     </nav>
@@ -159,7 +159,6 @@ onMounted(() => {
                 <span class="w-2 h-2 rounded-full bg-green-500 mr-2 pulsing-dot"></span>
                 Available for work
               </span>
-              <span class="text-sm text-muted">· Gulu, Uganda</span>
             </div>
 
             <!-- Headline with underline accent -->
@@ -569,13 +568,6 @@ onMounted(() => {
                 d="M160 40 L200 35 L240 50 L260 80 L270 120 L260 160 L250 190 L220 210 L200 220 L170 210 L150 185 L140 160 L135 130 L140 100 L150 70 Z"
                 fill="rgba(74,222,128,0.06)" stroke="rgba(74,222,128,0.4)" stroke-width="1.5" stroke-linejoin="round" />
 
-              <!-- Gulu dot -->
-              <circle cx="200" cy="90" r="5" fill="#4ade80" class="map-dot" style="animation-delay: 0s;" />
-              <circle cx="200" cy="90" r="14" fill="rgba(74,222,128,0.12)" class="map-dot"
-                style="animation-delay: 0s;" />
-              <text x="212" y="94" fill="#4ade80" font-size="10" font-family="'Syne', sans-serif" font-weight="700">Gulu
-                City</text>
-
               <!-- Kampala dot -->
               <circle cx="195" cy="175" r="4" fill="#22c55e" class="map-dot" style="animation-delay: 0.7s;" />
               <circle cx="195" cy="175" r="12" fill="rgba(34,197,94,0.12)" class="map-dot"
@@ -733,7 +725,7 @@ onMounted(() => {
     <footer class="py-8 px-6 md:px-12 border-t border-green-500/10">
       <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <p class="syne font-bold text-lg brand-text">KE.</p>
-        <p class="text-xs text-muted">© 2026 Kato Emmanuel · Full-Stack & Geospatial Engineer · Gulu City, Uganda</p>
+        <p class="text-xs text-muted">© 2026 Kato Emmanuel · Full-Stack & Geospatial Engineer · Uganda</p>
         <p class="text-xs text-muted">Built with precision & code.</p>
       </div>
     </footer>
