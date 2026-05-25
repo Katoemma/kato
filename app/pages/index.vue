@@ -197,46 +197,74 @@ onMounted(() => {
             </div>
           </div>
 
-          <!-- Right: Avatar card -->
+          <!-- Right: Profile Card -->
           <div class="flex-shrink-0 relative">
             <!-- Main card -->
-            <div class="relative w-72 h-80 card overflow-hidden card-gradient">
-              <!-- Decorative geo lines -->
-              <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 288 320" fill="none">
-                <line x1="0" y1="80" x2="288" y2="80" stroke="#4ade80" stroke-width="0.5" />
-                <line x1="0" y1="160" x2="288" y2="160" stroke="#4ade80" stroke-width="0.5" />
-                <line x1="0" y1="240" x2="288" y2="240" stroke="#4ade80" stroke-width="0.5" />
-                <line x1="72" y1="0" x2="72" y2="320" stroke="#4ade80" stroke-width="0.5" />
-                <line x1="144" y1="0" x2="144" y2="320" stroke="#4ade80" stroke-width="0.5" />
-                <line x1="216" y1="0" x2="216" y2="320" stroke="#4ade80" stroke-width="0.5" />
-                <circle cx="144" cy="160" r="60" stroke="#4ade80" stroke-width="0.5" />
-                <circle cx="144" cy="160" r="100" stroke="#4ade80" stroke-width="0.3" />
-              </svg>
+            <div class="relative w-80 card overflow-hidden">
+              <!-- Top accent bar -->
+              <div class="h-1.5 bg-gradient-to-r from-green-500 via-green-600 to-green-500"></div>
 
-              <!-- Avatar placeholder -->
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="text-center">
-                  <div
-                    class="w-28 h-28 rounded-full mx-auto mb-4 flex items-center justify-center syne font-extrabold text-4xl avatar-gradient">
-                    KE
+              <div class="p-6">
+                <!-- Avatar with ring -->
+                <div class="relative mx-auto w-24 h-24 mb-4">
+                  <div class="absolute inset-0 rounded-full bg-gradient-to-br from-green-400 to-green-600 animate-pulse opacity-20">
                   </div>
-                  <p class="syne font-bold text-lg">Kato Emmanuel</p>
-                  <p class="text-sm mt-1 text-muted">Gulu City, Uganda</p>
-                  <div class="flex justify-center gap-2 mt-3">
-                    <span class="tag text-xs">Laravel</span>
-                    <span class="tag text-xs">Flutter</span>
+                  <div
+                    class="relative w-24 h-24 rounded-full mx-auto flex items-center justify-center syne font-extrabold text-3xl bg-white border-2 border-green-500/30 shadow-lg">
+                    <span class="brand-text">KE</span>
+                  </div>
+                  <!-- Status dot -->
+                  <div
+                    class="absolute bottom-1 right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white flex items-center justify-center">
+                    <div class="w-2 h-2 bg-white rounded-full"></div>
+                  </div>
+                </div>
+
+                <!-- Info -->
+                <div class="text-center">
+                  <p class="syne font-bold text-xl mb-1">Kato Emmanuel</p>
+                  <p class="text-sm text-muted mb-4">Full-Stack & Geospatial Engineer</p>
+
+                  <!-- Location pill -->
+                  <div class="flex items-center justify-center gap-1.5 text-xs text-muted mb-4">
+                    <Icon icon="lucide:map-pin" class="w-3.5 h-3.5" />
+                    <span>Gulu City, Uganda</span>
+                  </div>
+
+                  <!-- Tech stack icons -->
+                  <div class="flex justify-center gap-3 mb-4">
+                    <div class="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center" title="Laravel">
+                      <Icon icon="logos:laravel" class="w-5 h-5" />
+                    </div>
+                    <div class="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center" title="Vue.js">
+                      <Icon icon="logos:vue" class="w-5 h-5" />
+                    </div>
+                    <div class="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center" title="Flutter">
+                      <Icon icon="logos:flutter" class="w-5 h-5" />
+                    </div>
+                    <div class="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center" title="PostGIS">
+                      <Icon icon="logos:postgresql" class="w-5 h-5" />
+                    </div>
+                  </div>
+
+                  <!-- Availability badge -->
+                  <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    <span class="text-xs font-medium brand-text">Available for work</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- Floating badges -->
-            <div class="float-badge absolute -top-5 -right-8 card px-3 py-2 text-xs syne font-bold bg-card">
-              <Icon icon="lucide:hexagon" class="w-4 h-4 brand-text" /> GIS Systems
+            <div class="float-badge absolute -top-3 -right-6 card px-3 py-2 flex items-center gap-2">
+              <Icon icon="lucide:hexagon" class="w-4 h-4 brand-text" />
+              <span class="text-xs font-medium">GIS Systems</span>
             </div>
-            <div class="float-badge absolute -bottom-4 -left-8 card px-3 py-2 text-xs syne font-bold bg-card"
-              style="animation-delay: 1.5s;">
-              <Icon icon="lucide:bot" class="w-4 h-4 brand-text" /> AI-Powered Apps
+            <div class="float-badge absolute -bottom-3 -left-6 card px-3 py-2 flex items-center gap-2"
+              style="animation-delay: 1s;">
+              <Icon icon="lucide:bot" class="w-4 h-4 brand-text" />
+              <span class="text-xs font-medium">AI-Powered</span>
             </div>
           </div>
 
