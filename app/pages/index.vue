@@ -418,121 +418,131 @@ onMounted(() => {
           <p class="text-sm text-muted">Shipped products with real-world impact.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
 
-          <!-- Project 1 -->
-          <div class="card p-6 reveal" style="animation-delay: 0.1s;">
-            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-green-500/10">
-              <Icon icon="lucide:leaf" class="w-6 h-6 brand-text" />
+          <!-- Project 1: Kijani -->
+          <a href="#" class="group block bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg hover:border-green-200 transition-all duration-300 reveal" style="animation-delay: 0.1s;">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-11 h-11 rounded-xl bg-green-50 flex items-center justify-center group-hover:bg-green-500 group-hover:scale-110 transition-all duration-300">
+                <Icon icon="lucide:leaf" class="w-5 h-5 brand-text group-hover:text-white transition-colors" />
+              </div>
+              <Icon icon="lucide:arrow-up-right" class="w-4 h-4 text-gray-300 group-hover:text-green-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
             </div>
-            <h3 class="syne font-bold text-lg mb-2">Kijani Forestry App</h3>
-            <p class="text-sm leading-relaxed mb-5 text-muted">
+            <h3 class="syne font-bold text-lg mb-2 group-hover:text-green-600 transition-colors">Kijani Forestry App</h3>
+            <p class="text-sm leading-relaxed mb-4 text-muted line-clamp-3">
               Cross-platform Flutter application with Airtable API integration for offline-first field data collection.
-              Adopted by 450+ field staff across Uganda, cutting reporting time by 75%.
+              Adopted by 450+ field staff across Uganda.
             </p>
-            <div class="flex flex-wrap gap-2 mb-5">
-              <span class="tag">Flutter</span><span class="tag">Airtable API</span><span
-                class="tag">Offline-First</span>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md">Flutter</span>
+              <span class="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md">Airtable</span>
+              <span class="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md">Offline-First</span>
             </div>
-            <div class="flex items-center gap-4 pt-4 border-t border-green-500/10 text-xs text-muted">
-              <span>450+ Users</span>
-              <span class="brand-text">75% Time Saved</span>
-            </div>
-          </div>
+          </a>
 
-          <!-- Project 2 -->
-          <div class="card p-6 reveal" style="animation-delay: 0.2s;">
-            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-green-500/10">
-              <Icon icon="lucide:package" class="w-6 h-6 brand-text" />
+          <!-- Project 2: Airtable CRUD -->
+          <a href="https://pub.dev/packages/airtable_crud" target="_blank" rel="noopener" class="group block bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg hover:border-green-200 transition-all duration-300 reveal" style="animation-delay: 0.2s;">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-11 h-11 rounded-xl bg-green-50 flex items-center justify-center group-hover:bg-green-500 group-hover:scale-110 transition-all duration-300">
+                <Icon icon="lucide:package" class="w-5 h-5 brand-text group-hover:text-white transition-colors" />
+              </div>
+              <Icon icon="lucide:external-link" class="w-4 h-4 text-gray-300 group-hover:text-green-500 transition-all" />
             </div>
-            <h3 class="syne font-bold text-lg mb-2">Airtable CRUD Library</h3>
-            <p class="text-sm leading-relaxed mb-5 text-muted">
-              Open-source Dart library published to pub.dev that simplifies Airtable API integration for Flutter
-              developers. Reduces boilerplate and accelerates development across the community.
+            <h3 class="syne font-bold text-lg mb-2 group-hover:text-green-600 transition-colors">Airtable CRUD</h3>
+            <p class="text-sm leading-relaxed mb-4 text-muted line-clamp-3">
+              Open-source Dart library published to pub.dev. Simplifies Airtable API integration for Flutter developers,
+              reducing boilerplate and accelerating development.
             </p>
-            <div class="flex flex-wrap gap-2 mb-5">
-              <span class="tag">Dart</span><span class="tag">Open Source</span><span class="tag">pub.dev</span>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md">Dart</span>
+              <span class="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md">Open Source</span>
+              <span class="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md">pub.dev</span>
             </div>
-            <div class="flex items-center gap-4 pt-4 border-t border-green-500/10 text-xs text-muted">
-              <span>Flutter Community</span>
-              <span class="brand-text">Public Package</span>
-            </div>
-          </div>
+          </a>
 
-          <!-- Project 3: Geo -->
-          <div class="card p-6 reveal border-green-400/25" style="animation-delay: 0.3s;">
-            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-green-500/15">
-              <Icon icon="lucide:map" class="w-6 h-6 brand-text" />
+          <!-- Project 3: Terrave -->
+          <a href="https://terrave.lipon.store" target="_blank" rel="noopener" class="group block bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg hover:border-green-200 transition-all duration-300 reveal" style="animation-delay: 0.3s;">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-11 h-11 rounded-xl bg-green-50 flex items-center justify-center group-hover:bg-green-500 group-hover:scale-110 transition-all duration-300">
+                <Icon icon="lucide:map" class="w-5 h-5 brand-text group-hover:text-white transition-colors" />
+              </div>
+              <Icon icon="lucide:external-link" class="w-4 h-4 text-gray-300 group-hover:text-green-500 transition-all" />
             </div>
-            <h3 class="syne font-bold text-lg mb-2">Geospatial Field Dashboard</h3>
-            <p class="text-sm leading-relaxed mb-5 text-muted">
+            <h3 class="syne font-bold text-lg mb-2 group-hover:text-green-600 transition-colors">Terrave</h3>
+            <p class="text-sm leading-relaxed mb-4 text-muted line-clamp-3">
               Real-time spatial dashboard for visualising field data from across Uganda. Integrates PostGIS, Leaflet,
-              and Laravel to provide map-based analytics for decision-makers.
+              and Laravel for map-based analytics.
             </p>
-            <div class="flex flex-wrap gap-2 mb-5">
-              <span class="tag">PostGIS</span><span class="tag">Leaflet</span><span class="tag">Laravel</span>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md">PostGIS</span>
+              <span class="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md">Leaflet</span>
+              <span class="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md">Laravel</span>
             </div>
-            <div class="flex items-center gap-4 pt-4 border-t border-green-500/10 text-xs">
-              <span class="brand-text">Geospatial System</span>
+          </a>
+
+          <!-- Project 4: VireonHR -->
+          <a href="https://lipon.store" target="_blank" rel="noopener" class="group block bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg hover:border-green-200 transition-all duration-300 reveal" style="animation-delay: 0.1s;">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-11 h-11 rounded-xl bg-green-50 flex items-center justify-center group-hover:bg-green-500 group-hover:scale-110 transition-all duration-300">
+                <Icon icon="lucide:users" class="w-5 h-5 brand-text group-hover:text-white transition-colors" />
+              </div>
+              <Icon icon="lucide:external-link" class="w-4 h-4 text-gray-300 group-hover:text-green-500 transition-all" />
+            </div>
+            <h3 class="syne font-bold text-lg mb-2 group-hover:text-green-600 transition-colors">VireonHR</h3>
+            <p class="text-sm leading-relaxed mb-4 text-muted line-clamp-3">
+              HRMS system with AI-powered recruitment and automated reports. Features employee management, payroll,
+              attendance tracking, and performance reviews.
+            </p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md">Laravel</span>
+              <span class="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md">Vue</span>
+              <span class="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md">AI</span>
+              <span class="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md">Docker</span>
+            </div>
+          </a>
+
+          <!-- Project 5: Publlsh -->
+          <div class="group block bg-white rounded-2xl p-6 border border-gray-100 shadow-sm reveal opacity-80" style="animation-delay: 0.2s;">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-11 h-11 rounded-xl bg-green-50 flex items-center justify-center">
+                <Icon icon="lucide:sparkles" class="w-5 h-5 brand-text" />
+              </div>
+              <span class="px-2 py-1 bg-amber-50 text-amber-600 text-xs rounded-full">Building</span>
+            </div>
+            <h3 class="syne font-bold text-lg mb-2">Publlsh</h3>
+            <p class="text-sm leading-relaxed mb-4 text-muted line-clamp-3">
+              AI-powered social media management platform in development. Automates content scheduling, generates
+              AI-assisted captions, and provides analytics.
+            </p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md">Laravel</span>
+              <span class="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md">Vue</span>
+              <span class="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md">AI</span>
             </div>
           </div>
 
-          <!-- Project 4: POS -->
-          <div class="card p-6 reveal" style="animation-delay: 0.1s;">
-            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-green-500/10">
-              <Icon icon="lucide:monitor" class="w-6 h-6 brand-text" />
+          <!-- Project 6: Zoya Travels -->
+          <a href="https://zoyatravelsug.com/" target="_blank" rel="noopener" class="group block bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg hover:border-green-200 transition-all duration-300 reveal" style="animation-delay: 0.3s;">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-11 h-11 rounded-xl bg-green-50 flex items-center justify-center group-hover:bg-green-500 group-hover:scale-110 transition-all duration-300">
+                <Icon icon="lucide:plane" class="w-5 h-5 brand-text group-hover:text-white transition-colors" />
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-1 bg-blue-50 text-blue-600 text-xs rounded-full">Client</span>
+                <Icon icon="lucide:external-link" class="w-4 h-4 text-gray-300 group-hover:text-green-500 transition-all" />
+              </div>
             </div>
-            <h3 class="syne font-bold text-lg mb-2">Legacy POS Modernization</h3>
-            <p class="text-sm leading-relaxed mb-5 text-muted">
-              Migrated legacy point-of-sale systems to modern architectures with offline-first desktop and mobile
-              clients designed for low-connectivity environments.
+            <h3 class="syne font-bold text-lg mb-2 group-hover:text-green-600 transition-colors">Zoya Travels</h3>
+            <p class="text-sm leading-relaxed mb-4 text-muted line-clamp-3">
+              Travel agency landing page built with Nuxt.js and Tailwind CSS. Fast, responsive, and SEO-optimized
+              for showcasing travel packages and destinations.
             </p>
-            <div class="flex flex-wrap gap-2 mb-5">
-              <span class="tag">Offline-First</span><span class="tag">Desktop App</span><span class="tag">Modern
-                Stack</span>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md">Nuxt</span>
+              <span class="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md">Tailwind</span>
+              <span class="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md">Landing Page</span>
             </div>
-            <div class="flex items-center gap-4 pt-4 border-t border-green-500/10 text-xs text-muted">
-              <span>Native Frontiers</span>
-              <span class="brand-text">2026</span>
-            </div>
-          </div>
-
-          <!-- Project 5: AI -->
-          <div class="card p-6 reveal" style="animation-delay: 0.2s;">
-            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-green-500/10">
-              <Icon icon="lucide:bot" class="w-6 h-6 brand-text" />
-            </div>
-            <h3 class="syne font-bold text-lg mb-2">AI-Powered Workflow Tools</h3>
-            <p class="text-sm leading-relaxed mb-5 text-muted">
-              Integrated LLM APIs (OpenAI, Anthropic) into business workflows for document processing, intelligent
-              routing, and automated data-driven reporting.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-5">
-              <span class="tag">OpenAI API</span><span class="tag">Anthropic</span><span class="tag">Prompt
-                Engineering</span>
-            </div>
-            <div class="flex items-center gap-4 pt-4 border-t border-green-500/10 text-xs text-muted">
-              <span class="brand-text">AI Integration</span>
-            </div>
-          </div>
-
-          <!-- Project 6: Web -->
-          <div class="card p-6 reveal" style="animation-delay: 0.3s;">
-            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-green-500/10">
-              <Icon icon="lucide:globe" class="w-6 h-6 brand-text" />
-            </div>
-            <h3 class="syne font-bold text-lg mb-2">Responsive Web Platforms</h3>
-            <p class="text-sm leading-relaxed mb-5 text-muted">
-              Developed responsive web interfaces using PHP and Tailwind CSS for Oysters & Pearls Uganda, improving page
-              load speed by 35% and database efficiency.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-5">
-              <span class="tag">PHP</span><span class="tag">Tailwind CSS</span><span class="tag">MySQL</span>
-            </div>
-            <div class="flex items-center gap-4 pt-4 border-t border-green-500/10 text-xs text-muted">
-              <span>35% Faster Load</span>
-            </div>
-          </div>
+          </a>
 
         </div>
       </div>
