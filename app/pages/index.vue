@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
+import { Icon } from '@iconify/vue'
 
 // SEO Meta Tags
 useSeoMeta({
@@ -137,7 +138,7 @@ onMounted(() => {
         </div>
         <a href="mailto:katoemmy001@gmail.com" class="btn-primary text-xs py-2 px-5">
           Hire Me
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <Icon icon="lucide:arrow-right" class="w-4 h-4" />
         </a>
       </div>
     </nav>
@@ -228,10 +229,10 @@ onMounted(() => {
 
             <!-- Floating badges -->
             <div class="float-badge absolute -top-5 -right-8 card px-3 py-2 text-xs syne font-bold bg-card">
-              <span class="brand-text">⬡</span> GIS Systems
+              <Icon icon="lucide:hexagon" class="w-4 h-4 brand-text" /> GIS Systems
             </div>
             <div class="float-badge absolute -bottom-4 -left-8 card px-3 py-2 text-xs syne font-bold bg-card" style="animation-delay: 1.5s;">
-              🤖 AI-Powered Apps
+              <Icon icon="lucide:bot" class="w-4 h-4 brand-text" /> AI-Powered Apps
             </div>
           </div>
 
@@ -270,27 +271,27 @@ onMounted(() => {
           <!-- Right: Values grid -->
           <div class="flex-1 grid grid-cols-2 gap-4 reveal">
             <div class="card p-5 col-span-2">
-              <p class="text-2xl mb-2">🌍</p>
+              <Icon icon="lucide:globe" class="w-8 h-8 mb-2 brand-text" />
               <p class="syne font-bold text-base mb-1">Geospatial & Field-First</p>
               <p class="text-sm text-muted">Building systems that work where data is sparse — in the field, offline, and under pressure.</p>
             </div>
             <div class="card p-5">
-              <p class="text-2xl mb-2">🤖</p>
+              <Icon icon="lucide:bot" class="w-8 h-8 mb-2 brand-text" />
               <p class="syne font-bold text-sm mb-1">AI-Augmented</p>
               <p class="text-xs text-muted">Integrating LLM APIs (OpenAI, Anthropic) to automate workflows.</p>
             </div>
             <div class="card p-5">
-              <p class="text-2xl mb-2">📦</p>
+              <Icon icon="lucide:package" class="w-8 h-8 mb-2 brand-text" />
               <p class="syne font-bold text-sm mb-1">Open Source</p>
               <p class="text-xs text-muted">Published Dart libraries to the pub.dev community.</p>
             </div>
             <div class="card p-5">
-              <p class="text-2xl mb-2">🎓</p>
+              <Icon icon="lucide:graduation-cap" class="w-8 h-8 mb-2 brand-text" />
               <p class="syne font-bold text-sm mb-1">Mentor</p>
               <p class="text-xs text-muted">Mentored 100+ students to national app competition finals.</p>
             </div>
             <div class="card p-5">
-              <p class="text-2xl mb-2">⚡</p>
+              <Icon icon="lucide:zap" class="w-8 h-8 mb-2 brand-text" />
               <p class="syne font-bold text-sm mb-1">Performance</p>
               <p class="text-xs text-muted">35–75% efficiency gains in real deployments.</p>
             </div>
@@ -313,7 +314,7 @@ onMounted(() => {
           <!-- Backend -->
           <div class="card p-5 text-center group">
             <div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-green-500/20 transition-colors">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="brand-text"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <Icon icon="lucide:server" class="w-5 h-5 brand-text" />
             </div>
             <p class="syne font-semibold text-sm mb-1">Backend</p>
             <p class="text-xs text-muted">Laravel · PHP · Node.js</p>
@@ -322,7 +323,7 @@ onMounted(() => {
           <!-- Frontend -->
           <div class="card p-5 text-center group">
             <div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-green-500/20 transition-colors">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="brand-text"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="9"/></svg>
+              <Icon icon="lucide:monitor" class="w-5 h-5 brand-text" />
             </div>
             <p class="syne font-semibold text-sm mb-1">Frontend</p>
             <p class="text-xs text-muted">Vue.js · Nuxt · Tailwind</p>
@@ -331,7 +332,7 @@ onMounted(() => {
           <!-- Mobile -->
           <div class="card p-5 text-center group">
             <div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-green-500/20 transition-colors">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="brand-text"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+              <Icon icon="lucide:smartphone" class="w-5 h-5 brand-text" />
             </div>
             <p class="syne font-semibold text-sm mb-1">Mobile</p>
             <p class="text-xs text-muted">Flutter · Dart · Offline-First</p>
@@ -340,7 +341,7 @@ onMounted(() => {
           <!-- Data & Maps -->
           <div class="card p-5 text-center group">
             <div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-green-500/20 transition-colors">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="brand-text"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+              <Icon icon="lucide:map-pin" class="w-5 h-5 brand-text" />
             </div>
             <p class="syne font-semibold text-sm mb-1">Data & Maps</p>
             <p class="text-xs text-muted">PostGIS · Leaflet · QGIS</p>
@@ -352,7 +353,7 @@ onMounted(() => {
         <div class="mt-4 reveal">
           <div class="card p-5 flex items-center gap-4">
             <div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center flex-shrink-0">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="brand-text"><path d="M12 2a10 10 0 1 0 10 10 10 10 0 0 0-10-10zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg>
+              <Icon icon="lucide:brain-circuit" class="w-5 h-5 brand-text" />
             </div>
             <div>
               <p class="syne font-semibold text-sm">AI Integration</p>
@@ -378,7 +379,7 @@ onMounted(() => {
           <!-- Project 1 -->
           <div class="card p-6 reveal" style="animation-delay: 0.1s;">
             <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-green-500/10">
-              🌿
+              <Icon icon="lucide:leaf" class="w-6 h-6 brand-text" />
             </div>
             <h3 class="syne font-bold text-lg mb-2">Kijani Forestry App</h3>
             <p class="text-sm leading-relaxed mb-5 text-muted">
@@ -396,7 +397,7 @@ onMounted(() => {
           <!-- Project 2 -->
           <div class="card p-6 reveal" style="animation-delay: 0.2s;">
             <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-green-500/10">
-              📦
+              <Icon icon="lucide:package" class="w-6 h-6 brand-text" />
             </div>
             <h3 class="syne font-bold text-lg mb-2">Airtable CRUD Library</h3>
             <p class="text-sm leading-relaxed mb-5 text-muted">
@@ -414,7 +415,7 @@ onMounted(() => {
           <!-- Project 3: Geo -->
           <div class="card p-6 reveal border-green-400/25" style="animation-delay: 0.3s;">
             <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-green-500/15">
-              🗺️
+              <Icon icon="lucide:map" class="w-6 h-6 brand-text" />
             </div>
             <h3 class="syne font-bold text-lg mb-2">Geospatial Field Dashboard</h3>
             <p class="text-sm leading-relaxed mb-5 text-muted">
@@ -431,7 +432,7 @@ onMounted(() => {
           <!-- Project 4: POS -->
           <div class="card p-6 reveal" style="animation-delay: 0.1s;">
             <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-green-500/10">
-              🖥️
+              <Icon icon="lucide:monitor" class="w-6 h-6 brand-text" />
             </div>
             <h3 class="syne font-bold text-lg mb-2">Legacy POS Modernization</h3>
             <p class="text-sm leading-relaxed mb-5 text-muted">
@@ -449,7 +450,7 @@ onMounted(() => {
           <!-- Project 5: AI -->
           <div class="card p-6 reveal" style="animation-delay: 0.2s;">
             <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-green-500/10">
-              🤖
+              <Icon icon="lucide:bot" class="w-6 h-6 brand-text" />
             </div>
             <h3 class="syne font-bold text-lg mb-2">AI-Powered Workflow Tools</h3>
             <p class="text-sm leading-relaxed mb-5 text-muted">
@@ -466,7 +467,7 @@ onMounted(() => {
           <!-- Project 6: Web -->
           <div class="card p-6 reveal" style="animation-delay: 0.3s;">
             <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-green-500/10">
-              🌐
+              <Icon icon="lucide:globe" class="w-6 h-6 brand-text" />
             </div>
             <h3 class="syne font-bold text-lg mb-2">Responsive Web Platforms</h3>
             <p class="text-sm leading-relaxed mb-5 text-muted">
@@ -557,28 +558,28 @@ onMounted(() => {
 
             <div class="space-y-4">
               <div class="card p-4 flex gap-4">
-                <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm bg-green-500/10">🗄️</div>
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 bg-green-500/10"><Icon icon="lucide:database" class="w-4 h-4 brand-text" /></div>
                 <div>
                   <p class="syne font-bold text-sm mb-1">Spatial Databases</p>
                   <p class="text-xs text-muted">PostGIS, spatial indexing, geospatial queries, coordinate systems.</p>
                 </div>
               </div>
               <div class="card p-4 flex gap-4">
-                <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm bg-green-500/10">🗺️</div>
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 bg-green-500/10"><Icon icon="lucide:map" class="w-4 h-4 brand-text" /></div>
                 <div>
                   <p class="syne font-bold text-sm mb-1">Interactive Mapping</p>
                   <p class="text-xs text-muted">Leaflet, Mapbox, OpenLayers — dynamic, web-based map visualisations.</p>
                 </div>
               </div>
               <div class="card p-4 flex gap-4">
-                <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm bg-green-500/10">📱</div>
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 bg-green-500/10"><Icon icon="lucide:smartphone" class="w-4 h-4 brand-text" /></div>
                 <div>
                   <p class="syne font-bold text-sm mb-1">Mobile Field Collection</p>
                   <p class="text-xs text-muted">GPS-integrated Flutter apps with offline sync for field teams.</p>
                 </div>
               </div>
               <div class="card p-4 flex gap-4">
-                <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm bg-green-500/10">📊</div>
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 bg-green-500/10"><Icon icon="lucide:bar-chart-3" class="w-4 h-4 brand-text" /></div>
                 <div>
                   <p class="syne font-bold text-sm mb-1">Spatial Analytics</p>
                   <p class="text-xs text-muted">GeoJSON, KML, shapefiles — data pipelines for geographic decision-making.</p>
@@ -623,22 +624,22 @@ onMounted(() => {
           </div>
           <button class="btn-primary w-full justify-center" onclick="window.location='mailto:katoemmy001@gmail.com'">
             Send Message
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <Icon icon="lucide:arrow-right" class="w-4 h-4" />
           </button>
         </div>
 
         <!-- Contact links -->
         <div class="flex flex-wrap justify-center gap-6 mt-10">
           <a href="mailto:katoemmy001@gmail.com" class="flex items-center gap-2 text-sm nav-link">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <Icon icon="lucide:mail" class="w-4 h-4" />
             katoemmy001@gmail.com
           </a>
           <a href="tel:+256778707801" class="flex items-center gap-2 text-sm nav-link">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.08 1.2 2 2 0 012.06 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+            <Icon icon="lucide:phone" class="w-4 h-4" />
             +256 778 707 801
           </a>
           <a href="https://katoemma.website" target="_blank" class="flex items-center gap-2 text-sm nav-link">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            <Icon icon="lucide:globe" class="w-4 h-4" />
             katoemma.website
           </a>
         </div>
