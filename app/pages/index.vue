@@ -133,7 +133,6 @@ onMounted(() => {
           <a href="#skills" class="nav-link">Skills</a>
           <a href="#projects" class="nav-link">Projects</a>
           <a href="#geo" class="nav-link">Geospatial</a>
-          <a href="#experience" class="nav-link">Experience</a>
           <a href="#contact" class="nav-link">Contact</a>
         </div>
         <a href="mailto:katoemmy001@gmail.com" class="btn-primary text-xs py-2 px-5">
@@ -303,82 +302,62 @@ onMounted(() => {
 
     <!-- =========== SKILLS =========== -->
     <section id="skills" class="py-24 px-6 md:px-12 bg-white/[0.01]">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-14 reveal">
-          <div class="accent-line mx-auto mb-4"></div>
-          <h2 class="syne text-4xl font-bold mb-3">Technical Skills</h2>
-          <p class="text-sm text-muted">A full-stack toolkit — from pixel to pipeline.</p>
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16 reveal">
+          <h2 class="syne text-3xl font-bold mb-4">Tech Stack</h2>
+          <p class="text-sm text-muted max-w-md mx-auto">Core technologies I use to build scalable applications and geospatial systems.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
 
-          <!-- Languages & Frameworks -->
-          <div class="card p-7">
-            <p class="syne font-bold text-sm mb-6 brand-text">Languages & Frameworks</p>
-            <div class="space-y-5">
-              <div>
-                <div class="flex justify-between text-sm mb-2"><span>PHP / Laravel</span><span class="text-muted">95%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 0.95;"></div></div>
-              </div>
-              <div>
-                <div class="flex justify-between text-sm mb-2"><span>JavaScript / TypeScript</span><span class="text-muted">88%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 0.88;"></div></div>
-              </div>
-              <div>
-                <div class="flex justify-between text-sm mb-2"><span>Vue.js / Nuxt.js</span><span class="text-muted">90%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 0.90;"></div></div>
-              </div>
-              <div>
-                <div class="flex justify-between text-sm mb-2"><span>Dart / Flutter</span><span class="text-muted">92%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 0.92;"></div></div>
-              </div>
-              <div>
-                <div class="flex justify-between text-sm mb-2"><span>Node.js</span><span class="text-muted">78%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 0.78;"></div></div>
-              </div>
+          <!-- Backend -->
+          <div class="card p-5 text-center group">
+            <div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-green-500/20 transition-colors">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="brand-text"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </div>
+            <p class="syne font-semibold text-sm mb-1">Backend</p>
+            <p class="text-xs text-muted">Laravel · PHP · Node.js</p>
           </div>
 
-          <!-- Geospatial & Data -->
-          <div class="card p-7">
-            <p class="syne font-bold text-sm mb-6 brand-text">Geospatial & Data</p>
-            <div class="space-y-5">
-              <div>
-                <div class="flex justify-between text-sm mb-2"><span>PostGIS / Spatial SQL</span><span class="text-muted">85%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 0.85;"></div></div>
-              </div>
-              <div>
-                <div class="flex justify-between text-sm mb-2"><span>Leaflet / Mapbox / OpenLayers</span><span class="text-muted">82%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 0.82;"></div></div>
-              </div>
-              <div>
-                <div class="flex justify-between text-sm mb-2"><span>QGIS / Field Data Collection</span><span class="text-muted">80%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 0.80;"></div></div>
-              </div>
-              <div>
-                <div class="flex justify-between text-sm mb-2"><span>GeoJSON / KML / Shapefiles</span><span class="text-muted">88%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 0.88;"></div></div>
-              </div>
-              <div>
-                <div class="flex justify-between text-sm mb-2"><span>PostgreSQL / MySQL / Firebase</span><span class="text-muted">90%</span></div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 0.90;"></div></div>
-              </div>
+          <!-- Frontend -->
+          <div class="card p-5 text-center group">
+            <div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-green-500/20 transition-colors">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="brand-text"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="9"/></svg>
             </div>
+            <p class="syne font-semibold text-sm mb-1">Frontend</p>
+            <p class="text-xs text-muted">Vue.js · Nuxt · Tailwind</p>
+          </div>
+
+          <!-- Mobile -->
+          <div class="card p-5 text-center group">
+            <div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-green-500/20 transition-colors">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="brand-text"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+            </div>
+            <p class="syne font-semibold text-sm mb-1">Mobile</p>
+            <p class="text-xs text-muted">Flutter · Dart · Offline-First</p>
+          </div>
+
+          <!-- Data & Maps -->
+          <div class="card p-5 text-center group">
+            <div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-green-500/20 transition-colors">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="brand-text"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+            </div>
+            <p class="syne font-semibold text-sm mb-1">Data & Maps</p>
+            <p class="text-xs text-muted">PostGIS · Leaflet · QGIS</p>
           </div>
 
         </div>
 
-        <!-- Tech pills grid -->
-        <div class="mt-8 card p-6 reveal">
-          <p class="syne font-bold text-sm mb-5 text-muted">Full toolkit</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="tag">PHP</span><span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">Nuxt.js</span>
-            <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Node.js</span><span class="tag">TypeScript</span>
-            <span class="tag">PostgreSQL</span><span class="tag">PostGIS</span><span class="tag">MySQL</span><span class="tag">Firebase</span>
-            <span class="tag">Airtable</span><span class="tag">QGIS</span><span class="tag">Leaflet</span><span class="tag">Mapbox</span>
-            <span class="tag">GeoJSON</span><span class="tag">Docker</span><span class="tag">Nginx</span><span class="tag">Linux</span>
-            <span class="tag">Git / GitHub</span><span class="tag">CI/CD</span><span class="tag">Figma</span><span class="tag">Tailwind CSS</span>
-            <span class="tag">OpenAI API</span><span class="tag">Anthropic API</span><span class="tag">Prompt Engineering</span>
+        <!-- AI Integration -->
+        <div class="mt-4 reveal">
+          <div class="card p-5 flex items-center gap-4">
+            <div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center flex-shrink-0">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="brand-text"><path d="M12 2a10 10 0 1 0 10 10 10 10 0 0 0-10-10zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div>
+              <p class="syne font-semibold text-sm">AI Integration</p>
+              <p class="text-xs text-muted">OpenAI · Anthropic APIs · Prompt Engineering for automated workflows</p>
+            </div>
           </div>
         </div>
 
@@ -612,133 +591,6 @@ onMounted(() => {
       </div>
     </section>
 
-    <!-- =========== EXPERIENCE =========== -->
-    <section id="experience" class="py-24 px-6 md:px-12">
-      <div class="max-w-6xl mx-auto">
-        <div class="mb-14 reveal">
-          <div class="accent-line mb-4"></div>
-          <h2 class="syne text-4xl font-bold mb-3">Experience</h2>
-          <p class="text-sm text-muted">Built in the field, shipped in production.</p>
-        </div>
-
-        <div class="relative">
-          <!-- Vertical line -->
-          <div class="absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-green-500 to-transparent"></div>
-
-          <div class="space-y-10">
-
-            <!-- Job 1 -->
-            <div class="flex gap-8 reveal">
-              <div class="timeline-dot mt-1 ml-0 flex-shrink-0 relative z-10"></div>
-              <div class="card p-6 flex-1">
-                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
-                  <div>
-                    <h3 class="syne font-bold text-lg">Systems Upgrade Specialist</h3>
-                    <p class="brand-text text-sm font-medium">Native Frontiers</p>
-                  </div>
-                  <span class="tag text-xs flex-shrink-0">Jan 2026 – Mar 2026</span>
-                </div>
-                <ul class="space-y-2 text-sm text-muted">
-                  <li>→ Modernizing legacy POS systems to current architectures for improved performance and scalability.</li>
-                  <li>→ Designing offline-first desktop and mobile applications for low-connectivity environments.</li>
-                  <li>→ Introducing modern frameworks and security best practices to future-proof platforms.</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Job 2 -->
-            <div class="flex gap-8 reveal">
-              <div class="timeline-dot mt-1 ml-0 flex-shrink-0 relative z-10"></div>
-              <div class="card p-6 flex-1">
-                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
-                  <div>
-                    <h3 class="syne font-bold text-lg">Software Developer</h3>
-                    <p class="brand-text text-sm font-medium">Kijani Forestry</p>
-                  </div>
-                  <span class="tag text-xs flex-shrink-0">Jan 2024 – Dec 2025</span>
-                </div>
-                <ul class="space-y-2 text-sm text-muted">
-                  <li>→ Built the Kijani Forestry Mobile App (Flutter + Airtable) now used by 450+ field users.</li>
-                  <li>→ Cut manual reporting time by 75% via automated real-time data synchronisation.</li>
-                  <li>→ Open-sourced the Airtable CRUD Package to the Flutter community on pub.dev.</li>
-                  <li>→ Delivered weekly feature releases in Agile sprints with cross-functional teams.</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Job 3 -->
-            <div class="flex gap-8 reveal">
-              <div class="timeline-dot mt-1 ml-0 flex-shrink-0 relative z-10"></div>
-              <div class="card p-6 flex-1">
-                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
-                  <div>
-                    <h3 class="syne font-bold text-lg">IT Assistant</h3>
-                    <p class="brand-text text-sm font-medium">Kijani Forestry</p>
-                  </div>
-                  <span class="tag text-xs flex-shrink-0">Sep 2023 – Jan 2024</span>
-                </div>
-                <ul class="space-y-2 text-sm text-muted">
-                  <li>→ Reduced IT-related downtime by 30% through proactive maintenance.</li>
-                  <li>→ Trained 20+ staff on digital tools, significantly improving data accuracy.</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Job 4 -->
-            <div class="flex gap-8 reveal">
-              <div class="timeline-dot mt-1 ml-0 flex-shrink-0 relative z-10"></div>
-              <div class="card p-6 flex-1">
-                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
-                  <div>
-                    <h3 class="syne font-bold text-lg">Junior Developer (Intern) & Technovation Mentor</h3>
-                    <p class="brand-text text-sm font-medium">Oysters & Pearls Uganda</p>
-                  </div>
-                  <span class="tag text-xs flex-shrink-0">Nov 2021 – Aug 2023</span>
-                </div>
-                <ul class="space-y-2 text-sm text-muted">
-                  <li>→ Built responsive web interfaces in PHP + Tailwind, improving load speed by 35%.</li>
-                  <li>→ Mentored 100+ students in mobile app development using MIT App Inventor.</li>
-                  <li>→ Guided three student teams to national finals with user-centred design principles.</li>
-                </ul>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========== EDUCATION =========== -->
-    <section class="py-24 px-6 md:px-12 bg-white/[0.01]">
-      <div class="max-w-6xl mx-auto">
-        <div class="mb-14 reveal">
-          <div class="accent-line mb-4"></div>
-          <h2 class="syne text-4xl font-bold mb-3">Education & Certifications</h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="card p-6 reveal">
-            <span class="tag text-xs mb-4 inline-block">Commencing Aug 2026</span>
-            <h3 class="syne font-bold text-base mb-1">BSc Business Computing</h3>
-            <p class="text-sm mb-2 brand-text">Metropolitan International University</p>
-            <p class="text-xs text-muted">Kampala, Uganda · Expected 2028</p>
-          </div>
-          <div class="card p-6 reveal">
-            <span class="tag text-xs mb-4 inline-block">FreeCodeCamp · 2023</span>
-            <h3 class="syne font-bold text-base mb-1">Responsive Web Design</h3>
-            <p class="text-sm mb-2 brand-text">FreeCodeCamp.org</p>
-            <p class="text-xs text-muted">HTML5, CSS3, Responsive Design, Accessibility</p>
-          </div>
-          <div class="card p-6 reveal">
-            <span class="tag text-xs mb-4 inline-block">FreeCodeCamp · 2023</span>
-            <h3 class="syne font-bold text-base mb-1">JS Algorithms & Data Structures</h3>
-            <p class="text-sm mb-2 brand-text">FreeCodeCamp.org</p>
-            <p class="text-xs text-muted">ES6, OOP, Functional Programming, Algorithms</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- =========== CONTACT =========== -->
     <section id="contact" class="py-24 px-6 md:px-12">
       <div class="max-w-3xl mx-auto text-center reveal">
@@ -807,8 +659,8 @@ onMounted(() => {
 <style scoped>
 .site-wrapper {
   font-family: 'DM Sans', sans-serif;
-  background-color: #0a0f0a;
-  color: #e8f0e8;
+  background-color: #f8faf8;
+  color: #1a1f1a;
   overflow-x: hidden;
   cursor: none;
 }
@@ -816,7 +668,7 @@ onMounted(() => {
 /* Custom cursor */
 .cursor {
   width: 12px; height: 12px;
-  background: #4ade80;
+  background: #16a34a;
   border-radius: 50%;
   position: fixed; top: 0; left: 0;
   pointer-events: none; z-index: 9999;
@@ -825,7 +677,7 @@ onMounted(() => {
 }
 .cursor-ring {
   width: 36px; height: 36px;
-  border: 1px solid rgba(74,222,128,0.4);
+  border: 1px solid rgba(22,163,74,0.4);
   border-radius: 50%;
   position: fixed; top: 0; left: 0;
   pointer-events: none; z-index: 9998;
@@ -842,20 +694,21 @@ onMounted(() => {
   position: fixed; inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
   pointer-events: none; z-index: 0;
-  opacity: 0.4;
+  opacity: 0.15;
 }
 
 /* Brand color */
-.brand-text { color: #4ade80; }
-.text-muted { color: #6b7a6b; }
-.bg-card { background: #111811; }
+.brand-text { color: #16a34a; }
+.text-muted { color: #5b6a5b; }
+.bg-card { background: #ffffff; }
+.text-white { color: #1a1f1a !important; }
 
 /* Animated grid lines */
 .grid-bg {
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(74,222,128,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(74,222,128,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(22,163,74,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(22,163,74,0.06) 1px, transparent 1px);
   background-size: 60px 60px;
   animation: gridScroll 20s linear infinite;
 }
@@ -878,8 +731,8 @@ nav {
   position: fixed; top: 0; left: 0; right: 0;
   z-index: 100;
   backdrop-filter: blur(12px);
-  background: rgba(10,15,10,0.8);
-  border-bottom: 1px solid rgba(74,222,128,0.08);
+  background: rgba(248,250,248,0.85);
+  border-bottom: 1px solid rgba(22,163,74,0.1);
 }
 
 /* Hero text animation */
@@ -895,17 +748,19 @@ nav {
 
 /* Cards */
 .card {
-  background: #111811;
-  border: 1px solid rgba(74,222,128,0.12);
+  background: #ffffff;
+  border: 1px solid rgba(22,163,74,0.15);
   border-radius: 16px;
-  transition: border-color 0.3s ease, transform 0.3s ease;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 .card:hover {
-  border-color: rgba(74,222,128,0.35);
+  border-color: rgba(22,163,74,0.4);
   transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(22,163,74,0.1);
 }
 .card-gradient {
-  background: linear-gradient(135deg, #111811 0%, #0f1f0f 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f0f7f0 100%);
 }
 
 /* Tag pill */
@@ -916,16 +771,16 @@ nav {
   border-radius: 999px;
   font-size: 12px;
   font-weight: 500;
-  background: rgba(74,222,128,0.08);
-  color: #4ade80;
-  border: 1px solid rgba(74,222,128,0.2);
+  background: rgba(22,163,74,0.08);
+  color: #16a34a;
+  border: 1px solid rgba(22,163,74,0.2);
   letter-spacing: 0.02em;
 }
 
 /* Green accent line */
 .accent-line {
   width: 48px; height: 3px;
-  background: linear-gradient(90deg, #4ade80, transparent);
+  background: linear-gradient(90deg, #16a34a, transparent);
   border-radius: 2px;
 }
 
@@ -934,7 +789,7 @@ nav {
   font-family: 'Syne', sans-serif;
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
-  color: #4ade80;
+  color: #16a34a;
   line-height: 1;
 }
 
@@ -942,8 +797,8 @@ nav {
 .timeline-dot {
   width: 12px; height: 12px;
   border-radius: 50%;
-  background: #4ade80;
-  box-shadow: 0 0 0 4px rgba(74,222,128,0.15);
+  background: #16a34a;
+  box-shadow: 0 0 0 4px rgba(22,163,74,0.15);
   flex-shrink: 0;
   margin-top: 6px;
 }
@@ -951,13 +806,13 @@ nav {
 /* Skill bar */
 .skill-bar-track {
   height: 3px;
-  background: rgba(74,222,128,0.1);
+  background: rgba(22,163,74,0.12);
   border-radius: 2px;
   overflow: hidden;
 }
 .skill-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, #16a34a, #4ade80);
+  background: linear-gradient(90deg, #16a34a, #22c55e);
   border-radius: 2px;
   transform-origin: left;
   transform: scaleX(0);
@@ -990,7 +845,7 @@ nav {
 /* Nav link */
 .nav-link {
   position: relative;
-  color: #9ca39c;
+  color: #5b6a5b;
   transition: color 0.2s ease;
   font-size: 14px;
   font-weight: 400;
@@ -1000,10 +855,10 @@ nav {
   position: absolute;
   bottom: -2px; left: 0;
   width: 0; height: 1px;
-  background: #4ade80;
+  background: #16a34a;
   transition: width 0.3s ease;
 }
-.nav-link:hover { color: #4ade80; }
+.nav-link:hover { color: #16a34a; }
 .nav-link:hover::after { width: 100%; }
 
 /* CTA button */
@@ -1012,8 +867,8 @@ nav {
   align-items: center;
   gap: 8px;
   padding: 14px 28px;
-  background: #4ade80;
-  color: #0a0f0a;
+  background: #16a34a;
+  color: #ffffff;
   border-radius: 999px;
   font-family: 'Syne', sans-serif;
   font-weight: 700;
@@ -1023,9 +878,9 @@ nav {
   cursor: none;
 }
 .btn-primary:hover {
-  background: #86efac;
+  background: #15803d;
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(74,222,128,0.3);
+  box-shadow: 0 8px 30px rgba(22,163,74,0.25);
 }
 
 .btn-outline {
@@ -1034,8 +889,8 @@ nav {
   gap: 8px;
   padding: 14px 28px;
   background: transparent;
-  color: #4ade80;
-  border: 1px solid rgba(74,222,128,0.4);
+  color: #16a34a;
+  border: 1px solid rgba(22,163,74,0.4);
   border-radius: 999px;
   font-family: 'Syne', sans-serif;
   font-weight: 600;
@@ -1045,26 +900,29 @@ nav {
   cursor: none;
 }
 .btn-outline:hover {
-  background: rgba(74,222,128,0.08);
-  border-color: #4ade80;
+  background: rgba(22,163,74,0.08);
+  border-color: #16a34a;
   transform: translateY(-2px);
 }
 
 /* Contact input */
 .form-input {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(74,222,128,0.12);
-  color: #e8f0e8;
+  background: #ffffff;
+  border: 1px solid rgba(22,163,74,0.2);
+  color: #1a1f1a;
   border-radius: 10px;
   padding: 12px 16px;
   font-family: 'DM Sans', sans-serif;
   font-size: 14px;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
   outline: none;
   width: 100%;
 }
-.form-input:focus { border-color: rgba(74,222,128,0.5); }
-.form-input::placeholder { color: #6b7a6b; }
+.form-input:focus { 
+  border-color: rgba(22,163,74,0.5); 
+  box-shadow: 0 0 0 3px rgba(22,163,74,0.1);
+}
+.form-input::placeholder { color: #8b9a8b; }
 
 /* Floating badge */
 .float-badge {
@@ -1082,15 +940,15 @@ nav {
 
 /* Avatar gradient */
 .avatar-gradient {
-  background: linear-gradient(135deg, rgba(74,222,128,0.2), rgba(22,163,74,0.3));
-  border: 2px solid rgba(74,222,128,0.3);
-  color: #4ade80;
+  background: linear-gradient(135deg, rgba(22,163,74,0.15), rgba(34,197,94,0.25));
+  border: 2px solid rgba(22,163,74,0.3);
+  color: #16a34a;
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #0a0f0a; }
-::-webkit-scrollbar-thumb { background: rgba(74,222,128,0.3); border-radius: 2px; }
+::-webkit-scrollbar-track { background: #e8f0e8; }
+::-webkit-scrollbar-thumb { background: rgba(22,163,74,0.3); border-radius: 2px; }
 
 /* Hide custom cursor on touch devices */
 @media (hover: none) {
