@@ -501,7 +501,9 @@ onMounted(() => {
           </a>
 
           <!-- Project 5: Publlsh -->
-          <div class="group block bg-white rounded-2xl p-6 border border-gray-100 shadow-sm reveal opacity-80" style="animation-delay: 0.2s;">
+          <a href="https://publlsh.lipon.store" target="_blank" rel="noopener"
+            class="group block bg-white rounded-2xl p-6 border border-gray-100 shadow-sm reveal opacity-80"
+            style="animation-delay: 0.2s;">
             <div class="flex items-start justify-between mb-4">
               <div class="w-11 h-11 rounded-xl bg-green-50 flex items-center justify-center">
                 <Icon icon="lucide:sparkles" class="w-5 h-5 brand-text" />
@@ -518,7 +520,7 @@ onMounted(() => {
               <span class="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md">Vue</span>
               <span class="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-md">AI</span>
             </div>
-          </div>
+          </a>
 
           <!-- Project 6: Zoya Travels -->
           <a href="https://zoyatravelsug.com/" target="_blank" rel="noopener" class="group block bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg hover:border-green-200 transition-all duration-300 reveal" style="animation-delay: 0.3s;">
