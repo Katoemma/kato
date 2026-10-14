@@ -3,9 +3,9 @@
 
     <!-- Section label -->
     <div class="flex items-center gap-4 mb-14">
-      <span class="font-[Syne] text-[11px] font-bold text-[#E8541A] tracking-[0.1em]">01</span>
+      <span class="font-[ClashDisplay] text-[11px] font-bold text-[#E8541A] tracking-[0.1em]">01</span>
       <span class="w-12 h-px bg-[#E2E2DC]" />
-      <span class="font-[Syne] text-[11px] font-bold text-[#6B6B65] tracking-[0.12em] uppercase">About</span>
+      <span class="font-[ClashDisplay] text-[11px] font-bold text-[#6B6B65] tracking-[0.12em] uppercase">About</span>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-20 items-start">
@@ -13,7 +13,7 @@
       <!-- Left: text -->
       <div>
         <h2
-          class="font-[Syne] font-bold leading-[1.2] tracking-[-0.02em] text-[#18181B] mb-6"
+          class="font-[ClashDisplay] font-bold leading-[1.2] tracking-[-0.02em] text-[#18181B] mb-6"
           style="font-size: clamp(28px, 3.5vw, 42px);"
         >
           I build systems that work — on the web, in the field, everywhere in between.
@@ -52,7 +52,7 @@
             <component :is="v.icon" class="w-4 h-4" />
           </div>
           <div>
-            <p class="font-[Syne] text-[14px] font-bold text-[#18181B] mb-1">{{ v.title }}</p>
+            <p class="font-[ClashDisplay] text-[14px] font-bold text-[#18181B] mb-1">{{ v.title }}</p>
             <p class="text-[13px] text-[#6B6B65] leading-[1.6]">{{ v.desc }}</p>
           </div>
         </div>

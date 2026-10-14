@@ -3,9 +3,9 @@
 
     <!-- Section label -->
     <div class="flex items-center gap-4 mb-14">
-      <span class="font-[Syne] text-[11px] font-bold text-[#E8541A] tracking-[0.1em]">03</span>
+      <span class="font-[ClashDisplay] text-[11px] font-bold text-[#E8541A] tracking-[0.1em]">03</span>
       <span class="w-12 h-px bg-[#E2E2DC]" />
-      <span class="font-[Syne] text-[11px] font-bold text-[#6B6B65] tracking-[0.12em] uppercase">Geospatial</span>
+      <span class="font-[ClashDisplay] text-[11px] font-bold text-[#6B6B65] tracking-[0.12em] uppercase">Geospatial</span>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -13,7 +13,7 @@
       <!-- Left: copy -->
       <div>
         <h2
-          class="font-[Syne] font-bold leading-[1.2] tracking-[-0.02em] text-[#18181B] mb-5"
+          class="font-[ClashDisplay] font-bold leading-[1.2] tracking-[-0.02em] text-[#18181B] mb-5"
           style="font-size: clamp(28px, 3vw, 38px);"
         >
           Bridging the physical world and the digital.
@@ -30,11 +30,11 @@
             class="flex items-start gap-5 py-[18px]"
             :class="i === 0 ? 'border-t border-b border-[#E2E2DC]' : 'border-b border-[#E2E2DC]'"
           >
-            <span class="font-[Syne] text-[11px] font-bold text-[#E8541A] tracking-[0.08em] flex-shrink-0 pt-0.5">
+            <span class="font-[ClashDisplay] text-[11px] font-bold text-[#E8541A] tracking-[0.08em] flex-shrink-0 pt-0.5">
               0{{ i + 1 }}
             </span>
             <div>
-              <p class="font-[Syne] text-[14px] font-bold text-[#18181B] mb-1">{{ feat.title }}</p>
+              <p class="font-[ClashDisplay] text-[14px] font-bold text-[#18181B] mb-1">{{ feat.title }}</p>
               <p class="text-[13px] text-[#6B6B65] leading-[1.6]">{{ feat.desc }}</p>
             </div>
           </div>

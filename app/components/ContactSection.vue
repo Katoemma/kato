@@ -4,9 +4,9 @@
 
       <!-- Section label -->
       <div class="flex items-center gap-4 mb-14">
-        <span class="font-[Syne] text-[11px] font-bold text-[#E8541A] tracking-[0.1em]">04</span>
+        <span class="font-[ClashDisplay] text-[11px] font-bold text-[#E8541A] tracking-[0.1em]">04</span>
         <span class="w-12 h-px bg-[#2A2A24]" />
-        <span class="font-[Syne] text-[11px] font-bold text-[#8A8A80] tracking-[0.12em] uppercase">Contact</span>
+        <span class="font-[ClashDisplay] text-[11px] font-bold text-[#8A8A80] tracking-[0.12em] uppercase">Contact</span>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
@@ -14,7 +14,7 @@
         <!-- Left: headline + links -->
         <div>
           <h2
-            class="font-[Syne] font-extrabold leading-[1.0] tracking-[-0.03em] text-[#F5F0EB] mb-6"
+            class="font-[ClashDisplay] font-extrabold leading-[1.0] tracking-[-0.03em] text-[#F5F0EB] mb-6"
             style="font-size: clamp(42px, 5vw, 72px);"
           >
             Let's build<br />
@@ -80,7 +80,7 @@
 
           <a
             href="mailto:katoemmy001@gmail.com"
-            class="flex items-center justify-center gap-2 w-full bg-[#E8541A] hover:bg-[#C94815] text-white font-[Syne] font-bold text-[14px] tracking-[0.02em] rounded-full py-3.5 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(232,84,26,0.3)] transition-all duration-200"
+            class="flex items-center justify-center gap-2 w-full bg-[#E8541A] hover:bg-[#C94815] text-white font-[ClashDisplay] font-bold text-[14px] tracking-[0.02em] rounded-full py-3.5 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(232,84,26,0.3)] transition-all duration-200"
           >
             Send Message
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

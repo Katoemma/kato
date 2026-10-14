@@ -30,7 +30,7 @@ const navLinks = [
       <nav class="flex items-center justify-between h-[68px]">
 
         <!-- Logo -->
-        <a href="#" class="font-[Syne] font-extrabold text-[20px] tracking-tight text-[#18181B] leading-none">
+        <a href="#" class="font-[ClashDisplay] font-extrabold text-[20px] tracking-tight text-[#18181B] leading-none">
           KE<span class="text-[#E8541A]">.</span>
         </a>
 
