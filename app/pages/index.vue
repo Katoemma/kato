@@ -13,6 +13,8 @@ useSeoMeta({
 useHead({
   meta: [
     { name: 'theme-color', content: '#E8541A' },
+    { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
+    { name: 'color-scheme', content: 'light' },
   ],
   link: [
     { rel: 'preconnect', href: 'https://api.fontshare.com' },
