@@ -139,7 +139,7 @@ onMounted(() => {
             class="flex items-center gap-8"
           >
             <div>
-              <span class="block font-[ClashDisplay] font-extrabold text-[22px] leading-none text-[#18181B]">{{ stat.value }}</span>
+              <span class="block font-['DM_Serif_Display'] text-[26px] leading-none text-[#18181B]">{{ stat.value }}</span>
               <span class="block text-[10px] font-medium text-[#6B6B65] mt-1 tracking-[0.04em] uppercase">{{ stat.label }}</span>
             </div>
             <div v-if="i < stats.length - 1" class="w-px h-7 bg-[#E2E2DC]" />
