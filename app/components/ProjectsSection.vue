@@ -1,109 +1,128 @@
-<script setup>
-const projects = [
-  {
-    title: 'Terrave',
-    description: 'Geospatial SaaS application for managing forest gardens in Africa.',
-    link: 'https://terrave.katoemma.website',
-    iframeUrl: 'https://terrave.katoemma.website',
-    tags: ['GIS', 'SaaS', 'Vue.js', 'PostGIS']
-  },
-  {
-    title: 'Qigo-HR',
-    description: 'A comprehensive Human Capital Management (HCM) system.',
-    link: 'https://hr.lipon.store',
-    iframeUrl: 'https://hr.lipon.store',
-    tags: ['HCM', 'Laravel', 'Vue.js', 'Operations']
-  },
-  {
-    title: 'Zoya Travels',
-    description: 'Travel agency landing page built with Nuxt.js and Tailwind CSS.',
-    link: 'https://zoyatravelsug.com',
-    iframeUrl: 'https://zoyatravelsug.com',
-    tags: ['Nuxt', 'TailwindCSS', 'Landing Page', 'Travel']
-  }
-]
-</script>
-
 <template>
-  <section id="projects" class="py-28 bg-[#0f1f17]">
-    <div class="max-w-7xl mx-auto px-6">
-      <!-- Section Header -->
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-16">
-        <div>
-          <p class="text-orange-500 font-medium uppercase tracking-wide text-sm mb-2">
-            Portfolio
-          </p>
-          <h2 class="text-4xl md:text-5xl font-bold text-white">
-            Selected Projects
-          </h2>
-        </div>
-        <p class="text-slate-400 max-w-md mt-4 md:mt-0">
-          A selection of systems I've designed and built for real-world operations.
-        </p>
+  <section id="work" class="bg-[#0C0C0A] py-24">
+    <div class="max-w-[1200px] mx-auto px-8">
+
+      <!-- Section label -->
+      <div class="flex items-center gap-4 mb-4">
+        <span class="font-[Syne] text-[11px] font-bold text-[#E8541A] tracking-[0.1em]">02</span>
+        <span class="w-12 h-px bg-[#2A2A24]" />
+        <span class="font-[Syne] text-[11px] font-bold text-[#8A8A80] tracking-[0.12em] uppercase">Work</span>
       </div>
 
-      <!-- Project Grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <article v-for="project in projects" :key="project.title"
-          class="group relative bg-[#162e22] rounded-2xl overflow-hidden border border-white/5 hover:border-orange-500/30 transition-all duration-300">
-          <!-- Iframe Preview -->
-          <div class="relative h-64 overflow-hidden bg-black/20">
-            <iframe :src="project.iframeUrl"
-              class="w-[100%] h-[100%] border-none pointer-events-none scale-[0.6] origin-top-left w-[166.6%] h-[166.6%]"
-              loading="lazy" title="Project Preview"></iframe>
-            <!-- Overlay and link -->
-            <a :href="project.link" target="_blank" class="absolute inset-0 bg-transparent z-10 cursor-pointer">
-              <div
-                class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span
-                  class="text-white bg-orange-500 px-4 py-2 rounded-full text-sm font-semibold transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                  Open Site
-                </span>
-              </div>
-            </a>
-          </div>
+      <p class="text-[14px] text-[#8A8A80] mb-10">Shipped products with real-world impact.</p>
 
-          <!-- Content -->
-          <div class="p-6">
-            <!-- Tags -->
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span v-for="tag in project.tags" :key="tag"
-                class="px-3 py-1 text-xs font-medium text-orange-400 bg-orange-500/10 rounded-full">
-                {{ tag }}
-              </span>
+      <!-- Bento grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <a
+          v-for="card in cards" :key="card.title"
+          :href="card.href"
+          :target="card.href !== '#' ? '_blank' : undefined"
+          rel="noopener"
+          class="group flex flex-col bg-[#141410] border border-[#2A2A24] rounded-[20px] p-7 no-underline transition-all duration-[250ms] hover:border-[rgba(232,84,26,0.4)] hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(232,84,26,0.1)]"
+          :class="card.wide ? 'lg:col-span-2' : ''"
+        >
+          <!-- Top row -->
+          <div class="flex items-start justify-between mb-5">
+            <div class="w-11 h-11 rounded-xl bg-[rgba(232,84,26,0.1)] flex items-center justify-center text-[#E8541A] transition-colors duration-[250ms] group-hover:bg-[#E8541A] group-hover:text-white">
+              <component :is="card.icon" class="w-5 h-5" />
             </div>
-
-            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-orange-400 transition-colors duration-200">
-              {{ project.title }}
-            </h3>
-
-            <p class="text-slate-400 text-sm leading-relaxed">
-              {{ project.description }}
-            </p>
-
-            <!-- View Link -->
-            <div
-              class="mt-6 flex items-center text-sm font-medium text-white group-hover:text-orange-400 transition-colors">
-              <span>View Project</span>
-              <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
-                viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            <div class="flex items-center gap-2">
+              <span
+                v-if="card.badge"
+                class="text-[11px] font-semibold px-2.5 py-1 rounded-full"
+                :class="card.badge === 'Building'
+                  ? 'bg-[rgba(251,191,36,0.12)] text-[#FBBF24]'
+                  : 'bg-[rgba(232,84,26,0.12)] text-[#E8541A]'"
+              >
+                {{ card.badge }}
+              </span>
+              <svg v-else class="w-4 h-4 text-[#3A3A34] group-hover:text-[#E8541A] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </div>
           </div>
-        </article>
-      </div>
 
-      <!-- View All CTA -->
-      <div class="mt-16 text-center">
-        <a href="#contact"
-          class="inline-flex items-center gap-2 px-8 py-4 border border-white/20 rounded-full text-white font-medium hover:bg-white/5 transition-all duration-200">
-          Discuss Your Project
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
+          <h3 class="font-[Syne] text-[18px] font-bold text-[#F5F0EB] mb-2.5">{{ card.title }}</h3>
+          <p class="text-[13px] leading-[1.7] text-[#8A8A80] flex-1 mb-5">{{ card.desc }}</p>
+
+          <div class="flex flex-wrap gap-1.5">
+            <span
+              v-for="tag in card.tags" :key="tag"
+              class="text-[11px] font-medium px-2.5 py-1 rounded-[6px] bg-[rgba(255,255,255,0.05)] text-[#8A8A80] border border-[#2A2A24]"
+            >
+              {{ tag }}
+            </span>
+          </div>
         </a>
+
       </div>
     </div>
   </section>
 </template>
+
+<script setup>
+import { defineComponent, h } from 'vue'
+
+const icon = (d) => defineComponent({
+  render: () => h('svg', { fill: 'none', stroke: 'currentColor', viewBox: '0 0 24 24' }, [
+    h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': '2', d }),
+  ])
+})
+
+const IconLeaf    = icon('M5 3s0 4 3 7 7 3 7 3-4 0-7 3-3 7-3 7 0-4-3-7-7-3-7-3 4 0 7-3 3-7 3-7z')
+const IconPackage = icon('M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4')
+const IconMap     = icon('M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7')
+const IconUsers   = icon('M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z')
+const IconSpark   = icon('M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z')
+const IconPlane   = icon('M12 19l9 2-9-18-9 18 9-2zm0 0v-8')
+
+const cards = [
+  {
+    icon: IconLeaf,
+    title: 'Kijani Forestry App',
+    desc: 'Cross-platform Flutter app for offline-first field data collection via Airtable API. Adopted by 450+ field staff across Uganda.',
+    tags: ['Flutter', 'Airtable', 'Offline-First'],
+    href: '#',
+    wide: true,
+  },
+  {
+    icon: IconPackage,
+    title: 'Airtable CRUD',
+    desc: 'Open-source Dart library on pub.dev simplifying Airtable API for Flutter devs.',
+    tags: ['Dart', 'Open Source', 'pub.dev'],
+    href: 'https://pub.dev/packages/airtable_crud',
+  },
+  {
+    icon: IconMap,
+    title: 'Terrave',
+    desc: 'Real-time spatial dashboard integrating PostGIS, Leaflet & Laravel for map-based analytics.',
+    tags: ['PostGIS', 'Leaflet', 'Laravel'],
+    href: 'https://terrave.lipon.store',
+  },
+  {
+    icon: IconUsers,
+    title: 'VireonHR',
+    desc: 'AI-powered HRMS with automated recruitment, payroll, attendance tracking, and performance reviews for modern teams.',
+    tags: ['Laravel', 'Vue', 'AI', 'Docker'],
+    href: 'https://lipon.store',
+    wide: true,
+  },
+  {
+    icon: IconSpark,
+    title: 'Publlsh',
+    desc: 'AI-powered social media management — scheduling, AI captions, and analytics.',
+    tags: ['Laravel', 'Vue', 'AI'],
+    href: 'https://publlsh.lipon.store',
+    badge: 'Building',
+  },
+  {
+    icon: IconPlane,
+    title: 'Zoya Travels',
+    desc: 'SEO-optimised travel agency landing page built with Nuxt.js and Tailwind CSS.',
+    tags: ['Nuxt', 'Tailwind', 'SEO'],
+    href: 'https://zoyatravelsug.com/',
+    badge: 'Client',
+  },
+]
+</script>
