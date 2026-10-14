@@ -4,9 +4,9 @@
 
       <!-- Section label -->
       <div class="flex items-center gap-4 mb-4">
-        <span class="font-[ClashDisplay] text-[11px] font-bold text-[#E8541A] tracking-[0.1em]">02</span>
+        <span class="font-[Satoshi] text-[11px] font-bold text-[#E8541A] tracking-[0.1em]">02</span>
         <span class="w-12 h-px bg-[#2A2A24]" />
-        <span class="font-[ClashDisplay] text-[11px] font-bold text-[#8A8A80] tracking-[0.12em] uppercase">Work</span>
+        <span class="font-[Satoshi] text-[11px] font-bold text-[#8A8A80] tracking-[0.12em] uppercase">Work</span>
       </div>
 
       <p class="text-[14px] text-[#8A8A80] mb-10">Shipped products with real-world impact.</p>
@@ -43,7 +43,7 @@
             </div>
           </div>
 
-          <h3 class="font-[ClashDisplay] text-[18px] font-bold text-[#F5F0EB] mb-2.5">{{ card.title }}</h3>
+          <h3 class="font-[Satoshi] text-[18px] font-bold text-[#F5F0EB] mb-2.5">{{ card.title }}</h3>
           <p class="text-[13px] leading-[1.7] text-[#8A8A80] flex-1 mb-5">{{ card.desc }}</p>
 
           <div class="flex flex-wrap gap-1.5">

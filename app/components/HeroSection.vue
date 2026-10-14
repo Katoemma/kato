@@ -98,7 +98,7 @@ onMounted(() => {
       >
         <a
           href="#work"
-          class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#18181B] text-white font-[ClashDisplay] font-bold text-[13px] tracking-[0.03em] hover:bg-[#E8541A] active:scale-[0.97] transition-all duration-200"
+          class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#18181B] text-white font-[Satoshi] font-semibold text-[13px] tracking-[0.01em] hover:bg-[#E8541A] active:scale-[0.97] transition-all duration-200"
         >
           View Projects
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -107,7 +107,7 @@ onMounted(() => {
         </a>
         <a
           href="#contact"
-          class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-[#E2E2DC] text-[#18181B] font-[ClashDisplay] font-bold text-[13px] tracking-[0.03em] hover:border-[#18181B] active:scale-[0.97] transition-all duration-200"
+          class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-[#E2E2DC] text-[#18181B] font-[Satoshi] font-semibold text-[13px] tracking-[0.01em] hover:border-[#18181B] active:scale-[0.97] transition-all duration-200"
         >
           Let's Talk
         </a>

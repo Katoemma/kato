@@ -3,9 +3,9 @@
 
     <!-- Section label -->
     <div class="flex items-center gap-4 mb-14">
-      <span class="font-[ClashDisplay] text-[11px] font-bold text-[#E8541A] tracking-[0.1em]">01</span>
+      <span class="font-[Satoshi] text-[11px] font-bold text-[#E8541A] tracking-[0.1em]">01</span>
       <span class="w-12 h-px bg-[#E2E2DC]" />
-      <span class="font-[ClashDisplay] text-[11px] font-bold text-[#6B6B65] tracking-[0.12em] uppercase">About</span>
+      <span class="font-[Satoshi] text-[11px] font-bold text-[#6B6B65] tracking-[0.12em] uppercase">About</span>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-20 items-start">
@@ -52,7 +52,7 @@
             <component :is="v.icon" class="w-4 h-4" />
           </div>
           <div>
-            <p class="font-[ClashDisplay] text-[14px] font-bold text-[#18181B] mb-1">{{ v.title }}</p>
+            <p class="font-[Satoshi] text-[14px] font-bold text-[#18181B] mb-1">{{ v.title }}</p>
             <p class="text-[13px] text-[#6B6B65] leading-[1.6]">{{ v.desc }}</p>
           </div>
         </div>
