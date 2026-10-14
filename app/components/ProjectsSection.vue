@@ -1,62 +1,97 @@
 <template>
-  <section id="work" class="bg-[#0C0C0A] py-24">
+  <section id="work" class="bg-[#FAFAF8] py-24">
     <div class="max-w-[1200px] mx-auto px-8">
 
-      <!-- Section label -->
-      <div class="flex items-center gap-4 mb-4">
-        <span class="font-[Satoshi] text-[11px] font-bold text-[#E8541A] tracking-[0.1em]">02</span>
-        <span class="w-12 h-px bg-[#2A2A24]" />
-        <span class="font-[Satoshi] text-[11px] font-bold text-[#8A8A80] tracking-[0.12em] uppercase">Work</span>
+      <!-- Section header -->
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-14">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="font-[Satoshi] text-[11px] font-bold text-[#E8541A] tracking-[0.1em]">02</span>
+            <span class="w-10 h-px bg-[#E2E2DC]" />
+            <span class="font-[Satoshi] text-[11px] font-bold text-[#6B6B65] tracking-[0.12em] uppercase">Work</span>
+          </div>
+          <h2 class="font-[ClashDisplay] font-bold text-[#18181B] leading-tight tracking-[-0.02em]"
+            style="font-size: clamp(32px, 4vw, 48px);">
+            Selected Projects
+          </h2>
+        </div>
+        <p class="text-[14px] text-[#6B6B65] max-w-xs leading-relaxed">
+          Shipped products with real-world impact.
+        </p>
       </div>
-
-      <p class="text-[14px] text-[#8A8A80] mb-10">Shipped products with real-world impact.</p>
 
       <!-- Bento grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-
         <a
           v-for="card in cards" :key="card.title"
           :href="card.href"
           :target="card.href !== '#' ? '_blank' : undefined"
           rel="noopener"
-          class="group flex flex-col bg-[#141410] border border-[#2A2A24] rounded-[20px] p-7 no-underline transition-all duration-[250ms] hover:border-[rgba(232,84,26,0.4)] hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(232,84,26,0.1)]"
+          class="group flex flex-col bg-white border border-[#E2E2DC] rounded-2xl p-7 no-underline transition-all duration-[250ms] hover:border-[#E8541A]/30 hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(0,0,0,0.08)]"
           :class="card.wide ? 'lg:col-span-2' : ''"
         >
           <!-- Top row -->
-          <div class="flex items-start justify-between mb-5">
-            <div class="w-11 h-11 rounded-xl bg-[rgba(232,84,26,0.1)] flex items-center justify-center text-[#E8541A] transition-colors duration-[250ms] group-hover:bg-[#E8541A] group-hover:text-white">
+          <div class="flex items-start justify-between mb-6">
+            <div
+              class="w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-[250ms] group-hover:bg-[#E8541A] group-hover:text-white"
+              :class="card.accent
+                ? 'bg-[#E8541A] text-white'
+                : 'bg-[#F4F4F2] text-[#6B6B65]'"
+            >
               <component :is="card.icon" class="w-5 h-5" />
             </div>
+
             <div class="flex items-center gap-2">
               <span
                 v-if="card.badge"
-                class="text-[11px] font-semibold px-2.5 py-1 rounded-full"
+                class="text-[11px] font-semibold px-3 py-1 rounded-full"
                 :class="card.badge === 'Building'
-                  ? 'bg-[rgba(251,191,36,0.12)] text-[#FBBF24]'
-                  : 'bg-[rgba(232,84,26,0.12)] text-[#E8541A]'"
+                  ? 'bg-amber-50 text-amber-600 border border-amber-200'
+                  : 'bg-[rgba(232,84,26,0.07)] text-[#E8541A] border border-[rgba(232,84,26,0.2)]'"
               >
                 {{ card.badge }}
               </span>
-              <svg v-else class="w-4 h-4 text-[#3A3A34] group-hover:text-[#E8541A] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
+              <div v-else class="w-7 h-7 rounded-lg bg-[#F4F4F2] flex items-center justify-center group-hover:bg-[#E8541A]/10 transition-colors duration-200">
+                <svg class="w-3.5 h-3.5 text-[#6B6B65] group-hover:text-[#E8541A] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </div>
             </div>
           </div>
 
-          <h3 class="font-[Satoshi] text-[18px] font-bold text-[#F5F0EB] mb-2.5">{{ card.title }}</h3>
-          <p class="text-[13px] leading-[1.7] text-[#8A8A80] flex-1 mb-5">{{ card.desc }}</p>
+          <!-- Title -->
+          <h3 class="font-[Satoshi] text-[17px] font-bold text-[#18181B] mb-2 group-hover:text-[#E8541A] transition-colors duration-200">
+            {{ card.title }}
+          </h3>
 
+          <!-- Desc -->
+          <p class="text-[13px] leading-[1.75] text-[#6B6B65] flex-1 mb-6">{{ card.desc }}</p>
+
+          <!-- Tags -->
           <div class="flex flex-wrap gap-1.5">
             <span
               v-for="tag in card.tags" :key="tag"
-              class="text-[11px] font-medium px-2.5 py-1 rounded-[6px] bg-[rgba(255,255,255,0.05)] text-[#8A8A80] border border-[#2A2A24]"
+              class="text-[11px] font-medium px-2.5 py-[5px] rounded-md bg-[#F4F4F2] text-[#6B6B65] border border-[#E2E2DC]"
             >
               {{ tag }}
             </span>
           </div>
         </a>
-
       </div>
+
+      <!-- Bottom CTA -->
+      <div class="mt-12 flex justify-center">
+        <a
+          href="#contact"
+          class="inline-flex items-center gap-2 text-[13px] font-semibold text-[#6B6B65] border border-[#E2E2DC] px-6 py-3 rounded-full hover:border-[#18181B] hover:text-[#18181B] transition-all duration-200"
+        >
+          Discuss your project
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+
     </div>
   </section>
 </template>
@@ -85,6 +120,7 @@ const cards = [
     tags: ['Flutter', 'Airtable', 'Offline-First'],
     href: '#',
     wide: true,
+    accent: true,
   },
   {
     icon: IconPackage,
@@ -107,6 +143,7 @@ const cards = [
     tags: ['Laravel', 'Vue', 'AI', 'Docker'],
     href: 'https://lipon.store',
     wide: true,
+    accent: true,
   },
   {
     icon: IconSpark,
