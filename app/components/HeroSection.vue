@@ -29,16 +29,10 @@ onMounted(() => {
 
     <!-- ── Top strip: role + location ── -->
     <div
-      class="relative z-10 max-w-[1200px] mx-auto w-full px-10 pt-14 flex items-center justify-between"
+      class="relative z-10 max-w-[1200px] mx-auto w-full px-10 pt-14 flex items-center justify-end"
       :class="mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-3'"
       style="transition: opacity 500ms cubic-bezier(0.23,1,0.32,1), transform 500ms cubic-bezier(0.23,1,0.32,1); transition-delay: 0ms;"
     >
-      <!-- Left: availability pill -->
-      <div class="inline-flex items-center gap-2 px-4 py-[7px] rounded-full text-[12px] font-medium text-[#E8541A] bg-[rgba(232,84,26,0.07)] border border-[rgba(232,84,26,0.2)]">
-        <span class="w-[7px] h-[7px] rounded-full bg-[#E8541A] animate-pulse" />
-        Available for work
-      </div>
-
       <!-- Right: location -->
       <div class="hidden sm:flex items-center gap-1.5 text-[12px] font-medium text-[#6B6B65]">
         <svg class="w-3.5 h-3.5 text-[#E8541A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
