@@ -2,17 +2,15 @@
 import { onMounted } from 'vue'
 import { Icon } from '@iconify/vue'
 
-// SEO Meta Tags
 useSeoMeta({
   title: 'Kato Emmanuel — Full-Stack & Geospatial Engineer',
-  description: 'Kato Emmanuel - Expert Full-Stack Software Engineer & Geospatial Developer based in Uganda. Specializing in Laravel, Vue.js, Flutter, PostGIS, and AI-powered applications. Building scalable web, mobile, and geospatial systems for real-world impact.',
+  description: 'Kato Emmanuel - Expert Full-Stack Software Engineer & Geospatial Developer based in Uganda. Specializing in Laravel, Vue.js, Flutter, PostGIS, and AI-powered applications.',
   ogTitle: 'Kato Emmanuel — Full-Stack & Geospatial Engineer',
   ogDescription: 'Full-Stack & Geospatial Engineer building web, mobile, and AI-powered applications with real-world impact.',
   ogImage: 'https://katoemma.website/og-image.png',
   ogUrl: 'https://katoemma.website',
   ogSiteName: 'Kato Emmanuel',
   twitterCard: 'summary_large_image',
-  twitterTitle: 'Kato Emmanuel — Full-Stack & Geospatial Engineer',
 })
 
 useHead({
@@ -23,1125 +21,1218 @@ useHead({
   ]
 })
 
-// Custom cursor logic
 onMounted(() => {
   const cursor = document.getElementById('cursor')
   const ring = document.getElementById('cursorRing')
 
-  const moveCursor = (e: MouseEvent) => {
+  document.addEventListener('mousemove', (e: MouseEvent) => {
     if (cursor && ring) {
       cursor.style.left = e.clientX + 'px'
       cursor.style.top = e.clientY + 'px'
       ring.style.left = e.clientX + 'px'
       ring.style.top = e.clientY + 'px'
     }
-  }
+  })
 
-  document.addEventListener('mousemove', moveCursor)
-
-  // Hover effects
-  const hoverElements = document.querySelectorAll('a, button, .card')
-  hoverElements.forEach(el => {
+  document.querySelectorAll('a, button').forEach(el => {
     el.addEventListener('mouseenter', () => {
-      if (cursor) {
-        cursor.style.width = '6px'
-        cursor.style.height = '6px'
-      }
-      if (ring) {
-        ring.style.width = '50px'
-        ring.style.height = '50px'
-      }
+      if (ring) { ring.style.width = '52px'; ring.style.height = '52px'; ring.style.borderColor = 'rgba(232,84,26,0.6)' }
     })
     el.addEventListener('mouseleave', () => {
-      if (cursor) {
-        cursor.style.width = '12px'
-        cursor.style.height = '12px'
-      }
-      if (ring) {
-        ring.style.width = '36px'
-        ring.style.height = '36px'
-      }
+      if (ring) { ring.style.width = '36px'; ring.style.height = '36px'; ring.style.borderColor = 'rgba(232,84,26,0.3)' }
     })
   })
 
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal')
+  // Reveal on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
-        ; (entry.target as HTMLElement).style.transitionDelay = (i % 3) * 0.1 + 's'
+        ;(entry.target as HTMLElement).style.transitionDelay = (i % 4) * 0.08 + 's'
         entry.target.classList.add('visible')
       }
     })
-  }, { threshold: 0.1 })
-  reveals.forEach(el => observer.observe(el))
-
-  // Skill bars
-  const barObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
-          bar.classList.add('animate')
-        })
-      }
-    })
-  }, { threshold: 0.3 })
-  document.querySelectorAll('.card').forEach(card => barObserver.observe(card))
-
-  // Counter animation
-  const animateCounter = (el: HTMLElement, target: number, duration = 1800) => {
-    let start: number | null = null
-    const step = (timestamp: number) => {
-      if (!start) start = timestamp
-      const progress = Math.min((timestamp - start) / duration, 1)
-      el.textContent = Math.floor(progress * target).toString()
-      if (progress < 1) requestAnimationFrame(step)
-      else {
-        const suffix = target === 75 ? '%' : target === 450 ? '+' : '+'
-        el.textContent = target + suffix
-      }
-    }
-    requestAnimationFrame(step)
-  }
-
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const target = parseInt((entry.target as HTMLElement).dataset.target || '0')
-        animateCounter(entry.target as HTMLElement, target)
-        counterObserver.unobserve(entry.target)
-      }
-    })
-  }, { threshold: 0.5 })
-  document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el))
+  }, { threshold: 0.08 })
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el))
 })
 </script>
 
 <template>
   <div class="site-wrapper">
-    <!-- Custom cursor -->
     <div class="cursor" id="cursor"></div>
     <div class="cursor-ring" id="cursorRing"></div>
 
-    <!-- =========== NAV =========== -->
-    <nav class="py-4 px-6 md:px-12">
-      <div class="max-w-6xl mx-auto flex items-center justify-between">
-        <a href="#" class="syne font-bold text-xl tracking-tight brand-text">
-          KE<span class="text-dim">.</span>
-        </a>
-        <div class="hidden md:flex items-center gap-8">
-          <a href="#about" class="nav-link">About</a>
-          <a href="#skills" class="nav-link">Skills</a>
-          <a href="#projects" class="nav-link">Projects</a>
-          <a href="#geo" class="nav-link">Geospatial</a>
-          <a href="#contact" class="nav-link">Contact</a>
+    <!-- ======== NAV ======== -->
+    <nav>
+      <div class="nav-inner">
+        <a href="#" class="logo">KE<span class="logo-dot">.</span></a>
+        <div class="nav-links">
+          <a href="#about" class="nl">About</a>
+          <a href="#work" class="nl">Work</a>
+          <a href="#geo" class="nl">Geospatial</a>
+          <a href="#contact" class="nl">Contact</a>
         </div>
-        <a href="/Kato_Emmanuel_CV.pdf" download class="btn-primary text-xs py-2 px-5">
-          Download CV
-          <Icon icon="lucide:download" class="w-4 h-4" />
+        <a href="/Kato_Emmanuel_CV.pdf" download class="nav-cv">
+          Download CV <Icon icon="lucide:arrow-down-to-line" class="w-3.5 h-3.5" />
         </a>
       </div>
     </nav>
 
-    <!-- =========== HERO =========== -->
-    <section class="relative min-h-screen flex items-center overflow-hidden pt-20">
+    <!-- ======== HERO ======== -->
+    <section class="hero">
+      <div class="hero-container">
 
-      <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-12 w-full py-20">
-        <div class="flex flex-col lg:flex-row items-center gap-16">
-
-          <!-- Left: Text -->
-          <div class="flex-1 max-w-2xl">
-            <!-- Label -->
-            <div class="flex items-center gap-3 mb-8">
-              <span class="availability-tag">
-                <span class="pulsing-dot"></span>
-                Available for work
-              </span>
-            </div>
-
-            <!-- Headline -->
-            <h1 class="syne text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.08] mb-6 tracking-tight">
-              <span class="hero-word" style="animation-delay:0.1s;">Full-Stack</span><br />
-              <span class="hero-word brand-text" style="animation-delay:0.2s;">& Geospatial</span><br />
-              <span class="hero-word underline-accent" style="animation-delay:0.3s;">
-                Engineer
-              </span>
-            </h1>
-
-            <p class="text-base md:text-lg leading-relaxed mb-10 max-w-lg text-muted inter">
-              I'm <strong class="text-dark font-semibold">Kato Emmanuel</strong> — a Full-Stack Software Engineer with 3+
-              years building scalable web, mobile, and AI-powered applications.
-            </p>
-
-            <!-- CTA Buttons -->
-            <div class="flex flex-wrap items-center gap-4 mb-12">
-              <a href="#projects" class="btn-primary">
-                View Projects
-                <Icon icon="lucide:arrow-right" class="w-4 h-4" />
-              </a>
-              <a href="#contact" class="text-sm font-medium brand-text hover-link flex items-center gap-1.5">
-                Let's Talk
-                <Icon icon="lucide:arrow-up-right" class="w-4 h-4" />
-              </a>
-            </div>
-
-            <!-- Stats -->
-            <div class="flex gap-10">
-              <div>
-                <p class="syne text-3xl font-bold brand-text">75%</p>
-                <p class="inter text-xs text-muted mt-1 font-medium">Reporting Time Saved</p>
-              </div>
-              <div class="stat-divider"></div>
-              <div>
-                <p class="syne text-3xl font-bold brand-text">450+</p>
-                <p class="inter text-xs text-muted mt-1 font-medium">Field Users Reached</p>
-              </div>
-              <div class="stat-divider"></div>
-              <div>
-                <p class="syne text-3xl font-bold brand-text">3+</p>
-                <p class="inter text-xs text-muted mt-1 font-medium">Years Experience</p>
-              </div>
-            </div>
+        <!-- Left: all text content -->
+        <div class="hero-left">
+          <!-- Availability badge -->
+          <div class="avail-tag reveal">
+            <span class="avail-dot"></span>
+            Available for work
           </div>
 
-          <!-- Right: Profile Photo -->
-          <div class="flex-shrink-0 relative">
-            <!-- Main photo container -->
-            <div class="relative w-72 h-[26rem] rounded-3xl overflow-hidden shadow-xl border border-zinc-200">
-              <!-- Profile photo -->
-              <img
-                src="/Images/profile.png"
-                alt="Kato Emmanuel"
-                class="w-full h-full object-cover"
-              />
+          <!-- Name -->
+          <h1 class="hero-name reveal">
+            Kato<br />
+            <span class="hero-name-accent">Emmanuel</span>
+          </h1>
 
-              <!-- Name overlay at bottom -->
-              <div class="name-overlay absolute bottom-0 left-0 right-0 p-5">
-                <p class="syne font-bold text-lg text-dark">Kato Emmanuel</p>
-                <p class="inter text-sm text-muted">Full-Stack & Geospatial Engineer</p>
-              </div>
+          <!-- Role -->
+          <p class="hero-role reveal">Full-Stack & Geospatial Engineer</p>
+
+          <!-- Bio -->
+          <p class="hero-bio reveal">
+            Building scalable web, mobile & AI-powered systems —
+            from Kampala to the cloud. 3+ years, real-world impact.
+          </p>
+
+          <!-- CTAs -->
+          <div class="hero-cta reveal">
+            <a href="#work" class="btn-primary">
+              View Projects <Icon icon="lucide:arrow-right" class="w-4 h-4" />
+            </a>
+            <a href="#contact" class="btn-ghost">
+              Let's Talk <Icon icon="lucide:arrow-up-right" class="w-4 h-4" />
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div class="hero-stats reveal">
+            <div class="stat-item">
+              <p class="stat-num">75%</p>
+              <p class="stat-label">Reporting Time Saved</p>
             </div>
+            <div class="stat-rule"></div>
+            <div class="stat-item">
+              <p class="stat-num">450+</p>
+              <p class="stat-label">Field Users Reached</p>
+            </div>
+            <div class="stat-rule"></div>
+            <div class="stat-item">
+              <p class="stat-num">3+</p>
+              <p class="stat-label">Years Experience</p>
+            </div>
+          </div>
+        </div>
 
+        <!-- Right: photo card -->
+        <div class="hero-right reveal">
+          <div class="hero-photo-card">
+            <img src="/Images/profile.png" alt="Kato Emmanuel" class="hero-photo" />
             <!-- Floating badges -->
-            <div class="float-badge absolute top-1/4 -right-5 bg-white rounded-2xl px-4 py-2.5 shadow-md border border-zinc-100 flex items-center gap-2.5">
-              <div class="w-8 h-8 rounded-xl badge-icon flex items-center justify-center">
-                <Icon icon="lucide:map-pin" class="w-4 h-4 text-white" />
-              </div>
-              <span class="inter text-xs font-semibold text-dark">GIS Expert</span>
+            <div class="hero-badge hero-badge-top">
+              <div class="hero-badge-icon"><Icon icon="lucide:map-pin" class="w-3.5 h-3.5" /></div>
+              <span>GIS Expert</span>
             </div>
-
-            <div class="float-badge absolute bottom-28 -left-7 bg-white rounded-2xl px-4 py-2.5 shadow-md border border-zinc-100 flex items-center gap-2.5">
-              <div class="w-8 h-8 rounded-xl badge-icon flex items-center justify-center">
-                <Icon icon="lucide:bot" class="w-4 h-4 text-white" />
-              </div>
-              <span class="inter text-xs font-semibold text-dark">AI Developer</span>
+            <div class="hero-badge hero-badge-bottom">
+              <div class="hero-badge-icon"><Icon icon="lucide:bot" class="w-3.5 h-3.5" /></div>
+              <span>AI Developer</span>
             </div>
-
-            <!-- Tech stack icons at bottom -->
-            <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-2xl px-4 py-2.5 shadow-md border border-zinc-100 flex items-center gap-2">
-              <div class="w-7 h-7 rounded-lg bg-zinc-50 flex items-center justify-center">
-                <Icon icon="logos:laravel" class="w-4 h-4" />
-              </div>
-              <div class="w-7 h-7 rounded-lg bg-zinc-50 flex items-center justify-center">
-                <Icon icon="logos:vue" class="w-4 h-4" />
-              </div>
-              <div class="w-7 h-7 rounded-lg bg-zinc-50 flex items-center justify-center">
-                <Icon icon="logos:flutter" class="w-4 h-4" />
-              </div>
-              <div class="w-7 h-7 rounded-lg bg-zinc-50 flex items-center justify-center">
-                <Icon icon="logos:postgresql" class="w-4 h-4" />
-              </div>
+            <!-- Tech row -->
+            <div class="hero-tech-row">
+              <div class="tech-chip"><Icon icon="logos:laravel" class="w-4 h-4" /></div>
+              <div class="tech-chip"><Icon icon="logos:vue" class="w-4 h-4" /></div>
+              <div class="tech-chip"><Icon icon="logos:flutter" class="w-4 h-4" /></div>
+              <div class="tech-chip"><Icon icon="logos:postgresql" class="w-4 h-4" /></div>
             </div>
           </div>
-
+          <!-- Location tag below photo -->
+          <div class="hero-location">
+            <Icon icon="lucide:map-pin" class="w-3.5 h-3.5" />
+            Kampala, Uganda
+          </div>
         </div>
+
       </div>
     </section>
 
-    <!-- =========== ABOUT =========== -->
-    <section id="about" class="py-24 px-6 md:px-12 section-alt">
-      <div class="max-w-6xl mx-auto">
-        <div class="flex flex-col lg:flex-row gap-16 items-start">
-
-          <!-- Left -->
-          <div class="flex-1 reveal">
-            <p class="inter text-xs font-semibold brand-text uppercase tracking-widest mb-3">About Me</p>
-            <h2 class="syne text-4xl font-bold mb-6 text-dark">Turning complex<br />problems into elegant code.</h2>
-            <p class="inter text-base leading-relaxed mb-5 text-muted">
-              I'm an innovative Full-Stack Software Developer with expertise spanning web, mobile, and AI-powered
-              applications. From backend architectures in <strong class="text-dark font-semibold">Laravel</strong> to fluid frontends
-              with <strong class="text-dark font-semibold">Vue.js / Nuxt.js</strong> and cross-platform apps in <strong
-                class="text-dark font-semibold">Flutter</strong> — I ship end-to-end.
-            </p>
-            <p class="inter text-base leading-relaxed mb-5 text-muted">
-              Beyond traditional development, I design and build <strong class="brand-text font-semibold">geospatial systems</strong>
-              — leveraging spatial databases, mapping libraries, and field data pipelines to help organizations
-              understand and act on geographic information in real time.
-            </p>
-            <p class="inter text-base leading-relaxed text-muted">
-              I thrive in challenging environments — from low-connectivity field deployments across Uganda to
-              AI-augmented workflows — always with a focus on clean architecture, open-source, and technology that
-              solves real problems.
-            </p>
-
-            <div class="flex flex-wrap gap-2.5 mt-8">
-              <span class="tag">Clean Architecture</span>
-              <span class="tag">Open Source</span>
-              <span class="tag">Agile / Sprints</span>
-              <span class="tag">Offline-First Apps</span>
-              <span class="tag">LLM Integration</span>
-            </div>
-          </div>
-
-          <!-- Right: Values grid -->
-          <div class="flex-1 grid grid-cols-2 gap-4 reveal">
-            <div class="card p-5 col-span-2">
-              <div class="icon-wrap mb-3">
-                <Icon icon="lucide:globe" class="w-5 h-5 brand-text" />
-              </div>
-              <p class="syne font-bold text-base mb-1 text-dark">Geospatial & Field-First</p>
-              <p class="inter text-sm text-muted">Building systems that work where data is sparse — in the field, offline, and
-                under pressure.</p>
-            </div>
-            <div class="card p-5">
-              <div class="icon-wrap mb-3">
-                <Icon icon="lucide:bot" class="w-5 h-5 brand-text" />
-              </div>
-              <p class="syne font-bold text-sm mb-1 text-dark">AI-Augmented</p>
-              <p class="inter text-xs text-muted">Integrating LLM APIs (OpenAI, Anthropic) to automate workflows.</p>
-            </div>
-            <div class="card p-5">
-              <div class="icon-wrap mb-3">
-                <Icon icon="lucide:package" class="w-5 h-5 brand-text" />
-              </div>
-              <p class="syne font-bold text-sm mb-1 text-dark">Open Source</p>
-              <p class="inter text-xs text-muted">Published Dart libraries to the pub.dev community.</p>
-            </div>
-            <div class="card p-5">
-              <div class="icon-wrap mb-3">
-                <Icon icon="lucide:graduation-cap" class="w-5 h-5 brand-text" />
-              </div>
-              <p class="syne font-bold text-sm mb-1 text-dark">Mentor</p>
-              <p class="inter text-xs text-muted">Mentored 100+ students to national app competition finals.</p>
-            </div>
-            <div class="card p-5">
-              <div class="icon-wrap mb-3">
-                <Icon icon="lucide:zap" class="w-5 h-5 brand-text" />
-              </div>
-              <p class="syne font-bold text-sm mb-1 text-dark">Performance</p>
-              <p class="inter text-xs text-muted">35–75% efficiency gains in real deployments.</p>
-            </div>
-          </div>
-
-        </div>
+    <!-- ======== MARQUEE ======== -->
+    <div class="marquee-wrap">
+      <div class="marquee-track">
+        <span>Laravel</span><span class="sep">·</span>
+        <span>Vue.js</span><span class="sep">·</span>
+        <span>Flutter</span><span class="sep">·</span>
+        <span>PostGIS</span><span class="sep">·</span>
+        <span>Mapbox</span><span class="sep">·</span>
+        <span>Node.js</span><span class="sep">·</span>
+        <span>Nuxt.js</span><span class="sep">·</span>
+        <span>PostgreSQL</span><span class="sep">·</span>
+        <span>OpenAI</span><span class="sep">·</span>
+        <span>Docker</span><span class="sep">·</span>
+        <span>QGIS</span><span class="sep">·</span>
+        <span>Leaflet</span><span class="sep">·</span>
+        <span>Dart</span><span class="sep">·</span>
+        <span>PHP</span><span class="sep">·</span>
+        <!-- duplicate for seamless loop -->
+        <span>Laravel</span><span class="sep">·</span>
+        <span>Vue.js</span><span class="sep">·</span>
+        <span>Flutter</span><span class="sep">·</span>
+        <span>PostGIS</span><span class="sep">·</span>
+        <span>Mapbox</span><span class="sep">·</span>
+        <span>Node.js</span><span class="sep">·</span>
+        <span>Nuxt.js</span><span class="sep">·</span>
+        <span>PostgreSQL</span><span class="sep">·</span>
+        <span>OpenAI</span><span class="sep">·</span>
+        <span>Docker</span><span class="sep">·</span>
+        <span>QGIS</span><span class="sep">·</span>
+        <span>Leaflet</span><span class="sep">·</span>
+        <span>Dart</span><span class="sep">·</span>
+        <span>PHP</span><span class="sep">·</span>
       </div>
-    </section>
+    </div>
 
-    <!-- =========== SKILLS =========== -->
-    <section id="skills" class="py-24 px-6 md:px-12">
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-16 reveal">
-          <p class="inter text-xs font-semibold brand-text uppercase tracking-widest mb-3">Tech Stack</p>
-          <h2 class="syne text-3xl font-bold mb-4 text-dark">Tools of the Trade</h2>
-          <p class="inter text-sm text-muted max-w-md mx-auto">Core technologies I use to build scalable applications and
-            geospatial systems.</p>
+    <!-- ======== ABOUT ======== -->
+    <section id="about" class="section">
+      <div class="section-label reveal">
+        <span class="sec-num">01</span>
+        <span class="sec-rule"></span>
+        <span class="sec-title">About</span>
+      </div>
+
+      <div class="about-grid">
+        <!-- Left: text -->
+        <div class="about-text">
+          <h2 class="about-headline reveal">
+            I build systems that work — on the web, in the field, everywhere in between.
+          </h2>
+          <p class="about-body reveal">
+            I'm an innovative Full-Stack Software Developer with expertise spanning web, mobile, and AI-powered
+            applications. From backend architectures in <strong>Laravel</strong> to fluid frontends
+            with <strong>Vue.js / Nuxt.js</strong> and cross-platform apps in <strong>Flutter</strong> — I ship end-to-end.
+          </p>
+          <p class="about-body reveal">
+            Beyond traditional development, I design geospatial systems — leveraging spatial databases, mapping libraries,
+            and field data pipelines to help organisations act on geographic information in real time.
+          </p>
+          <div class="tags-row reveal">
+            <span class="tag">Clean Architecture</span>
+            <span class="tag">Open Source</span>
+            <span class="tag">Agile / Sprints</span>
+            <span class="tag">Offline-First</span>
+            <span class="tag">LLM Integration</span>
+          </div>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
-
-          <!-- Backend -->
-          <div class="card p-5 text-center group">
-            <p class="syne font-semibold text-sm mb-3 text-dark">Backend</p>
-            <div class="flex justify-center gap-2 mb-3">
-              <Icon icon="logos:laravel" class="w-6 h-6" />
-              <Icon icon="logos:php" class="w-6 h-6" />
-              <Icon icon="logos:nodejs-icon" class="w-6 h-6" />
-            </div>
-            <p class="inter text-xs text-muted">Laravel · PHP · Node.js</p>
-          </div>
-
-          <!-- Frontend -->
-          <div class="card p-5 text-center group">
-            <p class="syne font-semibold text-sm mb-3 text-dark">Frontend</p>
-            <div class="flex justify-center gap-2 mb-3">
-              <Icon icon="logos:vue" class="w-6 h-6" />
-              <Icon icon="logos:nuxt-icon" class="w-6 h-6" />
-              <Icon icon="logos:tailwindcss-icon" class="w-6 h-6" />
-            </div>
-            <p class="inter text-xs text-muted">Vue.js · Nuxt · Tailwind</p>
-          </div>
-
-          <!-- Mobile -->
-          <div class="card p-5 text-center group">
-            <p class="syne font-semibold text-sm mb-3 text-dark">Mobile</p>
-            <div class="flex justify-center gap-2 mb-3">
-              <Icon icon="logos:flutter" class="w-6 h-6" />
-              <Icon icon="logos:dart" class="w-6 h-6" />
-            </div>
-            <p class="inter text-xs text-muted">Flutter · Dart · Offline-First</p>
-          </div>
-
-          <!-- Data & Maps -->
-          <div class="card p-5 text-center group">
-            <p class="syne font-semibold text-sm mb-3 text-dark">Data & Maps</p>
-            <div class="flex justify-center gap-2 mb-3">
-              <Icon icon="logos:postgresql" class="w-6 h-6" />
-              <Icon icon="simple-icons:qgis" class="w-6 h-6 brand-text" />
-              <Icon icon="simple-icons:mapbox" class="w-6 h-6" />
-            </div>
-            <p class="inter text-xs text-muted">PostgreSQL · PostGIS · Mapbox · QGIS</p>
-          </div>
-
-        </div>
-
-        <!-- AI Integration -->
-        <div class="mt-4 reveal">
-          <div class="card p-5 flex items-center gap-4">
-            <div class="icon-wrap flex-shrink-0">
-              <Icon icon="lucide:brain-circuit" class="w-5 h-5 brand-text" />
-            </div>
+        <!-- Right: values list -->
+        <div class="about-values">
+          <div class="value-item reveal">
+            <div class="value-icon"><Icon icon="lucide:globe" class="w-4 h-4" /></div>
             <div>
-              <p class="syne font-semibold text-sm text-dark">AI Integration</p>
-              <p class="inter text-xs text-muted">OpenAI · Anthropic APIs · Prompt Engineering for automated workflows</p>
+              <p class="value-title">Geospatial & Field-First</p>
+              <p class="value-desc">Systems that work where data is sparse — in the field, offline, under pressure.</p>
             </div>
           </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =========== PROJECTS =========== -->
-    <section id="projects" class="py-24 px-6 md:px-12 section-alt">
-      <div class="max-w-6xl mx-auto">
-        <div class="mb-14 reveal">
-          <p class="inter text-xs font-semibold brand-text uppercase tracking-widest mb-3">Work</p>
-          <h2 class="syne text-4xl font-bold mb-3 text-dark">Notable Projects</h2>
-          <p class="inter text-sm text-muted">Shipped products with real-world impact.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-
-          <!-- Project 1: Kijani -->
-          <a href="#" class="project-card group block reveal" style="animation-delay: 0.1s;">
-            <div class="flex items-start justify-between mb-5">
-              <div class="project-icon group-hover:brand-bg transition-all duration-300">
-                <Icon icon="lucide:leaf" class="w-5 h-5 brand-text group-hover:text-white transition-colors" />
-              </div>
-              <Icon icon="lucide:arrow-up-right" class="w-4 h-4 text-zinc-300 group-hover:brand-text group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-            </div>
-            <h3 class="syne font-bold text-lg mb-2 text-dark group-hover:brand-text transition-colors">Kijani Forestry App</h3>
-            <p class="inter text-sm leading-relaxed mb-5 text-muted line-clamp-3">
-              Cross-platform Flutter application with Airtable API integration for offline-first field data collection.
-              Adopted by 450+ field staff across Uganda.
-            </p>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="tech-tag">Flutter</span>
-              <span class="tech-tag">Airtable</span>
-              <span class="tech-tag">Offline-First</span>
-            </div>
-          </a>
-
-          <!-- Project 2: Airtable CRUD -->
-          <a href="https://pub.dev/packages/airtable_crud" target="_blank" rel="noopener" class="project-card group block reveal" style="animation-delay: 0.2s;">
-            <div class="flex items-start justify-between mb-5">
-              <div class="project-icon group-hover:brand-bg transition-all duration-300">
-                <Icon icon="lucide:package" class="w-5 h-5 brand-text group-hover:text-white transition-colors" />
-              </div>
-              <Icon icon="lucide:external-link" class="w-4 h-4 text-zinc-300 group-hover:brand-text transition-all" />
-            </div>
-            <h3 class="syne font-bold text-lg mb-2 text-dark group-hover:brand-text transition-colors">Airtable CRUD</h3>
-            <p class="inter text-sm leading-relaxed mb-5 text-muted line-clamp-3">
-              Open-source Dart library published to pub.dev. Simplifies Airtable API integration for Flutter developers,
-              reducing boilerplate and accelerating development.
-            </p>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="tech-tag">Dart</span>
-              <span class="tech-tag">Open Source</span>
-              <span class="tech-tag">pub.dev</span>
-            </div>
-          </a>
-
-          <!-- Project 3: Terrave -->
-          <a href="https://terrave.lipon.store" target="_blank" rel="noopener" class="project-card group block reveal" style="animation-delay: 0.3s;">
-            <div class="flex items-start justify-between mb-5">
-              <div class="project-icon group-hover:brand-bg transition-all duration-300">
-                <Icon icon="lucide:map" class="w-5 h-5 brand-text group-hover:text-white transition-colors" />
-              </div>
-              <Icon icon="lucide:external-link" class="w-4 h-4 text-zinc-300 group-hover:brand-text transition-all" />
-            </div>
-            <h3 class="syne font-bold text-lg mb-2 text-dark group-hover:brand-text transition-colors">Terrave</h3>
-            <p class="inter text-sm leading-relaxed mb-5 text-muted line-clamp-3">
-              Real-time spatial dashboard for visualising field data from across Uganda. Integrates PostGIS, Leaflet,
-              and Laravel for map-based analytics.
-            </p>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="tech-tag">PostGIS</span>
-              <span class="tech-tag">Leaflet</span>
-              <span class="tech-tag">Laravel</span>
-            </div>
-          </a>
-
-          <!-- Project 4: VireonHR -->
-          <a href="https://lipon.store" target="_blank" rel="noopener" class="project-card group block reveal" style="animation-delay: 0.1s;">
-            <div class="flex items-start justify-between mb-5">
-              <div class="project-icon group-hover:brand-bg transition-all duration-300">
-                <Icon icon="lucide:users" class="w-5 h-5 brand-text group-hover:text-white transition-colors" />
-              </div>
-              <Icon icon="lucide:external-link" class="w-4 h-4 text-zinc-300 group-hover:brand-text transition-all" />
-            </div>
-            <h3 class="syne font-bold text-lg mb-2 text-dark group-hover:brand-text transition-colors">VireonHR</h3>
-            <p class="inter text-sm leading-relaxed mb-5 text-muted line-clamp-3">
-              HRMS system with AI-powered recruitment and automated reports. Features employee management, payroll,
-              attendance tracking, and performance reviews.
-            </p>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="tech-tag">Laravel</span>
-              <span class="tech-tag">Vue</span>
-              <span class="tech-tag">AI</span>
-              <span class="tech-tag">Docker</span>
-            </div>
-          </a>
-
-          <!-- Project 5: Publlsh -->
-          <a href="https://publlsh.lipon.store" target="_blank" rel="noopener" class="project-card group block reveal opacity-80" style="animation-delay: 0.2s;">
-            <div class="flex items-start justify-between mb-5">
-              <div class="project-icon">
-                <Icon icon="lucide:sparkles" class="w-5 h-5 brand-text" />
-              </div>
-              <span class="building-badge">Building</span>
-            </div>
-            <h3 class="syne font-bold text-lg mb-2 text-dark">Publlsh</h3>
-            <p class="inter text-sm leading-relaxed mb-5 text-muted line-clamp-3">
-              AI-powered social media management platform in development. Automates content scheduling, generates
-              AI-assisted captions, and provides analytics.
-            </p>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="tech-tag">Laravel</span>
-              <span class="tech-tag">Vue</span>
-              <span class="tech-tag">AI</span>
-            </div>
-          </a>
-
-          <!-- Project 6: Zoya Travels -->
-          <a href="https://zoyatravelsug.com/" target="_blank" rel="noopener" class="project-card group block reveal" style="animation-delay: 0.3s;">
-            <div class="flex items-start justify-between mb-5">
-              <div class="project-icon group-hover:brand-bg transition-all duration-300">
-                <Icon icon="lucide:plane" class="w-5 h-5 brand-text group-hover:text-white transition-colors" />
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="client-badge">Client</span>
-                <Icon icon="lucide:external-link" class="w-4 h-4 text-zinc-300 group-hover:brand-text transition-all" />
-              </div>
-            </div>
-            <h3 class="syne font-bold text-lg mb-2 text-dark group-hover:brand-text transition-colors">Zoya Travels</h3>
-            <p class="inter text-sm leading-relaxed mb-5 text-muted line-clamp-3">
-              Travel agency landing page built with Nuxt.js and Tailwind CSS. Fast, responsive, and SEO-optimized
-              for showcasing travel packages and destinations.
-            </p>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="tech-tag">Nuxt</span>
-              <span class="tech-tag">Tailwind</span>
-              <span class="tech-tag">Landing Page</span>
-            </div>
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- =========== GEOSPATIAL =========== -->
-    <section id="geo" class="py-24 px-6 md:px-12">
-      <div class="max-w-6xl mx-auto">
-        <div class="flex flex-col lg:flex-row gap-16 items-center">
-
-          <!-- Map SVG visual -->
-          <div class="flex-1 reveal">
-            <svg viewBox="0 0 420 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-lg">
-              <!-- Grid -->
-              <defs>
-                <pattern id="geo-grid" width="30" height="30" patternUnits="userSpaceOnUse">
-                  <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(212,101,26,0.08)" stroke-width="0.5" />
-                </pattern>
-              </defs>
-              <rect width="420" height="300" fill="url(#geo-grid)" />
-
-              <!-- Uganda outline (simplified) -->
-              <path
-                d="M160 40 L200 35 L240 50 L260 80 L270 120 L260 160 L250 190 L220 210 L200 220 L170 210 L150 185 L140 160 L135 130 L140 100 L150 70 Z"
-                fill="rgba(212,101,26,0.06)" stroke="rgba(212,101,26,0.35)" stroke-width="1.5" stroke-linejoin="round" />
-
-              <!-- Kampala dot -->
-              <circle cx="195" cy="175" r="4" fill="#D4651A" class="map-dot" style="animation-delay: 0.7s;" />
-              <circle cx="195" cy="175" r="12" fill="rgba(212,101,26,0.12)" class="map-dot"
-                style="animation-delay: 0.7s;" />
-              <text x="207" y="179" fill="#9ca3af" font-size="9" font-family="'Inter', sans-serif">Kampala</text>
-
-              <!-- Field lines -->
-              <line x1="200" y1="90" x2="195" y2="175" stroke="rgba(212,101,26,0.2)" stroke-width="1"
-                stroke-dasharray="4,3" />
-
-              <!-- Data points scattered -->
-              <circle cx="150" cy="110" r="3" fill="rgba(212,101,26,0.5)" />
-              <circle cx="230" cy="105" r="3" fill="rgba(212,101,26,0.5)" />
-              <circle cx="170" cy="140" r="3" fill="rgba(212,101,26,0.5)" />
-              <circle cx="220" cy="145" r="3" fill="rgba(212,101,26,0.5)" />
-              <circle cx="165" cy="165" r="3" fill="rgba(212,101,26,0.5)" />
-              <circle cx="240" cy="125" r="3" fill="rgba(212,101,26,0.3)" />
-
-              <!-- Legend -->
-              <circle cx="30" cy="260" r="4" fill="#D4651A" />
-              <text x="40" y="264" fill="#71717a" font-size="9" font-family="'Inter', sans-serif">Base Location</text>
-              <circle cx="120" cy="260" r="3" fill="rgba(212,101,26,0.5)" />
-              <text x="130" y="264" fill="#71717a" font-size="9" font-family="'Inter', sans-serif">Field Data Points</text>
-
-              <!-- Compass rose -->
-              <g transform="translate(375, 40)">
-                <circle cx="0" cy="0" r="18" fill="rgba(212,101,26,0.05)" stroke="rgba(212,101,26,0.2)"
-                  stroke-width="0.5" />
-                <text x="0" y="-7" fill="#D4651A" font-size="8" text-anchor="middle" font-family="'Syne', sans-serif"
-                  font-weight="700">N</text>
-                <line x1="0" y1="-4" x2="0" y2="4" stroke="rgba(212,101,26,0.5)" stroke-width="0.5" />
-                <line x1="-4" y1="0" x2="4" y2="0" stroke="rgba(212,101,26,0.3)" stroke-width="0.5" />
-              </g>
-
-              <!-- Scale bar -->
-              <line x1="300" y1="270" x2="360" y2="270" stroke="rgba(212,101,26,0.4)" stroke-width="1" />
-              <line x1="300" y1="267" x2="300" y2="273" stroke="rgba(212,101,26,0.4)" stroke-width="1" />
-              <line x1="360" y1="267" x2="360" y2="273" stroke="rgba(212,101,26,0.4)" stroke-width="1" />
-              <text x="330" y="265" fill="#71717a" font-size="8" text-anchor="middle"
-                font-family="'Inter', sans-serif">100 km</text>
-            </svg>
-          </div>
-
-          <!-- Right: Text -->
-          <div class="flex-1 reveal">
-            <p class="inter text-xs font-semibold brand-text uppercase tracking-widest mb-3">Specialty</p>
-            <h2 class="syne text-4xl font-bold mb-6 text-dark">Geospatial Systems</h2>
-            <p class="inter text-base leading-relaxed mb-8 text-muted">
-              I design and build geospatial systems that transform raw geographic data into actionable intelligence.
-              From mobile field data collection in remote Uganda to interactive web-based spatial dashboards — I bridge
-              the physical world and the digital.
-            </p>
-
-            <div class="space-y-3">
-              <div class="card p-4 flex gap-4">
-                <div class="icon-wrap flex-shrink-0">
-                  <Icon icon="lucide:database" class="w-4 h-4 brand-text" />
-                </div>
-                <div>
-                  <p class="syne font-bold text-sm mb-1 text-dark">Spatial Databases</p>
-                  <p class="inter text-xs text-muted">PostGIS, spatial indexing, geospatial queries, coordinate systems.</p>
-                </div>
-              </div>
-              <div class="card p-4 flex gap-4">
-                <div class="icon-wrap flex-shrink-0">
-                  <Icon icon="lucide:map" class="w-4 h-4 brand-text" />
-                </div>
-                <div>
-                  <p class="syne font-bold text-sm mb-1 text-dark">Interactive Mapping</p>
-                  <p class="inter text-xs text-muted">Leaflet, Mapbox, OpenLayers — dynamic, web-based map visualisations.</p>
-                </div>
-              </div>
-              <div class="card p-4 flex gap-4">
-                <div class="icon-wrap flex-shrink-0">
-                  <Icon icon="lucide:smartphone" class="w-4 h-4 brand-text" />
-                </div>
-                <div>
-                  <p class="syne font-bold text-sm mb-1 text-dark">Mobile Field Collection</p>
-                  <p class="inter text-xs text-muted">GPS-integrated Flutter apps with offline sync for field teams.</p>
-                </div>
-              </div>
-              <div class="card p-4 flex gap-4">
-                <div class="icon-wrap flex-shrink-0">
-                  <Icon icon="lucide:bar-chart-3" class="w-4 h-4 brand-text" />
-                </div>
-                <div>
-                  <p class="syne font-bold text-sm mb-1 text-dark">Spatial Analytics</p>
-                  <p class="inter text-xs text-muted">GeoJSON, KML, shapefiles — data pipelines for geographic
-                    decision-making.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- =========== CONTACT =========== -->
-    <section id="contact" class="py-24 px-6 md:px-12 section-alt">
-      <div class="max-w-3xl mx-auto text-center reveal">
-        <p class="inter text-xs font-semibold brand-text uppercase tracking-widest mb-3">Get In Touch</p>
-        <h2 class="syne text-4xl md:text-5xl font-bold mb-4 text-dark">
-          Let's Build<br /><span class="brand-text">Something Great.</span>
-        </h2>
-        <p class="inter mb-12 text-base text-muted">
-          Open to freelance projects, full-time roles, and geospatial collaborations. Based in Uganda, working globally.
-        </p>
-
-        <div class="card p-8 text-left">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div class="value-item reveal">
+            <div class="value-icon"><Icon icon="lucide:brain-circuit" class="w-4 h-4" /></div>
             <div>
-              <label class="inter text-xs mb-2 block text-muted font-medium">Your Name</label>
-              <input type="text" class="form-input" placeholder="Jane Smith" />
+              <p class="value-title">AI-Augmented</p>
+              <p class="value-desc">Integrating OpenAI & Anthropic APIs to automate complex workflows.</p>
             </div>
+          </div>
+          <div class="value-item reveal">
+            <div class="value-icon"><Icon icon="lucide:package" class="w-4 h-4" /></div>
             <div>
-              <label class="inter text-xs mb-2 block text-muted font-medium">Email Address</label>
-              <input type="email" class="form-input" placeholder="jane@company.com" />
+              <p class="value-title">Open Source Contributor</p>
+              <p class="value-desc">Published Dart libraries to pub.dev used by the Flutter community.</p>
             </div>
           </div>
-          <div class="mb-4">
-            <label class="inter text-xs mb-2 block text-muted font-medium">Subject</label>
-            <input type="text" class="form-input" placeholder="Project inquiry / Job opportunity" />
+          <div class="value-item reveal">
+            <div class="value-icon"><Icon icon="lucide:graduation-cap" class="w-4 h-4" /></div>
+            <div>
+              <p class="value-title">Mentor & Educator</p>
+              <p class="value-desc">Mentored 100+ students to national app competition finals.</p>
+            </div>
           </div>
-          <div class="mb-6">
-            <label class="inter text-xs mb-2 block text-muted font-medium">Message</label>
-            <textarea class="form-input" rows="4" placeholder="Tell me about your project..."></textarea>
+          <div class="value-item reveal">
+            <div class="value-icon"><Icon icon="lucide:zap" class="w-4 h-4" /></div>
+            <div>
+              <p class="value-title">Measurable Impact</p>
+              <p class="value-desc">35–75% efficiency gains across real production deployments.</p>
+            </div>
           </div>
-          <button class="btn-primary w-full justify-center" onclick="window.location='mailto:katoemmy001@gmail.com'">
-            Send Message
-            <Icon icon="lucide:arrow-right" class="w-4 h-4" />
-          </button>
-        </div>
-
-        <!-- Contact links -->
-        <div class="flex flex-wrap justify-center gap-6 mt-10">
-          <a href="mailto:katoemmy001@gmail.com" class="flex items-center gap-2 text-sm nav-link">
-            <Icon icon="lucide:mail" class="w-4 h-4" />
-            katoemmy001@gmail.com
-          </a>
-          <a href="tel:+256778707801" class="flex items-center gap-2 text-sm nav-link">
-            <Icon icon="lucide:phone" class="w-4 h-4" />
-            +256 778 707 801
-          </a>
-          <a href="https://katoemma.website" target="_blank" class="flex items-center gap-2 text-sm nav-link">
-            <Icon icon="lucide:globe" class="w-4 h-4" />
-            katoemma.website
-          </a>
         </div>
       </div>
     </section>
 
-    <!-- =========== FOOTER =========== -->
-    <footer class="py-8 px-6 md:px-12 border-t border-zinc-200">
-      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <p class="syne font-bold text-lg brand-text">KE.</p>
-        <p class="inter text-xs text-muted">© 2026 Kato Emmanuel · Full-Stack & Geospatial Engineer · Uganda</p>
-        <p class="inter text-xs text-muted">Built with precision & code.</p>
+    <!-- ======== PROJECTS ======== -->
+    <section id="work" class="section section-dark">
+      <div class="section-label reveal">
+        <span class="sec-num sec-num-dark">02</span>
+        <span class="sec-rule sec-rule-dark"></span>
+        <span class="sec-title sec-title-dark">Work</span>
+      </div>
+      <p class="section-sub reveal">Shipped products with real-world impact.</p>
+
+      <!-- Bento grid -->
+      <div class="bento">
+
+        <!-- Card 1: Kijani — featured wide -->
+        <a href="#" class="bento-card bento-wide reveal">
+          <div class="bento-top">
+            <div class="bento-icon"><Icon icon="lucide:leaf" class="w-5 h-5" /></div>
+            <Icon icon="lucide:arrow-up-right" class="w-4 h-4 bento-arrow" />
+          </div>
+          <h3 class="bento-title">Kijani Forestry App</h3>
+          <p class="bento-desc">
+            Cross-platform Flutter app for offline-first field data collection via Airtable API. Adopted by 450+ field staff across Uganda.
+          </p>
+          <div class="bento-tags">
+            <span>Flutter</span><span>Airtable</span><span>Offline-First</span>
+          </div>
+        </a>
+
+        <!-- Card 2: Airtable CRUD — small -->
+        <a href="https://pub.dev/packages/airtable_crud" target="_blank" rel="noopener" class="bento-card reveal">
+          <div class="bento-top">
+            <div class="bento-icon"><Icon icon="lucide:package" class="w-5 h-5" /></div>
+            <Icon icon="lucide:external-link" class="w-4 h-4 bento-arrow" />
+          </div>
+          <h3 class="bento-title">Airtable CRUD</h3>
+          <p class="bento-desc">Open-source Dart library on pub.dev simplifying Airtable API for Flutter devs.</p>
+          <div class="bento-tags">
+            <span>Dart</span><span>Open Source</span><span>pub.dev</span>
+          </div>
+        </a>
+
+        <!-- Card 3: Terrave — small -->
+        <a href="https://terrave.lipon.store" target="_blank" rel="noopener" class="bento-card reveal">
+          <div class="bento-top">
+            <div class="bento-icon"><Icon icon="lucide:map" class="w-5 h-5" /></div>
+            <Icon icon="lucide:external-link" class="w-4 h-4 bento-arrow" />
+          </div>
+          <h3 class="bento-title">Terrave</h3>
+          <p class="bento-desc">Real-time spatial dashboard integrating PostGIS, Leaflet & Laravel for map-based analytics.</p>
+          <div class="bento-tags">
+            <span>PostGIS</span><span>Leaflet</span><span>Laravel</span>
+          </div>
+        </a>
+
+        <!-- Card 4: VireonHR — featured wide -->
+        <a href="https://lipon.store" target="_blank" rel="noopener" class="bento-card bento-wide reveal">
+          <div class="bento-top">
+            <div class="bento-icon"><Icon icon="lucide:users" class="w-5 h-5" /></div>
+            <Icon icon="lucide:external-link" class="w-4 h-4 bento-arrow" />
+          </div>
+          <h3 class="bento-title">VireonHR</h3>
+          <p class="bento-desc">
+            AI-powered HRMS with automated recruitment, payroll, attendance tracking, and performance reviews for modern teams.
+          </p>
+          <div class="bento-tags">
+            <span>Laravel</span><span>Vue</span><span>AI</span><span>Docker</span>
+          </div>
+        </a>
+
+        <!-- Card 5: Publlsh — small, building -->
+        <a href="https://publlsh.lipon.store" target="_blank" rel="noopener" class="bento-card bento-building reveal">
+          <div class="bento-top">
+            <div class="bento-icon"><Icon icon="lucide:sparkles" class="w-5 h-5" /></div>
+            <span class="bento-wip">Building</span>
+          </div>
+          <h3 class="bento-title">Publlsh</h3>
+          <p class="bento-desc">AI-powered social media management — scheduling, AI captions, and analytics.</p>
+          <div class="bento-tags">
+            <span>Laravel</span><span>Vue</span><span>AI</span>
+          </div>
+        </a>
+
+        <!-- Card 6: Zoya Travels — small -->
+        <a href="https://zoyatravelsug.com/" target="_blank" rel="noopener" class="bento-card reveal">
+          <div class="bento-top">
+            <div class="bento-icon"><Icon icon="lucide:plane" class="w-5 h-5" /></div>
+            <div class="flex items-center gap-2">
+              <span class="bento-client">Client</span>
+              <Icon icon="lucide:external-link" class="w-4 h-4 bento-arrow" />
+            </div>
+          </div>
+          <h3 class="bento-title">Zoya Travels</h3>
+          <p class="bento-desc">SEO-optimised travel agency landing page built with Nuxt.js and Tailwind CSS.</p>
+          <div class="bento-tags">
+            <span>Nuxt</span><span>Tailwind</span><span>SEO</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ======== GEOSPATIAL ======== -->
+    <section id="geo" class="section">
+      <div class="section-label reveal">
+        <span class="sec-num">03</span>
+        <span class="sec-rule"></span>
+        <span class="sec-title">Geospatial</span>
+      </div>
+
+      <div class="geo-grid">
+        <!-- Left: copy -->
+        <div class="geo-text">
+          <h2 class="geo-headline reveal">
+            Bridging the physical world and the digital.
+          </h2>
+          <p class="geo-body reveal">
+            I design geospatial systems that transform raw geographic data into actionable intelligence — from
+            mobile field collection in remote Uganda to interactive web spatial dashboards.
+          </p>
+
+          <div class="geo-features reveal">
+            <div class="geo-feat">
+              <span class="geo-feat-num">01</span>
+              <div>
+                <p class="geo-feat-title">Spatial Databases</p>
+                <p class="geo-feat-desc">PostGIS, spatial indexing, geospatial queries, coordinate systems.</p>
+              </div>
+            </div>
+            <div class="geo-feat">
+              <span class="geo-feat-num">02</span>
+              <div>
+                <p class="geo-feat-title">Interactive Mapping</p>
+                <p class="geo-feat-desc">Leaflet, Mapbox, OpenLayers — dynamic, web-based map visualisations.</p>
+              </div>
+            </div>
+            <div class="geo-feat">
+              <span class="geo-feat-num">03</span>
+              <div>
+                <p class="geo-feat-title">Mobile Field Collection</p>
+                <p class="geo-feat-desc">GPS-integrated Flutter apps with offline sync for field teams.</p>
+              </div>
+            </div>
+            <div class="geo-feat">
+              <span class="geo-feat-num">04</span>
+              <div>
+                <p class="geo-feat-title">Spatial Analytics</p>
+                <p class="geo-feat-desc">GeoJSON, KML, shapefiles — pipelines for geographic decision-making.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: map -->
+        <div class="geo-map reveal">
+          <svg viewBox="0 0 420 340" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+            <defs>
+              <pattern id="geo-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+                <path d="M 28 0 L 0 0 0 28" fill="none" stroke="rgba(232,84,26,0.07)" stroke-width="0.5" />
+              </pattern>
+            </defs>
+            <rect width="420" height="340" fill="url(#geo-grid)" rx="16"/>
+
+            <!-- Uganda outline -->
+            <path
+              d="M160 50 L200 44 L242 60 L264 92 L274 135 L264 178 L252 208 L222 230 L200 240 L168 228 L148 200 L136 172 L130 140 L136 108 L148 78 Z"
+              fill="rgba(232,84,26,0.06)" stroke="rgba(232,84,26,0.4)" stroke-width="1.5" stroke-linejoin="round" />
+
+            <!-- Kampala -->
+            <circle cx="196" cy="192" r="5" fill="#E8541A" class="map-dot" />
+            <circle cx="196" cy="192" r="14" fill="rgba(232,84,26,0.1)" class="map-dot" />
+            <text x="214" y="197" fill="#71717A" font-size="9" font-family="'Inter', sans-serif" font-weight="500">Kampala</text>
+
+            <!-- Field lines -->
+            <line x1="200" y1="95" x2="196" y2="192" stroke="rgba(232,84,26,0.18)" stroke-width="1" stroke-dasharray="4,3" />
+
+            <!-- Data points -->
+            <circle cx="152" cy="120" r="3.5" fill="rgba(232,84,26,0.55)" />
+            <circle cx="234" cy="115" r="3.5" fill="rgba(232,84,26,0.55)" />
+            <circle cx="172" cy="153" r="3.5" fill="rgba(232,84,26,0.55)" />
+            <circle cx="224" cy="158" r="3.5" fill="rgba(232,84,26,0.55)" />
+            <circle cx="166" cy="178" r="3.5" fill="rgba(232,84,26,0.55)" />
+            <circle cx="244" cy="137" r="3.5" fill="rgba(232,84,26,0.35)" />
+
+            <!-- Compass -->
+            <g transform="translate(378, 42)">
+              <circle cx="0" cy="0" r="20" fill="rgba(232,84,26,0.05)" stroke="rgba(232,84,26,0.18)" stroke-width="0.8" />
+              <text x="0" y="-7" fill="#E8541A" font-size="8" text-anchor="middle" font-family="'Syne', sans-serif" font-weight="700">N</text>
+              <line x1="0" y1="-4" x2="0" y2="4" stroke="rgba(232,84,26,0.45)" stroke-width="0.8" />
+              <line x1="-4" y1="0" x2="4" y2="0" stroke="rgba(232,84,26,0.3)" stroke-width="0.8" />
+            </g>
+
+            <!-- Legend -->
+            <circle cx="28" cy="308" r="5" fill="#E8541A" />
+            <text x="40" y="312" fill="#71717A" font-size="9" font-family="'Inter', sans-serif">Base Location</text>
+            <circle cx="128" cy="308" r="3.5" fill="rgba(232,84,26,0.5)" />
+            <text x="140" y="312" fill="#71717A" font-size="9" font-family="'Inter', sans-serif">Field Data Points</text>
+
+            <!-- Scale bar -->
+            <line x1="300" y1="310" x2="368" y2="310" stroke="rgba(232,84,26,0.35)" stroke-width="1" />
+            <line x1="300" y1="306" x2="300" y2="314" stroke="rgba(232,84,26,0.35)" stroke-width="1" />
+            <line x1="368" y1="306" x2="368" y2="314" stroke="rgba(232,84,26,0.35)" stroke-width="1" />
+            <text x="334" y="305" fill="#71717A" font-size="8" text-anchor="middle" font-family="'Inter', sans-serif">100 km</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== CONTACT ======== -->
+    <section id="contact" class="section section-dark">
+      <div class="section-label reveal">
+        <span class="sec-num sec-num-dark">04</span>
+        <span class="sec-rule sec-rule-dark"></span>
+        <span class="sec-title sec-title-dark">Contact</span>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Left: big CTA -->
+        <div class="contact-left">
+          <h2 class="contact-headline reveal">
+            Let's build<br /><span class="brand-text">something</span><br />great.
+          </h2>
+          <p class="contact-sub reveal">
+            Open to freelance projects, full-time roles, and geospatial collaborations.
+            Based in Uganda, working globally.
+          </p>
+          <div class="contact-links reveal">
+            <a href="mailto:katoemmy001@gmail.com" class="contact-link">
+              <Icon icon="lucide:mail" class="w-4 h-4" />
+              katoemmy001@gmail.com
+            </a>
+            <a href="tel:+256778707801" class="contact-link">
+              <Icon icon="lucide:phone" class="w-4 h-4" />
+              +256 778 707 801
+            </a>
+            <a href="https://katoemma.website" target="_blank" class="contact-link">
+              <Icon icon="lucide:globe" class="w-4 h-4" />
+              katoemma.website
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <div class="contact-form-wrap reveal">
+          <div class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Your Name</label>
+                <input type="text" class="form-input" placeholder="Jane Smith" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-input" placeholder="jane@company.com" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Subject</label>
+              <input type="text" class="form-input" placeholder="Project inquiry / Job opportunity" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message</label>
+              <textarea class="form-input" rows="4" placeholder="Tell me about your project..."></textarea>
+            </div>
+            <button class="btn-primary w-full-btn" onclick="window.location='mailto:katoemmy001@gmail.com'">
+              Send Message <Icon icon="lucide:arrow-right" class="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== FOOTER ======== -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <p class="footer-logo">KE.</p>
+        <p class="footer-copy">© 2026 Kato Emmanuel · Full-Stack & Geospatial Engineer · Uganda</p>
+        <p class="footer-right">Built with precision & code.</p>
       </div>
     </footer>
   </div>
 </template>
 
 <style scoped>
-/* =====================
+/* =========================================
    TOKENS
-   ===================== */
-:root {
-  --brand: #D4651A;
-  --brand-dark: #b8541a;
-  --dark: #18181B;
-  --muted: #71717A;
-  --bg: #FAFAF8;
-  --bg-alt: #F4F4F2;
-  --border: #E4E4E7;
-  --white: #ffffff;
-}
-
-/* =====================
-   BASE
-   ===================== */
+   ========================================= */
 .site-wrapper {
+  --brand:       #E8541A;
+  --brand-dark:  #C94815;
+  --dark:        #0C0C0A;
+  --dark2:       #141410;
+  --dark3:       #1C1C18;
+  --border-dark: #2A2A24;
+  --text-light:  #F5F0EB;
+  --text-muted:  #8A8A80;
+  --light-bg:    #FAFAF8;
+  --light-alt:   #F2F1EE;
+  --light-border:#E2E2DC;
+  --text-dark:   #18181B;
+  --text-dmuted: #6B6B65;
+
   font-family: 'Inter', sans-serif;
-  background-color: var(--bg);
-  color: var(--dark);
+  background: var(--light-bg);
+  color: var(--text-dark);
   overflow-x: hidden;
   cursor: none;
 }
 
-.inter { font-family: 'Inter', sans-serif; }
-.syne  { font-family: 'Syne', sans-serif; }
-
-.text-dark  { color: var(--dark); }
-.text-muted { color: var(--muted); }
-.text-dim   { color: #A1A1AA; }
-
-.brand-text { color: var(--brand); }
-
-/* =====================
+/* =========================================
    CURSOR
-   ===================== */
+   ========================================= */
 .cursor {
-  width: 12px;
-  height: 12px;
+  width: 10px; height: 10px;
   background: var(--brand);
   border-radius: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9999;
+  position: fixed; top: 0; left: 0;
+  pointer-events: none; z-index: 9999;
   transform: translate(-50%, -50%);
-  transition: width 0.2s ease, height 0.2s ease;
+  transition: width 0.15s, height 0.15s;
 }
-
 .cursor-ring {
-  width: 36px;
-  height: 36px;
-  border: 1.5px solid rgba(212, 101, 26, 0.35);
+  width: 36px; height: 36px;
+  border: 1.5px solid rgba(232,84,26,0.3);
   border-radius: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9998;
+  position: fixed; top: 0; left: 0;
+  pointer-events: none; z-index: 9998;
   transform: translate(-50%, -50%);
-  transition: left 0.08s ease, top 0.08s ease, width 0.2s ease, height 0.2s ease;
+  transition: left 0.07s ease, top 0.07s ease, width 0.2s, height 0.2s, border-color 0.2s;
 }
 
-/* =====================
+/* =========================================
    NAV
-   ===================== */
+   ========================================= */
 nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  background: rgba(250, 250, 248, 0.88);
-  border-bottom: 1px solid var(--border);
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(250,250,248,0.92);
+  border-bottom: 1px solid var(--light-border);
 }
-
-.nav-link {
-  position: relative;
-  color: var(--muted);
-  transition: color 0.2s ease;
-  font-size: 14px;
-  font-weight: 450;
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 40px;
+  height: 68px;
 }
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1px;
+.logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800; font-size: 20px;
+  color: var(--text-dark);
+  letter-spacing: -0.5px;
+  flex-shrink: 0;
+}
+.logo-dot { color: var(--brand); }
+.nav-links {
+  display: flex; gap: 36px;
+  position: absolute; left: 50%; transform: translateX(-50%);
+}
+.nl {
+  font-size: 13.5px; font-weight: 450;
+  color: var(--text-dmuted);
+  transition: color 0.2s;
+  letter-spacing: 0.01em;
+  position: relative; padding-bottom: 2px;
+}
+.nl::after {
+  content: ''; position: absolute;
+  bottom: -2px; left: 0; width: 0; height: 1.5px;
   background: var(--brand);
   transition: width 0.25s ease;
+  border-radius: 1px;
 }
-
-.nav-link:hover { color: var(--brand); }
-.nav-link:hover::after { width: 100%; }
-
-/* =====================
-   HERO
-   ===================== */
-.hero-word {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(28px);
-  animation: wordUp 0.65s ease forwards;
-}
-
-@keyframes wordUp {
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.underline-accent {
-  position: relative;
-}
-
-.underline-accent::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: var(--brand);
-  border-radius: 2px;
-}
-
-.availability-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  background: rgba(212, 101, 26, 0.07);
-  border: 1px solid rgba(212, 101, 26, 0.2);
-  border-radius: 999px;
+.nl:hover { color: var(--text-dark); }
+.nl:hover::after { width: 100%; }
+.nav-cv {
+  display: inline-flex; align-items: center; gap: 7px;
   font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--brand);
+  font-size: 12.5px; font-weight: 600;
+  color: var(--text-dark);
+  background: var(--light-alt);
+  border: 1.5px solid var(--light-border);
+  padding: 9px 18px; border-radius: 999px;
+  transition: all 0.2s ease;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
 }
-
-.pulsing-dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
+.nav-cv:hover {
   background: var(--brand);
-  animation: pulse 1.6s ease-in-out infinite;
+  border-color: var(--brand);
+  color: #fff;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.5; transform: scale(1.3); }
+/* =========================================
+   HERO
+   ========================================= */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding-top: 68px;
 }
-
-.stat-divider {
-  width: 1px;
-  background: var(--border);
-  align-self: stretch;
-}
-
-.hover-link {
-  transition: opacity 0.2s;
-}
-.hover-link:hover { opacity: 0.75; }
-
-/* Profile card overlay */
-.name-overlay {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(8px);
-  border-top: 1px solid var(--border);
-}
-
-/* Float badges */
-.float-badge {
-  animation: floatBadge 3s ease-in-out infinite;
-}
-
-@keyframes floatBadge {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-6px); }
-}
-
-.badge-icon {
-  background: var(--brand);
-}
-
-/* =====================
-   SECTION ALT
-   ===================== */
-.section-alt {
-  background: var(--bg-alt);
-}
-
-/* =====================
-   CARDS
-   ===================== */
-.card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-}
-
-.card:hover {
-  border-color: rgba(212, 101, 26, 0.3);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(212, 101, 26, 0.08);
-}
-
-/* Project card */
-.project-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 24px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.project-card:hover {
-  border-color: rgba(212, 101, 26, 0.3);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(212, 101, 26, 0.09);
-}
-
-/* Icon wrap */
-.icon-wrap {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: rgba(212, 101, 26, 0.08);
-  display: flex;
+.hero-container {
+  max-width: 1200px; margin: 0 auto;
+  width: 100%;
+  padding: 80px 40px;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 80px;
   align-items: center;
-  justify-content: center;
+}
+
+/* Left column */
+.hero-left {
+  display: flex; flex-direction: column;
+}
+.avail-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(232,84,26,0.07);
+  border: 1px solid rgba(232,84,26,0.2);
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-size: 12px; font-weight: 500; color: var(--brand);
+  width: fit-content; margin-bottom: 28px;
+  letter-spacing: 0.02em;
+}
+.avail-dot {
+  display: inline-block;
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--brand);
+  animation: pulse 1.8s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%      { opacity:0.4; transform:scale(1.5); }
+}
+
+.hero-name {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(52px, 6.5vw, 84px);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: var(--text-dark);
+  margin: 0 0 16px;
+}
+.hero-name-accent {
+  color: var(--brand);
+  display: block;
+}
+
+.hero-role {
+  font-size: 15px; font-weight: 500;
+  color: var(--text-dmuted);
+  letter-spacing: 0.01em;
+  margin-bottom: 20px;
+}
+
+.hero-bio {
+  font-size: 15px; line-height: 1.72;
+  color: var(--text-dmuted);
+  max-width: 460px;
+  margin-bottom: 36px;
+}
+
+.hero-cta {
+  display: flex; align-items: center; gap: 16px;
+  margin-bottom: 52px;
+}
+
+.hero-stats {
+  display: flex; align-items: center; gap: 28px;
+  padding-top: 28px;
+  border-top: 1px solid var(--light-border);
+}
+.stat-item {}
+.stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 26px; font-weight: 800;
+  color: var(--brand); line-height: 1;
+  display: block;
+}
+.stat-label {
+  font-size: 11px; color: var(--text-dmuted);
+  margin-top: 5px; display: block; font-weight: 500;
+  letter-spacing: 0.01em;
+}
+.stat-rule {
+  width: 1px; height: 32px;
+  background: var(--light-border);
   flex-shrink: 0;
 }
 
-/* Project icon */
-.project-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: rgba(212, 101, 26, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.25s ease, transform 0.25s ease;
+/* Right column: photo card */
+.hero-right {
+  display: flex; flex-direction: column; align-items: center; gap: 16px;
+}
+.hero-photo-card {
+  position: relative;
+  width: 100%;
+}
+.hero-photo {
+  width: 100%;
+  height: 500px;
+  object-fit: cover; object-position: top center;
+  border-radius: 24px;
+  border: 1px solid var(--light-border);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+  display: block;
 }
 
-.group:hover .project-icon {
+/* Floating badges */
+.hero-badge {
+  position: absolute;
+  display: flex; align-items: center; gap: 8px;
+  background: #fff;
+  border: 1px solid var(--light-border);
+  border-radius: 999px;
+  padding: 8px 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  font-size: 12px; font-weight: 600;
+  color: var(--text-dark);
+  white-space: nowrap;
+}
+.hero-badge-icon {
+  width: 26px; height: 26px;
+  border-radius: 50%;
   background: var(--brand);
-  transform: scale(1.05);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; flex-shrink: 0;
+}
+.hero-badge-top  { top: 20px; left: -20px; }
+.hero-badge-bottom { bottom: 80px; right: -20px; }
+
+/* Tech strip */
+.hero-tech-row {
+  position: absolute; bottom: 16px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; align-items: center; gap: 6px;
+  background: #fff;
+  border: 1px solid var(--light-border);
+  border-radius: 999px;
+  padding: 8px 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+.tech-chip {
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  background: var(--light-alt);
+  display: flex; align-items: center; justify-content: center;
 }
 
-.group:hover .project-icon .brand-text {
-  color: white;
+/* Location tag */
+.hero-location {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 500;
+  color: var(--text-dmuted);
+}
+.text-muted-light { color: var(--text-dmuted); }
+
+/* =========================================
+   MARQUEE
+   ========================================= */
+.marquee-wrap {
+  overflow: hidden;
+  border-top: 1px solid var(--light-border);
+  border-bottom: 1px solid var(--light-border);
+  padding: 16px 0;
+  background: var(--light-alt);
+}
+.marquee-track {
+  display: flex; gap: 24px; align-items: center;
+  white-space: nowrap;
+  animation: marquee 28s linear infinite;
+  width: max-content;
+}
+.marquee-track span {
+  font-size: 13px; font-weight: 500;
+  color: var(--text-dmuted); letter-spacing: 0.02em;
+}
+.marquee-track .sep { color: var(--brand); }
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-.brand-bg { background: var(--brand) !important; }
+/* =========================================
+   SECTION STRUCTURE
+   ========================================= */
+.section {
+  max-width: 1200px; margin: 0 auto;
+  padding: 96px 32px;
+}
+.section-dark {
+  max-width: 100%;
+  background: var(--dark);
+  padding: 96px 0;
+}
+.section-dark > * {
+  max-width: 1200px; margin-left: auto; margin-right: auto;
+  padding-left: 32px; padding-right: 32px;
+}
+.section-dark .bento,
+.section-dark .contact-grid {
+  max-width: 1200px; margin: 0 auto;
+  padding-left: 32px; padding-right: 32px;
+}
 
-/* =====================
-   TAGS
-   ===================== */
+.section-label {
+  display: flex; align-items: center; gap: 16px;
+  margin-bottom: 56px;
+}
+.sec-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 11px; font-weight: 700;
+  color: var(--brand); letter-spacing: 0.1em;
+}
+.sec-num-dark { color: var(--brand); }
+.sec-rule {
+  flex: 0 0 48px; height: 1px;
+  background: var(--light-border);
+}
+.sec-rule-dark { background: var(--border-dark); }
+.sec-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 11px; font-weight: 700;
+  color: var(--text-dmuted); letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.sec-title-dark { color: var(--text-muted); }
+.section-sub {
+  font-size: 14px; color: var(--text-muted);
+  margin-top: -40px; margin-bottom: 40px;
+  padding: 0 32px;
+}
+
+/* =========================================
+   ABOUT
+   ========================================= */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 80px; align-items: start;
+}
+.about-headline {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 700; line-height: 1.2;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+.about-body {
+  font-size: 15px; line-height: 1.75;
+  color: var(--text-dmuted); margin-bottom: 16px;
+}
+.about-body strong { color: var(--text-dark); font-weight: 600; }
+.tags-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
 .tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 5px 12px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 500;
-  font-family: 'Inter', sans-serif;
-  background: rgba(212, 101, 26, 0.07);
+  display: inline-flex; align-items: center;
+  padding: 5px 12px; border-radius: 999px;
+  font-size: 12px; font-weight: 500;
+  background: rgba(232,84,26,0.07);
   color: var(--brand);
-  border: 1px solid rgba(212, 101, 26, 0.18);
-  letter-spacing: 0.01em;
+  border: 1px solid rgba(232,84,26,0.18);
 }
-
-.tech-tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  font-weight: 500;
-  background: #F4F4F2;
-  color: var(--muted);
-  border: 1px solid var(--border);
+.about-values { display: flex; flex-direction: column; gap: 0; }
+.value-item {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--light-border);
 }
-
-.building-badge {
-  padding: 3px 10px;
-  background: #FEF3C7;
-  color: #92400E;
-  border-radius: 999px;
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-}
-
-.client-badge {
-  padding: 3px 10px;
-  background: rgba(212, 101, 26, 0.08);
+.value-item:first-child { border-top: 1px solid var(--light-border); }
+.value-icon {
+  width: 36px; height: 36px; flex-shrink: 0;
+  background: rgba(232,84,26,0.08);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
   color: var(--brand);
-  border-radius: 999px;
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
+}
+.value-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px; font-weight: 700;
+  color: var(--text-dark); margin-bottom: 4px;
+}
+.value-desc { font-size: 13px; color: var(--text-dmuted); line-height: 1.6; }
+
+/* =========================================
+   PROJECTS BENTO
+   ========================================= */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.bento-card {
+  background: var(--dark2);
+  border: 1px solid var(--border-dark);
+  border-radius: 20px;
+  padding: 28px;
+  display: flex; flex-direction: column;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  text-decoration: none;
+}
+.bento-card:hover {
+  border-color: rgba(232,84,26,0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(232,84,26,0.1);
+}
+.bento-wide { grid-column: span 2; }
+.bento-building { opacity: 0.72; }
+
+.bento-top {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; margin-bottom: 20px;
+}
+.bento-icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: rgba(232,84,26,0.1);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--brand);
+  transition: background 0.25s;
+}
+.bento-card:hover .bento-icon { background: var(--brand); color: #fff; }
+.bento-arrow { color: #3A3A34; transition: color 0.25s; }
+.bento-card:hover .bento-arrow { color: var(--brand); }
+
+.bento-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px; font-weight: 700;
+  color: var(--text-light); margin-bottom: 10px;
+}
+.bento-desc {
+  font-size: 13px; line-height: 1.7;
+  color: var(--text-muted); flex: 1; margin-bottom: 20px;
+}
+.bento-tags {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.bento-tags span {
+  font-size: 11px; font-weight: 500;
+  padding: 4px 10px; border-radius: 6px;
+  background: rgba(255,255,255,0.05);
+  color: var(--text-muted);
+  border: 1px solid var(--border-dark);
+}
+.bento-wip {
+  font-size: 11px; font-weight: 600;
+  padding: 4px 10px; border-radius: 999px;
+  background: rgba(251,191,36,0.12);
+  color: #FBBF24;
+}
+.bento-client {
+  font-size: 11px; font-weight: 600;
+  padding: 4px 10px; border-radius: 999px;
+  background: rgba(232,84,26,0.12);
+  color: var(--brand);
 }
 
-/* =====================
+/* =========================================
+   GEOSPATIAL
+   ========================================= */
+.geo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
+}
+.geo-headline {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 700; line-height: 1.2;
+  color: var(--text-dark);
+  letter-spacing: -0.02em; margin-bottom: 20px;
+}
+.geo-body {
+  font-size: 15px; line-height: 1.75;
+  color: var(--text-dmuted); margin-bottom: 40px;
+}
+.geo-features { display: flex; flex-direction: column; gap: 0; }
+.geo-feat {
+  display: flex; align-items: flex-start; gap: 20px;
+  padding: 18px 0; border-bottom: 1px solid var(--light-border);
+}
+.geo-feat:first-child { border-top: 1px solid var(--light-border); }
+.geo-feat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 11px; font-weight: 700;
+  color: var(--brand); letter-spacing: 0.08em;
+  flex-shrink: 0; padding-top: 2px;
+}
+.geo-feat-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px; font-weight: 700;
+  color: var(--text-dark); margin-bottom: 3px;
+}
+.geo-feat-desc { font-size: 13px; color: var(--text-dmuted); line-height: 1.6; }
+
+.geo-map {
+  background: var(--light-alt);
+  border: 1px solid var(--light-border);
+  border-radius: 24px; padding: 24px;
+}
+
+/* =========================================
+   CONTACT
+   ========================================= */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: start;
+}
+.contact-headline {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(42px, 5vw, 72px);
+  font-weight: 800; line-height: 1.0;
+  color: var(--text-light);
+  letter-spacing: -0.03em; margin-bottom: 24px;
+}
+.brand-text { color: var(--brand); }
+.contact-sub {
+  font-size: 15px; line-height: 1.7;
+  color: var(--text-muted); margin-bottom: 36px;
+}
+.contact-links { display: flex; flex-direction: column; gap: 12px; }
+.contact-link {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 14px; color: var(--text-muted);
+  transition: color 0.2s;
+}
+.contact-link:hover { color: var(--brand); }
+
+/* Contact form -->
+.contact-form-wrap { }
+.contact-form {
+  background: var(--dark2);
+  border: 1px solid var(--border-dark);
+  border-radius: 20px; padding: 32px;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.form-group { margin-bottom: 16px; }
+.form-group:last-of-type { margin-bottom: 20px; }
+.form-label {
+  display: block; font-size: 11px; font-weight: 600;
+  color: var(--text-muted); text-transform: uppercase;
+  letter-spacing: 0.08em; margin-bottom: 8px;
+}
+.form-input {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-dark);
+  color: var(--text-light);
+  border-radius: 10px; padding: 12px 16px;
+  font-family: 'Inter', sans-serif; font-size: 14px;
+  width: 100%; outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+.form-input::placeholder { color: #46463E; }
+.form-input:focus {
+  border-color: rgba(232,84,26,0.45);
+  box-shadow: 0 0 0 3px rgba(232,84,26,0.08);
+}
+
+/* =========================================
    BUTTONS
-   ===================== */
+   ========================================= */
 .btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  display: inline-flex; align-items: center; gap: 8px;
   padding: 13px 26px;
-  background: var(--brand);
-  color: #ffffff;
+  background: var(--brand); color: #ffffff;
   border-radius: 999px;
   font-family: 'Syne', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.02em;
-  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: none;
+  font-weight: 700; font-size: 14px; letter-spacing: 0.02em;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  cursor: none; border: none;
 }
-
 .btn-primary:hover {
   background: var(--brand-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(212, 101, 26, 0.25);
+  box-shadow: 0 8px 28px rgba(232,84,26,0.3);
+}
+.w-full-btn {
+  width: 100%; justify-content: center;
+}
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 14px; font-weight: 500;
+  color: var(--text-dmuted);
+  transition: color 0.2s;
+  cursor: none;
+}
+.btn-ghost:hover { color: var(--brand); }
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.footer {
+  background: var(--dark);
+  border-top: 1px solid var(--border-dark);
+  padding: 28px 32px;
+}
+.footer-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.footer-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px; font-weight: 800; color: var(--brand);
+}
+.footer-copy, .footer-right {
+  font-size: 12px; color: var(--text-muted);
 }
 
-/* =====================
-   FORM
-   ===================== */
-.form-input {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  color: var(--dark);
-  border-radius: 10px;
-  padding: 12px 16px;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  outline: none;
-  width: 100%;
-}
-
-.form-input:focus {
-  border-color: rgba(212, 101, 26, 0.45);
-  box-shadow: 0 0 0 3px rgba(212, 101, 26, 0.08);
-}
-
-.form-input::placeholder {
-  color: #A1A1AA;
-}
-
-/* =====================
-   MAP DOT
-   ===================== */
-.map-dot {
-  animation: mapPulse 2s ease-in-out infinite;
-}
-
-@keyframes mapPulse {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.45; }
-}
-
-/* =====================
+/* =========================================
    SCROLL REVEAL
-   ===================== */
+   ========================================= */
 .reveal {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* =========================================
+   MAP DOT ANIMATION
+   ========================================= */
+.map-dot { animation: mapPulse 2.2s ease-in-out infinite; }
+@keyframes mapPulse {
+  0%,100% { opacity: 1; }
+  50%      { opacity: 0.4; }
 }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* =====================
+/* =========================================
    SCROLLBAR
-   ===================== */
+   ========================================= */
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb {
-  background: rgba(212, 101, 26, 0.25);
-  border-radius: 2px;
-}
+::-webkit-scrollbar-track { background: var(--dark); }
+::-webkit-scrollbar-thumb { background: rgba(232,84,26,0.3); border-radius: 2px; }
 
-/* =====================
+/* =========================================
    TOUCH DEVICES
-   ===================== */
+   ========================================= */
 @media (hover: none) {
   .site-wrapper { cursor: auto; }
   .cursor, .cursor-ring { display: none; }
-  .btn-primary { cursor: pointer; }
+  .btn-primary, .btn-ghost { cursor: pointer; }
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 1024px) {
+  .hero { flex-direction: column; align-items: flex-start; padding-top: 120px; }
+  .hero-photo-wrap { margin-left: 0; margin-top: 40px; }
+  .about-grid, .geo-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  .bento { grid-template-columns: 1fr 1fr; }
+  .bento-wide { grid-column: span 2; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hero-name { font-size: 56px; }
+  .bento { grid-template-columns: 1fr; }
+  .bento-wide { grid-column: span 1; }
+  .hero-stats { gap: 20px; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; gap: 8px; text-align: center; }
+  .section { padding: 64px 20px; }
+  .hero { padding: 120px 20px 48px; }
 }
 </style>
