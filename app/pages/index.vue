@@ -11,6 +11,9 @@ useSeoMeta({
 })
 
 useHead({
+  meta: [
+    { name: 'theme-color', content: '#E8541A' },
+  ],
   link: [
     { rel: 'preconnect', href: 'https://api.fontshare.com' },
     { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
