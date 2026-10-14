@@ -1218,21 +1218,27 @@ nav {
    RESPONSIVE
    ========================================= */
 @media (max-width: 1024px) {
-  .hero { flex-direction: column; align-items: flex-start; padding-top: 120px; }
-  .hero-photo-wrap { margin-left: 0; margin-top: 40px; }
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 60px 32px;
+  }
+  .hero-right { max-width: 400px; }
   .about-grid, .geo-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
   .bento { grid-template-columns: 1fr 1fr; }
   .bento-wide { grid-column: span 2; }
 }
 @media (max-width: 768px) {
   .nav-links { display: none; }
-  .hero-name { font-size: 56px; }
+  .hero-container { padding: 48px 20px; }
+  .hero-name { font-size: 48px; }
   .bento { grid-template-columns: 1fr; }
   .bento-wide { grid-column: span 1; }
-  .hero-stats { gap: 20px; }
+  .hero-stats { gap: 16px; }
   .form-row { grid-template-columns: 1fr; }
   .footer-inner { flex-direction: column; gap: 8px; text-align: center; }
   .section { padding: 64px 20px; }
-  .hero { padding: 120px 20px 48px; }
+  .hero-badge-top { left: 0; top: 12px; }
+  .hero-badge-bottom { right: 0; bottom: 70px; }
 }
 </style>
